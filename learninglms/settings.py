@@ -23,9 +23,9 @@ import os
 SECRET_KEY = ['django-insecure-c4+)%kz38b&5#havm33664&!2$mj5mzr@r62_dfxgnz+u(k9$3']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['acadamyflax.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
