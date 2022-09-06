@@ -1,0 +1,192 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+
+
+
+<style>
+/* .col-container {
+    display: table; 
+    width: 100%;
+  } */
+  
+  .gallery-item img{
+	width: 100%;
+				height: 5vw;
+				object-fit: cover;
+  }
+
+  .post {
+    display: grid; 
+  }</style>
+
+
+
+<div class="page-title-area">
+    <div class="container" >
+        <div class="page-title-content" style="margin-top:-60px;">
+            <h2>Blog</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>Blog</li>
+            </ul>
+        </div>
+    </div>
+    <div class="shape9" >
+        <img src="{% static '/wp-content/themes/ecademy/assets/img/shape8.svg' %}" alt="Shape Image One">
+    </div>
+</div>
+<div class="blog-area ptb-100">
+    <div class="container" style="margin-top:-80px;">
+        <div class="row" style="display: contents;">
+           
+            <div class="col-lg-12">
+                <div class="row">
+                   
+                    {% for b in blog %}
+                    <div
+                        class="col-lg-4 post-1931 post type-post status-publish format-standard has-post-thumbnail hentry category-kindergarten tag-preschool pmpro-has-access">
+                        <div class="single-blog-post main-blog-post">
+                            <div class="post-image">
+                                <a href="{% url 'single-blog' b.slug %}" class="d-block">
+                                    <img src="/media/{{b.blog_img}}"
+                                        alt="">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <a class="category" href="{% url 'blog' %}?category={{b.blog_category}}">{{b.blog_category|capfirst}}</a>
+                                <h3><a href="{% url 'single-blog' b.slug %}">{{b.blog_title|capfirst}}</a></h3>
+                                <p>{{b.blog_description|capfirst|safe|slice:':150'}}....</p>
+                                <ul class="post-content-footer d-flex align-items-center">
+                                    <li>
+                                        <div class="post-author d-flex align-items-center">
+                                            {% if b.blog_instructor.img|length != 0 %}
+                                            <img src="/media/{{b.blog_instructor.img}}"
+                                                class="rounded-circle" alt="Jone Smit">
+                                            {% else %}
+                                                <img src="/media/default.png"
+                                                class="rounded-circle" alt="Jone Smit">{% endif %}
+
+                                            <span>{{b.blog_instructor.name|capfirst}}</span>
+                                        </div>
+                                    </li>
+                                    <li><i class="flaticon-calendar"></i><a
+                                            href="{% url 'single-blog' b.slug %}">{{b.blog_created_date|date:'F d, Y'}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+
+
+
+                <div class="pagination-area text-center">
+                    <nav aria-label="navigation">
+
+                        {% if blog.has_previous %}
+                        <a class="previous page-numbers"
+                        href="?page={{blog.previous_page_number}}"><i
+                            class="bx bxs-chevrons-left"></i></a>
+                        {% endif %}
+
+                        {% for i in blog.paginator.page_range %}
+      {% if blog.number == i %}
+      <a 
+      href="?page={{i}}">
+                        <span aria-current="page" class="page-numbers current">{{i}}</span></a>
+                      {% else %}
+                      <a 
+                      href="?page={{i}}">
+                        <span aria-current="page" class="page-numbers ">{{i}}</span></a>
+
+                        {% endif %}{% endfor %}
+                   {% if blog.has_next %}
+                            <a class="next page-numbers"
+                            href="?page={{blog.next_page_number}}"><i
+                                class="bx bxs-chevrons-right"></i></a>
+                            {% endif %}
+                            
+                            </nav>
+                </div>
+
+            </div>
+
+            
+
+            {% comment %} <div class="col-lg-5 col-md-12 mt-5" >
+                <div id="secondary" class="sidebar">
+                    <div id="search-3" class="widget widget_search">
+                        <form role="search" method="post" id="search" class="search-form">
+                         {% csrf_token %}   <label>
+                                <input type="search" class="search-field" placeholder="Search..." value="" name="search"
+                                    id="s" required>
+                            </label>
+                            <button type="submit"><i class="bx bx-search-alt"></i></button>
+                        </form>
+                    </div>
+                    <div id="ecademy_posts_thumbs-5" class="widget widget_ecademy_posts_thumbs" >
+                        <h2 class="widget-title">Recent posts</h2>
+                     {% for b in blog %}  {% if forloop.counter < 5 %} <article
+                            class="item post-1931 post type-post status-publish format-standard has-post-thumbnail hentry category-kindergarten tag-preschool pmpro-has-access">
+                            <a href="{% url 'single-blog' b.slug %}" class="thumb hover-effect"
+                                aria-label="Why Play Is Important in Preschool and Early">
+                                <span class="fullimage cover" role="img"
+                                    aria-label="Why Play Is Important in Preschool and Early"
+                                    style="background: url(/media/{{b.blog_img}});"></span>
+                            </a>
+                            <div class="info gradient-effect">
+                                <time datetime="2020-07-01">{{b.blog_created_date|date:'F d, Y'}}</time>
+                                <h4 class="title usmall"><a href="{% url 'single-blog' b.slug %}">
+                                        {{b.blog_title|capfirst}}</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </article>{% endif %}
+                        {% endfor %}
+                    </div>
+                    <div id="categories-3" class="widget widget_categories">
+                        <h2 class="widget-title">Categories</h2>
+                        <ul> {% for cats,count in cat %}  
+                            <li class="cat-item cat-item-16"><a href="{% url 'blog' %}?category={{cats}}">{{cats|capfirst}}</a><span
+                                    class="post-count">({{count}})</span>
+                            </li>  {% endfor %}
+                           
+                        </ul>
+                    </div>
+                    <div id="tag_cloud-3" class="widget widget_tag_cloud">
+                        <h2 class="widget-title">Tags</h2>
+                        <div class="tagcloud">
+                            {% for t in tag %}
+                            <a href="{% url 'blog' %}?tags={{t}}" class="tag-cloud-link tag-link-15 tag-link-position-1"
+                                style="font-size: 8pt;" aria-label="ATD (1 item)">{{t|capfirst}}</a>
+                              {% endfor %}
+                            </div>
+                    </div>
+                    <div id="media_gallery-2" class="widget widget_media_gallery">
+                        <h2 class="widget-title">Gallery</h2>
+                        <div id='gallery-1' class='gallery galleryid-1931 gallery-columns-3 gallery-size-thumbnail'>
+                            {% for b in blog %} {% if forloop.counter < 7 %}
+                              <figure class='gallery-item'>
+                                <div class='gallery-icon landscape'>
+                                    <img width="150" height="150"
+                                        src="/media/{{b.blog_img}}"
+                                        class="attachment-thumbnail size-thumbnail" alt="" loading="lazy"
+                                        srcset="/media/{{b.blog_img}} 150w, /media/{{b.blog_img}} 400w, /media/{{b.blog_img}} 300w, /media/{{b.blog_img}} 100w"
+                                        sizes="(max-width: 150px) 100vw, 150px" />
+                                </div>
+                            </figure>{% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+
+          
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

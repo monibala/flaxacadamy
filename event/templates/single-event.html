@@ -1,0 +1,149 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+<div class="page-title-area">
+	<div class="container">
+		<div class="page-title-content">
+			<h2>{{event.0.event_title|capfirst}}</h2>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li>{{event.0.event_title|capfirst}}</li>
+			</ul>
+		</div>
+	</div>
+	<div class="shape9">
+		<img src="{% static '/wp-content/themes/ecademy/assets/img/shape8.svg' %}" alt="Shape Image One">
+	</div>
+</div> 
+
+
+<article id="tp_event-1737"
+	class="events-details-area pb-100 post-1737 tp_event type-tp_event status-publish has-post-thumbnail hentry tp_event_category-upcoming pmpro-has-access">
+	<div class="events-details-image">
+		{% if event.0.event_img|length != 0 %}
+		
+		<img src="/media/{{event.0.event_img}}"  alt="Events Details Image">{% else %}
+		<img  src="/media/default.png" alt="Events Details Image">{% endif %}
+	
+		<div id="timer" class="flex-wrap d-flex justify-content-center">
+			<div class="entry-countdown">
+				{% if today > event.0.event_end_date %}
+				<p class="tp-event-notice error">This event has expired</p>{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-12">
+				<div class="events-details-header">
+					<ul>
+						<li><i class='bx bx-calendar'></i>{{event.0.event_start_date|date:'F d, Y'|capfirst}} - {{event.0.event_end_date|date:'F d, Y'|capfirst}}</li>
+						<li><i class='bx bx-map'></i>{{event.0.state|capfirst}}, {{event.0.country|capfirst}}</li>
+						<li><i class='bx bx-time'></i>{{event.0.event_start_time|time:'g.i A'}} - {{event.0.event_end_time|time:'g.i A'}}</li>
+					</ul>
+				</div>
+				<div data-elementor-type="wp-post" data-elementor-id="1737" class="elementor elementor-1737"
+					data-elementor-settings="[]">
+					<div class="elementor-inner">
+						<div class="elementor-section-wrap">
+							<section
+								class="elementor-section elementor-top-section  elementor-element elementor-element-3a48f7d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+								data-id="3a48f7d" data-element_type="section">
+								<div class="elementor-container elementor-column-gap-default">
+									<div class="elementor-row">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-77b7856a"
+											data-id="77b7856a" data-element_type="column">
+											<div class="elementor-column-wrap elementor-element-populated">
+												<div class="elementor-widget-wrap">
+													<div class="elementor-element elementor-element-70629000 elementor-widget elementor-widget-google_maps"
+														data-id="70629000" data-element_type="widget"
+														data-widget_type="google_maps.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-custom-embed">
+																<iframe frameborder="0" scrolling="no" marginheight="0"
+																	marginwidth="0"
+																	src="https://maps.google.com/maps?q=Sydney%2C%20Australia&#038;t=m&#038;z=15&#038;output=embed&#038;iwloc=near"
+																	title="Sydney, Australia"
+																	aria-label="Sydney, Australia"></iframe>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<section
+								class="elementor-section mt-3 elementor-top-section elementor-element elementor-element-4d9e2ce elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+								data-id="4d9e2ce" data-element_type="section">
+								<div class="elementor-container elementor-column-gap-no">
+									<div class="elementor-row">
+										<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-79086bfe"
+											data-id="79086bfe" data-element_type="column">
+											<div class="elementor-column-wrap elementor-element-populated">
+												<div class="elementor-widget-wrap">
+													<div class="elementor-element elementor-element-188399fd elementor-widget elementor-widget-text-editor"
+														data-id="188399fd" data-element_type="widget"
+														data-widget_type="text-editor.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-text-editor elementor-clearfix">
+																<h3><b>About the Event</b></h3>
+																<p>{{event.0.about_event|safe|capfirst}}.</p>
+																<h3><b>Where the event?</b></h3>
+																<p>{{event.0.where_event|safe|capfirst}}</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<div class="events-details-info">
+					<div class="entry-register">
+						<ul class="entry-event-info">
+							<li class="meta-price">
+								<span class="meta-label">
+									<i class='bx bx-money'></i>
+									Cost: </span>
+								<span class="meta-value">
+									<span class="event-price">&#36;{{event.0.event_cost}}.00  </span>
+								</span>
+							</li>
+							<li class="total">
+								<span class="meta-label">
+									<i class='bx bx-user-plus'></i>
+									Total Slot: </span>
+								<span class="meta-value">{{event.0.event_total_slot}}</span>
+							</li>
+							<li class="booking_slot">
+								<span class="meta-label">
+									<i class='bx bxs-lock'></i>
+									Booked Slot: </span>
+								<span class="meta-value">{{event.0.event_booked_slot}}</span>
+							</li>
+						</ul>
+						<!-- <p class="tp-event-notice error">This event has expired</p> -->
+
+
+						{% if today > event.0.event_end_date %}
+				<p class="tp-event-notice error">This event has expired</p>
+				{% else %}
+				<p class="tp-event-notice success">This event comming soon</p>
+				{% endif %}
+		
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
+{% endblock body %}

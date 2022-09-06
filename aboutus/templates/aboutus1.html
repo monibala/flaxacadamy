@@ -1,0 +1,629 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+<div class="page-title-area">
+    <div class="container" >
+        <div class="page-title-content" style="margin-top:-60px;">
+            <h2>About Us </h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="item-current item-253">About Us </li>
+            </ul>
+        </div>
+    </div>
+    <div class="shape9">
+        <img src="{% static '/wp-content/themes/ecademy/assets/img/shape8.svg' %}" alt="Shape Image One">
+    </div>
+</div>
+<div class="page-area">
+    <div id="post-253" class="post-253 page type-page status-publish hentry pmpro-has-access">
+        <div class="entry-content ecademy-About Us 1-un">
+            <div data-elementor-type="wp-page" data-elementor-id="253" class="elementor elementor-253"
+                data-elementor-settings="[]">
+                <div class="elementor-inner">
+                    <div class="elementor-section-wrap">
+                        <div class="elementor-section elementor-top-section elementor-element elementor-element-935b003 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="935b003" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-no">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-50f8db4"
+                                        data-id="50f8db4" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-910f5ca elementor-widget elementor-widget-Distance_Learning"
+                                                    data-id="910f5ca" data-element_type="widget"
+                                                    data-widget_type="Distance_Learning.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="about-area  ptb-100">
+                                                            <div class="container"  style="margin-top:-60px;">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-6 col-md-12">
+                                                                        <div class="about-image">
+                                                                            <div class="row" >
+                                                                                <div
+                                                                                    class="col-lg-6 col-sm-6 col-md-6 col-6">
+                                                                                    <div class="image wow fadeInLeft">
+                                                                                        <img src="{% static '/wp-content/uploads/2020/05/about-img1.png' %}"
+                                                                                            alt="About Us">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="col-lg-6 col-sm-6 col-md-6 col-6">
+                                                                                    <div class="image wow fadeInDown">
+                                                                                        <img src="{% static '/wp-content/uploads/2020/05/about-img2.png' %}"
+                                                                                            alt="About Us">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="col-lg-6 col-sm-6 col-md-6 col-6">
+                                                                                    <div class="image wow fadeInUp">
+                                                                                        <img src="{% static '/wp-content/uploads/2020/05/about-img3.png' %}"
+                                                                                            alt="About Us">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
+                                                                                    class="col-lg-6 col-sm-6 col-md-6 col-6">
+                                                                                    <div class="image wow fadeInRight">
+                                                                                        <img src="{% static '/wp-content/uploads/2020/05/about-img4.png' %}"
+                                                                                            alt="About Us">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12">
+                                                                        <div class="about-content">
+                                                                            <span class="sub-title">Distance
+                                                                                Learning</span>
+                                                                            <h2>Develop Your Skills, Learn Something
+                                                                                New, and Grow Your Skills From Anywhere
+                                                                                in the World!</h2>
+                                                                            <p>We understand better that online-based
+                                                                                learning can make a significant change
+                                                                                to reach students from all over the
+                                                                                world! Giving options to learn better
+                                                                                always can offer the best outcomes!​</p>
+                                                                            <ul class="features-list">
+
+                                                                                {% for c in crs  %}
+                                                                                {%  if forloop.counter < 5  %}
+                                                                                <li><span><i
+                                                                                            class="flaticon-experience"></i>
+                                                                                        {{c|capfirst}}</span></li>{% endif %}
+                                                                                {% endfor %}
+
+                                                                            </ul>
+                                                                            <a href="{% url 'courses' %}"
+                                                                                class="default-btn"><i
+                                                                                    class="flaticon-user"></i>View
+                                                                                Courses<span></span></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="shape1" data-speed="0.06" data-revert="true">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape1.png' %}"
+                                                                    alt="About Us">
+                                                            </div>
+                                                            <div class="shape2" data-speed="0.06" data-revert="true">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape2.png' %}"
+                                                                    alt="About Us">
+                                                            </div>
+                                                            <div class="shape3" data-speed="0.06" data-revert="true">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape3.png' %}"
+                                                                    alt="About Us">
+                                                            </div>
+                                                            <div class="shape4" data-speed="0.06" data-revert="true">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape4.png' %}"
+                                                                    alt="About Us">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-section elementor-top-section elementor-element elementor-element-11add33 elementor-section-full_width funfacts-and-feedback-area ptb-100 elementor-section-height-default elementor-section-height-default"
+                            data-id="11add33" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-no">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7ad6db8"
+                                        data-id="7ad6db8" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <section
+                                                    class="elementor-section elementor-inner-section elementor-element elementor-element-d90b8b6 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                                    data-id="d90b8b6" data-element_type="section">
+                                                    <div class="elementor-container elementor-column-gap-default">
+                                                        <div class="elementor-row">
+                                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-682b4b9"
+                                                                data-id="682b4b9" data-element_type="column">
+                                                                <div
+                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                    <div class="elementor-widget-wrap">
+                                                                        <div class="elementor-element elementor-element-76f7d38 elementor-widget elementor-widget-Feedback"
+                                                                            data-id="76f7d38" data-element_type="widget"
+                                                                            data-widget_type="Feedback.default">
+                                                                            <div class="elementor-widget-container">
+                                                                                <div class="feedback-content">
+                                                                                    <span class="sub-title">Distance
+                                                                                        learning</span>
+                                                                                    <h2>Flexible Study at Your Own Pace,
+                                                                                        According to Your Own Needs</h2>
+                                                                                    <p>With the cyberCademy, you can study
+                                                                                        whenever and wherever you
+                                                                                        choose. We have students in over
+                                                                                        175 countries and a global
+                                                                                        reputation as a pioneer in the
+                                                                                        field of flexible learning. Our
+                                                                                        teaching also means, if you
+                                                                                        travel often or need to
+                                                                                        relocate, you can continue to
+                                                                                        study wherever you go.</p>
+                                                                                    <div
+                                                                                        class="feedback-slides owl-carousel owl-theme">
+                                                                                      {% for i in inst %}
+                                                                                        <div
+                                                                                            class="single-feedback-item">
+                                                                                            <p>{{i.about|slice:'100'|capfirst}}...</p>
+                                                                                            <div
+                                                                                                class="client-info d-flex align-items-center">
+                                                                                                {% if i.img|length != 0 %}
+                                                                                                <img class="shadow rounded-circle"
+                                                                                                    src="/media/{{i.img}}"
+                                                                                                    alt="David Warner">{% else %}
+                                                                                                    <img class="shadow rounded-circle"
+                                                                                                    src="/media/default.png"
+                                                                                                    alt="David Warner">
+                                                                                              {% endif %}
+                                                                                                <div class="title">
+                                                                                                    <h3>{{i.name|capfirst}}
+                                                                                                    </h3>
+                                                                                                    <span>
+                                                                                                    {{i.expert|capfirst}}</span>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                      {% endfor %}
+                                                                                    </div>
+                                                                                    <div class="feedback-info">
+                                                                                        {% if request.user.is_authenticated != True %}
+																		
+                                                                                        <p>Not a member yet? <a
+                                                                                                href="{% url 'loginregister' %}">Register
+                                                                                                now</a></p>{% endif %}
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-48f576a"
+                                                                data-id="48f576a" data-element_type="column">
+                                                                <div
+                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                    <div class="elementor-widget-wrap">
+                                                                        <div class="elementor-element elementor-element-47aa32f elementor-widget elementor-widget-eCademy_Funfacts"
+                                                                            data-id="47aa32f" data-element_type="widget"
+                                                                            data-widget_type="eCademy_Funfacts.default">
+                                                                            <div class="elementor-widget-container">
+                                                                                <div class="funfacts-list">
+                                                                                    <div class="row">
+                                                                                        <div
+                                                                                            class="col-lg-6 col-md-6 col-sm-6">
+                                                                                            <div
+                                                                                                class="single-funfacts-box">
+                                                                                                <h3><span
+                                                                                                        class="odometer"
+                                                                                                        data-count="1926">00</span>
+                                                                                                </h3>
+                                                                                                <p>Finished Sessions</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="col-lg-6 col-md-6 col-sm-6">
+                                                                                            <div
+                                                                                                class="single-funfacts-box">
+                                                                                                <h3><span
+                                                                                                        class="odometer"
+                                                                                                        data-count="3279">00</span>
+                                                                                                </h3>
+                                                                                                <p>Enrolled Learners</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="col-lg-6 col-md-6 col-sm-6">
+                                                                                            <div
+                                                                                                class="single-funfacts-box">
+                                                                                                <h3><span
+                                                                                                        class="odometer"
+                                                                                                        data-count="25">00</span>
+                                                                                                </h3>
+                                                                                                <p>Online Instructors
+                                                                                                </p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div
+                                                                                            class="col-lg-6 col-md-6 col-sm-6">
+                                                                                            <div
+                                                                                                class="single-funfacts-box">
+                                                                                                <h3><span
+                                                                                                        class="odometer"
+                                                                                                        data-count="100">00</span>
+                                                                                                </h3>
+                                                                                                <p>Satisfaction Rate</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                                <div class="elementor-section elementor-inner-section elementor-element elementor-element-7bee94e elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                                    data-id="7bee94e" data-element_type="section">
+                                                    <div class="elementor-container elementor-column-gap-no">
+                                                        <div class="elementor-row">
+                                                            <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-56ca3cd"
+                                                                data-id="56ca3cd" data-element_type="column">
+                                                                <div
+                                                                    class="elementor-column-wrap elementor-element-populated">
+                                                                    <div class="elementor-widget-wrap">
+                                                                        <div class="elementor-element elementor-element-3203443 elementor-widget elementor-widget-eCademy_Video_Box"
+                                                                            data-id="3203443" data-element_type="widget"
+                                                                            data-widget_type="eCademy_Video_Box.default">
+                                                                            <div class="elementor-widget-container">
+                                                                                <div class="video-box">
+                                                                                    <div class="image">
+                                                                                        <img src="{% static '/wp-content/uploads/2020/05/video-img1.jpg' %}"
+                                                                                            class="shadow"
+                                                                                            alt="Video Image">
+                                                                                    </div>
+                                                                                    <a href="https://www.youtube.com/watch?v=PWvPbGWVRrU"
+                                                                                        class="video-btn popup-youtube"><i
+                                                                                            class="flaticon-play"></i></a>
+                                                                                    <div class="shape10"
+                                                                                        data-speed="0.03"
+                                                                                        data-revert="true">
+                                                                                        <img src="{% static '/wp-content/uploads/2020/05/shape9.png' %}"
+                                                                                            alt="Shape Image">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="shape2" data-speed="0.03"
+                                                                                    data-revert="true">
+                                                                                    <img src="{% static '/wp-content/uploads/2020/05/shape2.png' %}"
+                                                                                        alt="Shape Image">
+                                                                                </div>
+                                                                                <div class="shape3" data-speed="0.03"
+                                                                                    data-revert="true">
+                                                                                    <img src="{% static '/wp-content/uploads/2020/05/shape3.png' %}"
+                                                                                        alt="Shape Image">
+                                                                                </div>
+                                                                                <div class="shape4" data-speed="0.03"
+                                                                                    data-revert="true">
+                                                                                    <img src="{% static '/wp-content/uploads/2020/05/shape4.png' %}"
+                                                                                        alt="Shape Image">
+                                                                                </div>
+                                                                                <div class="shape9" data-speed="0.03"
+                                                                                    data-revert="true">
+                                                                                    <img src="{% static '/wp-content/uploads/2020/05/shape8.png' %}"
+                                                                                        alt="Shape Image">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="elementor-section elementor-top-section elementor-element elementor-element-5e5ea6e features-area pb-70 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                            data-id="5e5ea6e" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-default">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-27b0909"
+                                        data-id="27b0909" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-cee60d6 elementor-widget elementor-widget-Section"
+                                                    data-id="cee60d6" data-element_type="widget"
+                                                    data-widget_type="Section.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="section-title">
+                                                            <span class="sub-title">Education for everyone</span>
+                                                            <h2>Affordable Online Courses and Learning Opportunities
+                                                            </h2>
+                                                            <p>Finding your own space and utilize better learning
+                                                                options can result in faster than the traditional ways.
+                                                                Enjoy the beauty of eLearning!</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-619aa51 elementor-widget elementor-widget-eCademy_Features_Boxe"
+                                                    data-id="619aa51" data-element_type="widget"
+                                                    data-widget_type="eCademy_Features_Boxe.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="col-lg-3 col-sm-6 col-md-6">
+                                                                    <div class="single-features-box"  style="box-shadow:3px 3px 10px 10px #e7e6e9;height:330px;">
+                                                                        <div class="icon">
+                                                                            <i class="flaticon-brain-process"></i>
+                                                                        </div>
+                                                                        <h3>Learn the Latest Top Skills</h3>
+                                                                        <p>Learning top skills can bring an
+                                                                            extra-ordinary outcome in a career.</p>
+                                                                        <a target="_self" href="{% url 'courses' %}"
+                                                                            class="link-btn">Start Now!</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-3 col-sm-6 col-md-6">
+                                                                    <div class="single-features-box"  style="box-shadow:3px 3px 10px 10px #e7e6e9;height:330px;">
+                                                                        <div class="icon">
+                                                                            <i class="flaticon-computer"></i>
+                                                                        </div>
+                                                                        <h3>Learn in Your Own Pace</h3>
+                                                                        <p>Everyone prefers to enjoy learning at their
+                                                                            own pace &amp; that gives a great result.
+                                                                        </p>
+                                                                        <a target="_self" href="{% url 'courses' %}"
+                                                                            class="link-btn">Start Now!</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-3 col-sm-6 col-md-6">
+                                                                    <div class="single-features-box"  style="box-shadow:3px 3px 10px 10px #e7e6e9;height:330px;">
+                                                                        <div class="icon">
+                                                                            <i class="flaticon-shield-1"></i>
+                                                                        </div>
+                                                                        <h3>Learn From Industry Experts</h3>
+                                                                        <p>Experienced teachers can assist in learning
+                                                                            faster with their best approaches!</p>
+                                                                        <a target="_self" href="{% url 'courses' %}"
+                                                                            class="link-btn">Start Now!</a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-3 col-sm-6 col-md-6">
+                                                                    <div class="single-features-box"  style="box-shadow:3px 3px 10px 10px #e7e6e9;height:330px;">
+                                                                        <div class="icon">
+                                                                            <i class="flaticon-world"></i>
+                                                                        </div>
+                                                                        <h3>Enjoy Learning From Anywhere </h3>
+                                                                        <p>We are delighted to give you options to enjoy
+                                                                            learning from anywhere in the world.</p>
+                                                                        <a target="_self" href="{% url 'courses' %}"
+                                                                            class="link-btn">Start Now!</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <section
+                            class="elementor-section elementor-top-section elementor-element elementor-element-b0bcea9 advisor-area bg-f9f9f9 ptb-100 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                            data-id="b0bcea9" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-no">
+                                <div class="elementor-row" >
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e55815a"
+                                        data-id="e55815a" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-da04828 elementor-widget elementor-widget-Section"
+                                                    data-id="da04828" data-element_type="widget"
+                                                    data-widget_type="Section.default">
+                                                    <div class="elementor-widget-container" >
+                                                        <div class="section-title" >
+                                                            <span class="sub-title">Instructor</span>
+                                                            <h2>cyberCademy Instructors</h2>
+                                                            <p>Meet our expert instructors for the courses we are
+                                                                offering! You will enjoy the best experience with the
+                                                                individual's lessons!</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="elementor-element elementor-element-50f3f4c elementor-widget elementor-widget-eCademy_Instructors"
+                                                    data-id="50f3f4c" data-element_type="widget"
+                                                    data-widget_type="eCademy_Instructors.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="advisor-slides owl-carousel owl-theme">
+                                                            {% for i in inst %}
+                                                            <div class="single-advisor-box">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-4 col-md-4">
+                                                                        <div class="advisor-image">
+                                                                            {% if i.img|length != 0 %}
+                                                                            <img width="223" height="336"
+                                                                                src="/media/{{i.img}}"
+                                                                                class="attachment-ecademy_advisor_thumb_one size-ecademy_advisor_thumb_one"
+                                                                                alt="" loading="lazy"
+                                                                                srcset="/media/{{i.img}} 223w, /media/{{i.img}} 199w"
+                                                                                sizes="(max-width: 223px) 100vw, 223px" />{% else %}
+                                                                                <img width="223" height="336"
+                                                                                src="/media/default.png"
+                                                                                class="attachment-ecademy_advisor_thumb_one size-ecademy_advisor_thumb_one"
+                                                                                alt="" loading="lazy"
+                                                                                srcset="/media/default.png 223w, /media/default.png 199w"
+                                                                                sizes="(max-width: 223px) 100vw, 223px" />{% endif %}
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-8 col-md-8">
+                                                                        <div class="advisor-content">
+                                                                            <h3><a href="{% url 'profile' i.slug %}">{{i.name|capfirst}}</a>
+                                                                            </h3>
+                                                                            <span class="sub-title">
+                                                                                <p>{{i.expert|capfirst}}</p>
+                                                                            </span>
+                                                                            <p>{{i.about|slice:'150'|capfirst}}...</p>
+                                                                            <ul class="social-link">
+                                                                                <li><a href="{{i.facebook}}" class="d-block"
+                                                                                        target="_blank"><i
+                                                                                            class="fa fa-facebook"></i></a>
+                                                                                </li>
+                                                                                <li><a href="{{i.twitter}}" class="d-block"
+                                                                                        target="_blank"><i
+                                                                                            class="fa fa-tumblr"></i></a>
+                                                                                </li>
+                                                                                <li><a href="#" class="d-block"
+                                                                                        target="_blank"><i
+                                                                                            class="fa fa-flickr"></i></a>
+                                                                                </li>
+                                                                                <li><a href="#" class="d-block"
+                                                                                        target="_blank"><i
+                                                                                            class="fa fa-behance"></i></a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                           {% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section
+                            class="elementor-section elementor-top-section elementor-element elementor-element-41d6582 elementor-section-full_width bg-fef8ef elementor-section-height-default elementor-section-height-default"
+                            data-id="41d6582" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-no">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-f023b56"
+                                        data-id="f023b56" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-e21832a elementor-widget elementor-widget-Section"
+                                                    data-id="e21832a" data-element_type="widget"
+                                                    data-widget_type="Section.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="premium-access-area ptb-100">
+                                                            <div class="container">
+                                                                <div class="premium-access-content">
+                                                                    <span class="sub-title">Online Certification</span>
+                                                                    <h2>Get Your Quality Skills Certificate Through
+                                                                        Online Exam</h2>
+                                                                    <p>Students friendly pricing for the certificate
+                                                                        programs helps individuals to get their skill
+                                                                        certificate easier than ever!</p>
+                                                                    <a href="{% url 'courses' %}" class="default-btn"><i
+                                                                            class="flaticon-agenda"></i> Get Started
+                                                                        Now<span></span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="shape3">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape3.png' %}"
+                                                                    alt="Shape Image">
+                                                            </div>
+                                                            <div class="shape4">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape4.png' %}"
+                                                                    alt="Shape Image">
+                                                            </div>
+                                                            <div class="shape8">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape7.png' %}"
+                                                                    alt="Shape Image">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="elementor-section elementor-top-section elementor-element elementor-element-23701ec elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                            data-id="23701ec" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-no">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a20f2a6"
+                                        data-id="a20f2a6" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-e84fbcd elementor-widget elementor-widget-Partner_Logo"
+                                                    data-id="e84fbcd" data-element_type="widget"
+                                                    data-widget_type="Partner_Logo.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="partner-area pt-100 pb-70 border-bottom">
+                                                            <div class="container">
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-lg-2 col-6 col-sm-3 col-md-3">
+                                                                        <div class="single-partner-item">
+                                                                            <img src="{% static '/wp-content/uploads/2020/05/logo-1.png' %}"
+                                                                                alt="Partner Logo">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-6 col-sm-3 col-md-3">
+                                                                        <div class="single-partner-item">
+                                                                            <img src="{% static '/wp-content/uploads/2020/05/logo-2.png' %}"
+                                                                                alt="Partner Logo">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-6 col-sm-3 col-md-3">
+                                                                        <div class="single-partner-item">
+                                                                            <img src="{% static '/wp-content/uploads/2020/05/logo-3.png' %}"
+                                                                                alt="Partner Logo">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-6 col-sm-3 col-md-3">
+                                                                        <div class="single-partner-item">
+                                                                            <img src="{% static '/wp-content/uploads/2020/05/logo-4.png' %}"
+                                                                                alt="Partner Logo">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-6 col-sm-3 col-md-3">
+                                                                        <div class="single-partner-item">
+                                                                            <img src="{% static '/wp-content/uploads/2020/05/logo-5.png' %}"
+                                                                                alt="Partner Logo">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2 col-6 col-sm-3 col-md-3">
+                                                                        <div class="single-partner-item">
+                                                                            <img src="{% static '/wp-content/uploads/2020/05/logo-6.png' %}"
+                                                                                alt="Partner Logo">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

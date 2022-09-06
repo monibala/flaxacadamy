@@ -1,0 +1,188 @@
+
+
+{% include 'dbasic.html' %}
+
+{% block body %}
+{% load static %}
+<style>
+/* .caption div {
+    box-shadow: 0 0 5px #C8C8C8;
+    transition: all 0.3s ease 0s;
+} */
+.img-circle {
+    border-radius: 0;
+}
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 0;
+    /* padding-bottom: 100%; */
+    position: relative;
+    width: 100%;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    /* max-width: 65%; */
+    border-radius: 10%;
+}
+.row{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+</style>
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header text-center">
+                            Profile
+                        </h1>
+                    </div>
+                </div>
+<div class="row ">
+   
+        <div class="panel panel-default">
+            <div class="panel-heading">
+               Admin Information
+            </div>
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    <!-- <li class="active"><a href="#home" data-toggle="tab">Home</a>
+                    </li> -->
+                    <li class="active"><a href="#profile" data-toggle="tab">Profile</a>
+                    </li>
+                   
+                    <li class=""><a href="#settings" data-toggle="tab">Settings</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- <div class="tab-pane fade active in" id="home">
+                        <h4>Home Tab</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div> -->
+                    <div class="tab-pane fade active in" id="profile">
+                       
+                     
+<div class="row" style="margin-top: 5%;">
+                        <div class="col-md-4 col-sm-4 " style="text-align: -webkit-center;">
+                            {% if profile.0.img|length != 0 %}
+                        <img  class="ratio img-responsive img-circle " src="/media/{{profile.0.img}}">
+                        {% else %}
+                        <img  class="ratio img-responsive img-circle " src="/media/default.png">{% endif %}
+
+                    </div>    <div class="col-md-8 col-sm-8">
+                        <button class="btn btn-primary " style="float: right;" onclick="$('#user').val('{{profile.0.user.id}}');" data-toggle="modal" data-target="#myModal">
+                            Edit
+                           </button>
+                        <h4><b>Name</b>&nbsp;:&nbsp; {{profile.0.name|title}}</h4>
+                        <h4><b>Email</b>&nbsp; :&nbsp; {{profile.0.email}}</h4>
+                        <h4><b>DOB</b>&nbsp; : &nbsp;{% if profile.0.dob != None %}{{profile.0.dob}}{% else %}--{% endif %}</h4>
+                        <h4><b>Mobile</b>&nbsp; :&nbsp; {% if profile.0.mobile != None %}{{profile.0.mobile}}{% else %}--{% endif %}</h4>
+                        <h4><b>Address</b>&nbsp; :&nbsp;{% if profile.0.address != '' %} {{profile.0.address}}{% else %}--{% endif %}</h4>
+                        <h4><b>About</b>&nbsp; : &nbsp;{% if profile.0.about != '' %}{{profile.0.about|capfirst}}{% else %}--{% endif %}</h4>
+                        </div></div>
+                  
+                    </div>
+                    
+                    <div class="tab-pane fade" id="settings">
+                        <h4>Site Settings </h4>
+                        <p>
+                            <form action="" method="post">{% csrf_token %}
+                            <div class="row">
+                                <input name="uss" type="hidden" value="{{profile.0.id}}                              <div class="form-group">
+                                    <label>Title</label>
+                                    <input type="text" name="title" class="form-control" placeholder="Ecademy">
+                                </div> 
+                                        <div class="form-group">
+                                            <label>Logo</label>
+                                            <input type="file" name="logo" class="form-control" >
+                                        </div>
+                                        <div class="form-group ">
+                                            <label>Favicon</label>
+                                            <input type="file" name="fav" class="form-control">
+                                        </div>
+                                       
+                                      
+                     
+                     
+                           
+            </div>       <button type="submit" style="float: right;" class="btn btn-primary">Save changes</button>
+           </form>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    
+</div>
+
+     
+{% endblock body %}
+{% block body1 %}
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Edit Information</h4>
+            </div>
+          <form action="" method="post" >{% csrf_token %}
+            <div class="modal-body">
+                <input id="user" value="" type="hidden" name="usr" >  
+                <div class="row">
+                    <div class="col-lg-6">
+                    
+                        
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="name" class="form-control" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="email@example.com">
+                            </div>
+                           
+                    </div>
+                    <!-- /.col-lg-6 (nested) -->
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>DOB</label>
+                            <input type="date" name="dob" class="form-control" placeholder="Enter text">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="number" name="phone" class="form-control" placeholder="Enter text">
+                       
+                       
+                    </div>
+                   
+                </div>
+         
+         
+                <div class="form-group">
+                    <label>Address</label>
+                    <textarea class="form-control" name="address"  rows="2"></textarea>
+                </div><div class="form-group">
+                    <label>About</label>
+                    <textarea class="form-control"  name="about" rows="3"></textarea>
+                </div><div class="form-group">
+                    <label>Image</label>
+                    <input class="form-control" name="img" type="file">
+                </div>
+</div>
+            <div class="modal-footer">
+                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div></form>
+    </div>
+</div></div>
+{% endblock body1 %}

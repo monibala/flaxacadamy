@@ -1,0 +1,274 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+<style>
+    .gallery-item img{
+      width: 100%;
+                  height: 5vw;
+                  object-fit: cover;
+    }</style>
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>{{blog.0.blog_title|capfirst}}</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li>{{blog.0.blog_title|capfirst}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="shape9">
+        <img src="{% static '/wp-content/themes/ecademy/assets/img/shape8.svg' %}" alt="Shape Image One">
+    </div>
+</div>
+<div class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details">
+                    <div class="article-image">{% if blog.0.blog_img|length != 0 %}
+                        <img src="/media/{{blog.0.blog_img}}"
+                          style="width: 100%; height: 40%;"  alt="10 Ways to Get Real About Your Body’s Limitations &#038; Avoid">
+                        {% else %} <img src="/media/default.png"
+                            alt="10 Ways to Get Real About Your Body’s Limitations &#038; Avoid">
+                        {% endif %}
+                    </div>
+                    <div class="blog-details-content">
+                        <div class="entry-meta">
+                            <ul>
+                                <li>
+                                    <i class="bx bx-comment"></i>
+                                    {% if comment_count != 0 %}
+                                    {{comment_count}} {% else %}0{% endif %}Comments
+                                </li>
+                                <li>
+                                    <i class="bx bx-group"></i>
+                                    <a
+                                        href="{% url 'profile' blog.0.blog_instructor.slug %}">{{blog.0.blog_instructor.name|capfirst}}</a>
+                                </li>
+                                <li>
+                                    <i class="bx bx-calendar"></i>
+                                    {{blog.0.blog_created_date|date:'F d, Y'}}
+                                </li>
+                            </ul>
+                        </div>
+                        <h3>{{blog.0.blog_title|capfirst}}</h3>
+                        <p>{{blog.0.blog_description|capfirst}}</p>
+
+                        <blockquote class="wp-block-quote">
+                            <p>{{blog.0.head1|capfirst}}</p>
+                        </blockquote>
+                        <p>{{blog.0.head2|capfirst}}</p>
+                        <figure class="wp-block-gallery columns-3 is-cropped">
+                            <ul class="blocks-gallery-grid">
+                                
+                                {% for r in rcnt %} {% if forloop.counter < 4 %}
+                                <li class="blocks-gallery-item">
+                                    <figure><img loading="lazy" width="750" height="500" src="/media/{{r.blog_img}}" alt=""
+                                            data-id="145" data-full-url="/media/{{r.blog_img}}"
+                                            data-link="/media/{{r.blog_img}}" class="wp-image-145" srcset="/media/{{r.blog_img}} 750w,
+                                                /media/{{r.blog_img}} 300w,
+                                                   /media/{{r.blog_img}} 600w" sizes="(max-width: 750px) 100vw, 750px" />
+                                    </figure>
+                                </li>{% endif %}{% endfor %}
+
+                            </ul>
+                        </figure>
+                        <h3>Four major elements that we offer:</h3>
+                        <ul>{% for b in blog.0.element.all %}
+
+                            <li>{{b.element|capfirst|safe}}</li>{% endfor %}
+                        </ul>
+                        <h3>Setting the mood with incense</h3>
+                        <p>{{blog.0.setting|capfirst|safe}}</p>
+                        <h3>The rise of marketing and why you need it</h3>
+                        <p>{{blog.0.why_need|capfirst|safe}}</p>
+                        <div class="article-author">
+                            <div class="author-profile-header"></div>
+                            <div class="author-profile">
+                                <div class="author-profile-title">
+                                    {% if blog.0.blog_instructor.img|length != 0 %}
+                                    <img src="/media/{{blog.0.blog_instructor.img}}" class="shadow-sm rounded-circle"
+                                        alt="Jone Smit">{% else %}
+                                    <img src="/media/default.png" class="shadow-sm rounded-circle" alt="Jone Smit">
+                                    {% endif %}
+                                    <div class="author-profile-title-details d-flex justify-content-between">
+                                        <div class="author-profile-details">
+                                            <h4>{{blog.0.blog_instructor.name|capfirst}}</h4>
+                                            <span class="d-block"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>{{blog.0.blog_instructor.about|capfirst|safe|slice:':280'}}...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if request.user.usertype.type != '2' %}
+                <div id="comments" class="comments-area">
+                    <div id="respond" class="comment-respond">
+                        <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow"
+                                    id="cancel-comment-reply-link"
+                                    href="/ecademy/10-ways-to-get-real-about-your-bodys-limitations-avoid-2/#respond"
+                                    style="display:none;">Cancel
+                                    reply</a></small></h3>
+                        <form method="post" id="commentform" class="comment-form" novalidate>
+                            {% csrf_token %}
+
+                            {% if request.user.is_authenticated %}
+                            <p class="logged-in-as">
+                                
+								{% if request.user.is_authenticated  and request.user.userType.type == '1'  %}
+                                <a href="{% url 'profile' request.user.intructor.slug %}"
+                                    aria-label="Logged in as Navneet. Edit your profile.">
+                                    Logged
+                                    in as {{request.user.username}} </a>OR
+								{% elif request.user.is_authenticated  and request.user.userType.type == '2'  %}
+                                <a href="{% url 'profile' request.user.student.slug %}"
+                                aria-label="Logged in as Navneet. Edit your profile.">
+                           
+                                    Logged
+                                    in as {{request.user.username|capfirst}} </a>OR{% endif %}
+                                    
+                                    
+                                    <a href="{% url 'logout' %}">Log
+                                    out?</a></p>
+                                    {% else %}
+                                    
+                                    <p class="logged-in-as">
+                                        <a href="{% url 'login' %}">Please! Log
+                                            in?</a></p>
+                                    {% endif %}
+                            <p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment"
+                                  name="comment" cols="45" rows="8" maxlength="65525" required='' ></textarea>
+                            </p>
+                            <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit"
+                                    value="Post a Comment" /> <input type='hidden' name='comment_post_ID' value='1677'
+                                    id='comment_post_ID' />
+                                <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                            </p>
+                        </form>
+                    </div>
+                </div>{% endif %}
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div id="secondary" class="sidebar">
+                    <div id="search-3" class="widget widget_search">
+                        <form role="search" method="post" action="{% url 'blog' %}" id="search" class="search-form">
+                            {% csrf_token %}
+                            <label>
+                                <input type="search" class="search-field" 
+                                placeholder="Search..." value="" name="search"
+                                    id="s" required>
+                            </label>
+                            <button type="submit"><i class="bx bx-search-alt"></i></button>
+                        </form>
+                    </div>
+                    <div id="ecademy_posts_thumbs-5" class="widget widget_ecademy_posts_thumbs">
+                        <h2 class="widget-title">Recent posts</h2>
+                        {% for r in rcnt %}
+                        {% if forloop.counter < 5 %}
+                        <article
+                            class="item post-1931 post type-post status-publish format-standard has-post-thumbnail hentry category-kindergarten tag-preschool pmpro-has-access">
+                            <a href="{% url 'single-blog' r.slug %}" class="thumb hover-effect"
+                                aria-label="Why Play Is Important in Preschool and Early">
+                                {% if r.blog_img|length != 0 %}
+                                <span class="fullimage cover" role="img"
+                                    aria-label="Why Play Is Important in Preschool and Early"
+                                    style="background: url(/media/{{r.blog_img}});"></span>
+                                {% else %} <span class="fullimage cover" role="img"
+                                    aria-label="Why Play Is Important in Preschool and Early"
+                                    style="background: url(/media/default.png);"></span>{% endif %}
+
+
+                            </a>
+                            <div class="info gradient-effect">
+                                <time datetime="2020-07-01">{{r.blog_created_date|date:'F d, Y'}}</time>
+                                <h4 class="title usmall"><a href="{% url 'single-blog' r.slug %}">
+                                        {{r.blog_title|capfirst}}</a></h4>
+                            </div>
+                            <div class="clear"></div>
+                        </article> {% endif %}{% endfor %}
+
+                    </div>
+                    <div id="categories-3" class="widget widget_categories">
+                        <h2 class="widget-title">Categories</h2>
+                        <ul> {% for cats,count in cat %}
+
+                            <li class="cat-item cat-item-16"><a
+                                    href="{% url 'blog' %}?category={{cats}}">{{cats|capfirst}}</a><span
+                                    class="post-count">({{count}})</span>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                    <div id="tag_cloud-3" class="widget widget_tag_cloud">
+                        <h2 class="widget-title">Tags</h2>
+                        <div class="tagcloud">{% for t in tag %}
+                            <a href="{% url 'blog' %}?tags={{t}}" class="tag-cloud-link tag-link-15 tag-link-position-1"
+                                style="font-size: 8pt;" aria-label="ATD (1 item)">{{t|capfirst}}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div id="media_gallery-2" class="widget widget_media_gallery">
+                        <h2 class="widget-title">Gallery</h2>
+                        <div id='gallery-1' class='gallery galleryid-1677 gallery-columns-4 gallery-size-thumbnail'>
+                            {% for r in rcnt %} {% if forloop.counter < 7 %}
+                            <figure class='gallery-item'>
+                                <div class='gallery-icon landscape'>
+                                    <img width="150" height="150" src="/media/{{r.blog_img}}"
+                                        class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" srcset="/media/{{r.blog_img}} 150w,
+                                         /media/{{r.blog_img}} 400w,
+                                          /media/{{r.blog_img}} 300w,
+                                          /media/{{r.blog_img}} 100w" sizes="(max-width: 150px) 100vw, 150px" />
+                                </div>
+                            </figure>
+                            {% endif %} {% endfor %}
+                        </div>
+                    </div>
+                    
+
+                    <div id="ecademy_posts_thumbs-5" class="widget widget_ecademy_posts_thumbs">
+                        <h2 class="widget-title">Reviews</h2>
+                        {% for r in rvw %}
+                        {% if forloop.counter < 5 %}
+                        <article  style="padding-bottom: 0px;margin-left: 20px;margin-right: 20px;" 
+                            class="item post-1931 post type-post status-publish format-standard has-post-thumbnail hentry category-kindergarten tag-preschool pmpro-has-access">
+                            <a href="#" class="thumb hover-effect"
+                                aria-label="Why Play Is Important in Preschool and Early">
+                        
+                                 
+                                        {% if r.user.img|length != 0  %}
+                                  <img src="/media/{{r.user.img}}" class="shadow-sm rounded-circle"
+                                  style="border-radius: 100%;max-width: 60%;"alt="Jone Smit">
+                                              {% else %}
+
+                                    <img src="/media/default.png" class="shadow-sm rounded-circle"
+               style="border-radius: 100%;max-width: 60%;"                     alt="Jone Smit">
+                                                {% endif %}
+                            </a>
+                            <div class="info gradient-effect">
+                                <h4 class="title usmall">
+                                       {{r.user.user.username|capfirst}}</h4>
+                                        <p>
+                                            {{r.comment|capfirst}} 
+                                                 <time style="float: right;font-size: 10px;" datetime="2020-07-01">({{r.create_date|date:'F d, Y'}})</time></p>
+                            </div>
+                            <div class="clear"></div>
+                        </article>
+                         {% endif %}
+                         {% empty %}
+                         <p> No Review yet !</p>
+                         {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,399 @@
+
+
+{% include 'dbasic.html' %}
+
+{% block body %}
+{% load newfilter %}
+{% load static %}
+<style>
+th{
+text-align: center;
+}
+td{
+    text-align: center;
+}
+/* .caption div {
+    box-shadow: 0 0 5px #C8C8C8;
+    transition: all 0.3s ease 0s;
+} */
+.img-circle {
+    border-radius: 0;
+}
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 0;
+    /* padding-bottom: 100%; */
+    position: relative;
+    width: 100%;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    /* max-width: 65%; */
+    border-radius: 10%;
+}
+.row{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+</style>
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header text-center">
+                            {% if who %}
+                    Courses For
+         {% elif blg %} Blog Elements{% endif %}               </h1>
+                    </div>
+                </div>
+<div class="row ">
+   
+        <div class="panel panel-default">
+            <div class="panel-heading"> {% if who %}
+              Who Buy This Courses{% elif blg %}  Elements{% endif %} 
+            </div>
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    
+                  
+                    {% if who %}
+                    <li class="active"><a href="#courses" data-toggle="tab">Courses For</a>
+                    </li> <li class=""><a href="#prodOrders" data-toggle="tab">Add New</a>
+                    </li>
+                    {% elif blg %}  <li class="active"><a href="#ele" data-toggle="tab">Elements</a>
+                    </li> <li class=""><a href="#eleadd" data-toggle="tab">Add New</a>
+                    </li>{% endif %} 
+                </ul>
+
+                <div class="tab-content">
+                  {% if who %}    
+                    <div class="tab-pane fade active in" id="courses">
+                        
+                        <p>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                              Who This Courses For
+                                </div> 
+                                <!-- <div class="panel-body"> -->
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Course Name</th>
+                                                    <th>Who This Course For</th>
+                                                    <th>Action</th><th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {% for i in who %} <tr>
+                                                    <td>{{forloop.counter}}</td>
+                                                
+                                                   <td>{{i.crs}}</td>
+
+                                                        <td>{{i.title}}</td>
+                                                        <td>
+                                                            <button 
+                                                            class="btn btn-primary " onclick="$('#eid').val('{{i.id}}');"  data-toggle="modal" data-target="#edit">
+                                                             Edit
+                                                            </button></td>
+                                                            <td>
+                                                                <button style="background-color: rgb(221, 47, 47);" 
+                              class="btn btn-primary " onclick="$('#did').val('{{i.id}}');" data-toggle="modal" data-target="#delete">
+                               Delete
+                              </button>
+
+                                                        </td>
+                                                </tr> 
+                                              {% endfor %}
+    
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                <!-- </div> -->
+                            </div>
+
+                            <!-- <nav aria-label="Page navigation example text-center"> 
+                                <ul class="pagination justify-content-end">
+                                    
+                                    {% if who.has_previous %}
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="?page={{who.previous_page_number}}" tabindex="-1">Previous</a>
+                                  </li>
+                                  {% endif %}
+                 
+                                  {% for i in who.paginator.page_range %}
+                                  {% if i <= who.number|add:5 and i >= who.number|add:-5 %}
+                                  <li class="page-item active"><a class="page-link" href="?page={{forloop.counter}}">{{i}}</a></li>
+                                 {% else %}
+                                  <li class="page-item "><a class="page-link" href="?page={{forloop.counter}}">{{forloop.counter}}</a></li>
+                                  {% endif %}{% endfor %} -->
+                 
+                                  <!-- {% for l in  who.paginator.page_range %}
+                                  {% if l <= who.number|add:5 and l >= who.number|add:-5 %}
+                                      <li><a href="?page={{forloop.counter}}">{{forloop.counter}}</a></li>
+                                  {% endif %}
+                              {% endfor %} -->
+                 
+                                  <!-- {% if who.has_next %}
+                                   <li class="page-item">
+                                    <a class="page-link" href="?page={{who.next_page_number}}">Next</a>
+                                  </li> {% endif %}
+                                </ul>
+                              </nav>  -->
+                            
+<br><br>
+<nav>
+                              <ul class="pagination justify-content-center flex-wrap mt-2 mb-4">
+                                {% if who.has_previous %}
+                                <li class="page-item ">
+                                  <a class="page-link" href="?page={{who.previous_page_number}}" tabindex="-1">Previous</a>
+                                </li>
+                                {% endif %}
+                      
+                            {% for i in who.paginator.page_range %}
+                                {% if who.number == i %}
+                                    <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                                {% elif i > who.number|add:'-2' and i < who.number|add:'2' %}
+                                    <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                      
+
+
+                                {% if who.has_next %}
+                                <li class="page-item">
+                                 <a class="page-link" href="?page={{who.next_page_number}}">Next</a>
+                               </li> {% endif %}
+                            </ul>
+                            </nav>
+                        </p>
+                    
+                    
+                    
+                    </div>
+                    
+                    <div class="tab-pane fade" id="prodOrders">
+                        
+                        <p>
+                            <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                                <div class="row">
+                               <div class="col-lg-12">
+                                   <div class="panel panel-default">
+                                       <div class="panel-heading">
+                                          Information
+                                       </div>
+                                       <div class="panel-body">
+                                           <div class="row">
+                                             
+                                            <div class="form-group">
+                                                <label>Course Title</label>
+                                                <input class="form-control" name="crs" type="text" >
+                                            </div> <div class="form-group">
+                                                <label>Who For This Course</label>
+                                                <input class="form-control" name="title" type="text" >
+                                            </div>
+               
+                                               <button class="btn btn-primary "  type="submit" style="float: right;">
+                                        Save </button>
+                           </div></form>
+                        </p>
+                    </div>
+                   {% elif blg %}
+                   
+                   <div class="tab-pane fade active in" id="ele">
+                        
+                    <p>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                         Blog Elements
+                            </div> 
+                            <!-- <div class="panel-body"> -->
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Elements</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for i in blg %} <tr>
+                                                <td>{{forloop.counter}}</td>
+                                            
+                                               <td>{{i.element}}</td>
+
+                                                   
+                                                    <td>
+                                                        <button 
+                                                        class="btn btn-primary " onclick="$('#bid').val('{{i.id}}');"  data-toggle="modal" data-target="#edit">
+                                                         Edit
+                                                        </button>
+                                                            <button style="background-color: rgb(221, 47, 47);" 
+                          class="btn btn-primary " onclick="$('#deid').val('{{i.id}}');" data-toggle="modal" data-target="#delete">
+                           Delete
+                          </button>
+
+                                                    </td>
+                                            </tr> 
+                                          {% endfor %}
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+
+                        <nav aria-label="Page navigation example text-center"> 
+                            <ul class="pagination justify-content-end">
+                                
+                                {% if blg.has_previous %}
+                              <li class="page-item ">
+                                <a class="page-link" href="?page={{blg.previous_page_number}}" tabindex="-1">Previous</a>
+                              </li>
+                              {% endif %}
+             
+             
+                              {% for i in blg.paginator.page_range %}
+                              {% if blg.number == i %}
+                                  <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                              {% elif i > blg.number|add:'-5' and i < blg.number|add:'5' %}
+                                  <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                              {% endif %}
+                          {% endfor %}
+             
+             
+                              {% if blg.has_next %}
+                               <li class="page-item">
+                                <a class="page-link" href="?page={{blg.next_page_number}}">Next</a>
+                              </li> {% endif %}
+                            </ul>
+                          </nav> 
+                         
+                    </p>
+                
+                
+                
+                </div>
+                
+                <div class="tab-pane fade" id="eleadd">
+                    
+                    <p>
+                        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <div class="row">
+                           <div class="col-lg-12">
+                               <div class="panel panel-default">
+                                   <div class="panel-heading">
+                                      Information
+                                   </div>
+                                   <div class="panel-body">
+                                       <div class="row">
+                                         
+                                        <div class="form-group">
+                                            <label>Blog Elements</label>
+                                            <input class="form-control" name="eles" type="text" >
+                                        </div>
+           
+                                           <button class="btn btn-primary "  type="submit" style="float: right;">
+                                    Save </button>
+                       </div></form>
+                    </p>
+                </div>
+                   {% endif %}
+                </div>
+            </div>
+        </div>
+   
+    
+</div>
+
+     
+{% endblock body %}
+{% block body1 %}
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title text-center" id="myModalLabel">Delete</h4>
+            </div>
+            <form action="" method="post">{% csrf_token %}
+            <div class="modal-body text-center" style="font-size:20px;">
+          
+                <input type="hidden" name="deid" id="deid">
+              <input type="hidden" name="did" id="did">
+            Are You Sure You want to delete?  </div>
+            <div class="modal-footer">
+                <button type="close" class="btn btn-primary" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-danger">Yes</button>
+            </div></form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Edit Information</h4>
+            </div>
+            {% if who %}
+          <form action="" method="post" enctype="multipart/form-data" >{% csrf_token %}
+            <div class="modal-body">  
+                <div class="row">
+                    <input id="eid" name="eid" type="hidden">
+                    
+                            <div class="form-group">
+                                <label>Course</label>
+                                <input type="text" name="crss" class="form-control" >
+                            </div>
+                            <div class="form-group">
+                                <label>Who This Course For</label>
+                                <input type="text" name="title" class="form-control" >
+                            </div>
+                          
+                   
+         
+         
+</div>
+            <div class="modal-footer">
+                <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </form>
+{% elif blg %}
+<form action="" method="post" enctype="multipart/form-data" >{% csrf_token %}
+    <div class="modal-body">  
+        <div class="row">
+            <input id="bid" name="bid" type="hidden">
+            
+                    
+                    <div class="form-group">
+                        <label>Elements</label>
+                        <input type="text" name="ele" class="form-control" >
+                    </div>
+                  
+           
+ 
+ 
+</div>
+    <div class="modal-footer">
+        <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+</div>
+</form>
+{% endif %}
+    </div>
+</div>
+</div>
+{% endblock body1 %}

@@ -1,0 +1,252 @@
+{% include 'dbasic.html' %}
+
+{% block body %}
+{% load static %}
+<style>.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.panel-body {
+    width: 100%;
+    height: 18vw;
+    object-fit: cover;
+}
+.card-title{
+    color:#2a6496;
+}
+
+ p{
+    font-size: 14px!important;
+    padding: 5px!important;
+}
+/* .pan */
+
+</style>
+
+        <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header" style="text-align: center;">
+                           
+                           {% if studs  %}Students
+
+                           {% elif insts  %}Instructors{% endif  %}
+                           <!-- <small>Summary of all products</small> -->
+                        </h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+
+                                 
+            <div class="row-eq-height" >
+               
+              
+                {% for i in inst %}
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                      <a href="{% url 'inst_detail' i.slug %}" >
+                        <div class="card-img-top" >
+                          {% if i.img|length != 0 %}
+                          
+                          <img src="/media/{{i.img}}" class="card-img-top" alt="...">{% else %}
+                            <img src="/media/default.png" class="card-img-top" alt="...">{% endif %}
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                          </div></a>
+                        <div class="panel-body">
+                          <a href="{% url 'inst_detail' i.slug %}" >
+                            <h4 class="card-title">{{i.name|title}}</h4></a>
+                            <p>{{i.about|safe|capfirst|slice:':100'}}...</p>
+                        </div>
+                        <div class="panel-footer">
+                            <!-- <button class="btn btn-primary " onclick="$('#inst').val('{{i.id}}');" data-toggle="modal" data-target="#instedit">
+                               Edit
+                              </button> -->
+                              <button style="background-color: rgb(221, 47, 47);" class="btn btn-primary "
+                               onclick="$('#idid').val('{{i.id}}');" data-toggle="modal" data-target="#delete">
+                               Delete
+                              </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                 {% for s in stud %}
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                      <a href="{% url 'stud_detail' s.slug %}" >
+                        <div class="card-img-top" >
+                          {% if s.img|length == 0 %}
+                          <img src="/media/default.png" class="card-img-top" alt="...">{% else %}
+                            <img src="/media/{{s.img}}" class="card-img-top" alt="...">{% endif %}
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                          </div></a>
+                        <div class="panel-body">
+                          <a href="{% url 'stud_detail' s.slug %}" >
+                            <h4 class="card-title">{{s.name|title}}</h4></a>
+                            <p>{{s.about|safe|capfirst|slice:':100'}}...</p>
+                        </div>
+                        <div class="panel-footer">
+                           <button style="background-color: rgb(221, 47, 47);" class="btn btn-primary "
+                               onclick="$('#sdid').val('{{s.id}}');" data-toggle="modal" data-target="#delete">
+                               Delete
+                              </button>
+                        </div>
+                    </div>
+                </div>{% endfor %}
+           
+            </div>
+           
+                
+              
+             {% if stud %} 
+                
+              <nav aria-label="Page navigation example text-center">
+               <ul class="pagination justify-content-end">
+                   
+                   {% if stud.has_previous %}
+                 <li class="page-item ">
+                   <a class="page-link" href="?page={{stud.previous_page_number}}" tabindex="-1">Previous</a>
+                 </li>
+                 {% endif %}
+
+                 {% for i in stud.paginator.page_range %}
+                      {% if stud.number == i %}
+                          <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                      {% elif i > stud.number|add:'-5' and i < stud.number|add:'5' %}
+                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+
+
+                 {% if stud.has_next %}
+                  <li class="page-item">
+                   <a class="page-link" href="?page={{stud.next_page_number}}">Next</a>
+                 </li> {% endif %}
+               </ul>
+             </nav>
+              {% elif inst %} 
+                
+             <nav aria-label="Page navigation example text-center">
+              <ul class="pagination justify-content-end">
+                  
+                  {% if inst.has_previous %}
+                <li class="page-item ">
+                  <a class="page-link" href="?page={{inst.previous_page_number}}" tabindex="-1">Previous</a>
+                </li>
+                {% endif %}
+
+                {% for i in inst.paginator.page_range %}
+                {% if inst.number == i %}
+                    <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                {% elif i > inst.number|add:'-5' and i < inst.number|add:'5' %}
+                    <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+
+
+                {% if inst.has_next %}
+                 <li class="page-item">
+                  <a class="page-link" href="?page={{inst.next_page_number}}">Next</a>
+                </li> {% endif %}
+              </ul>
+            </nav> 
+
+               {% endif %}
+                
+                
+                
+                
+                
+                
+            </div>
+          </div>
+           
+</div>
+            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title text-center" id="myModalLabel">Delete</h4>
+                      </div>
+                      <form action="" method="post">{% csrf_token %}
+                      <div class="modal-body text-center" style="font-size:20px;">
+                    
+                        <input type="hidden" name="idid" id="idid">
+                        <input type="hidden" name="sdid" id="sdid">
+                      Are You Sure You want to delete?  </div>
+                      <div class="modal-footer">
+                          <button type="close" class="btn btn-primary" data-dismiss="modal">No</button>
+                          <button type="submit" class="btn btn-danger">Yes</button>
+                      </div></form>
+                  </div>
+              </div>
+          </div>
+          <div class="modal fade" id="instedit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title" id="myModalLabel">Edit Information</h4>
+                      </div>
+                    <form action="" method="post" >{% csrf_token %}
+                      <div class="modal-body">  
+                          <div class="row">
+                              <div class="col-lg-6">
+                              
+                          <input id="inst"  name="inst"  type="hidden" >
+                          <input id="stud"  name="stud"  type="hidden" >
+                                      <div class="form-group">
+                                          <label>Name</label>
+                                          <input type="text" name="name" class="form-control" placeholder="Enter Name">
+                                      </div>
+                                      <div class="form-group">
+                                          <label>Email</label>
+                                          <input type="email" name="email" class="form-control" placeholder="email@example.com">
+                                      </div>
+                                     
+                              </div>
+                              <!-- /.col-lg-6 (nested) -->
+                              <div class="col-lg-6">
+                                  <div class="form-group">
+                                      <label>Expert</label>
+                                      <input type="text" name="expert" class="form-control" placeholder="Enter text">
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Image</label>
+                                      <input class="form-control" name="img" type="file">
+                                  </div>
+                             
+                          </div>
+                   
+                   
+                         <div class="form-group">
+                              <label>About</label>
+                              <textarea class="form-control"  name="about" rows="3"></textarea>
+                          </div>
+          </div>
+                      <div class="modal-footer">
+                          <button type="close" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                      </div>
+                  </div></form>
+              </div>
+          </div>
+          </div>
+          
+        
+{% endblock body %}

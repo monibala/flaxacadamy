@@ -1,0 +1,927 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+{% block body1 %}
+{% load myfilter %}
+<link rel='stylesheet' id='certificates-css-css'
+	href="{% static '/wp-content/plugins/ecademy-toolkit/inc/certificates/assets/css/certificates.min.css' %}"
+	type='text/css' media='all' />
+
+<link rel='stylesheet' id='video-css' href="{% static '/wp-content/themes/ecademy/assets/css/video.min.css' %}"
+	type='text/css' media='all' />
+
+
+
+<link rel='stylesheet' id='learn-press-pmpro-style-css'
+	href="{% static '/wp-content/plugins/ecademy-toolkit/inc/paid-membership-pro/assets/lp-pms-style.min.css' %}"
+	type='text/css' media='all' />
+
+<link rel='stylesheet' id='video-conferencing-with-zoom-api-css'
+	href="{% static '/wp-content/plugins/video-conferencing-with-zoom-api/assets/public/css/style.min.css' %}"
+	type='text/css' media='all' />
+
+<link rel='stylesheet' id='lp-font-awesome-5-css'
+	href="{% static '/wp-content/plugins/learnpress/assets/src/css/vendor/font-awesome-5.min.css' %}" type='text/css'
+	media='all' />
+<link rel='stylesheet' id='lp-bundle-css' href="{% static '/wp-content/plugins/learnpress/assets/css/bundle.min.css' %}"
+	type='text/css' media='all' />
+<link rel='stylesheet' id='learnpress-css'
+	href="{% static '/wp-content/plugins/learnpress/assets/css/learnpress.css' %}" type='text/css' media='all' />
+
+
+<link rel='stylesheet' id='lp-woo-css-css'
+	href="{% static '/wp-content/plugins/ecademy-toolkit/inc/woo-payment/assets/lp_woo.min.css' %}" type='text/css'
+	media='all' />
+
+
+
+
+
+<link rel='stylesheet' id='videojs-css' href="{% static '/wp-content/themes/ecademy/assets/js/videojs.min.js' %}"
+	type='text/css' media='all' />
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/global.min.js' %}"
+	id='lp-global-js'></script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/dist/utils.min.js' %}"
+	id='lp-utils-js'></script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/ecademy-toolkit/inc/certificates/assets/js/pdf.js' %}" id='pdfjs-js'></script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/ecademy-toolkit/inc/certificates/assets/js/fabric.min.js' %}" id='fabric-js'>
+</script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/ecademy-toolkit/inc/certificates/assets/js/download.min.js' %}"
+	id='downloadjs-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/hooks.min.js' %}" id='wp-hooks-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/i18n.min.js' %}" id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+	wp.i18n.setLocaleData({
+		'text direction\u0004ltr': ['ltr']
+	});
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/lodash.min.js' %}" id='lodash-js'></script>
+<script type='text/javascript' id='lodash-js-after'>
+	window.lodash = _.noConflict();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/url.min.js' %}" id='wp-url-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-translations'>
+	(function (domain, translations) {
+		var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+		localeData[""].domain = domain;
+		wp.i18n.setLocaleData(localeData, domain);
+	})("default", {
+		"locale_data": {
+			"messages": {
+				"": {}
+			}
+		}
+	});
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/api-fetch.min.js' %}" id='wp-api-fetch-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-after'>
+	wp.apiFetch.use(wp.apiFetch.createRootURLMiddleware("/wp-json/"));
+	wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware("6b363cd8d7");
+	wp.apiFetch.use(wp.apiFetch.nonceMiddleware);
+	wp.apiFetch.use(wp.apiFetch.mediaUploadMiddleware);
+	wp.apiFetch.nonceEndpoint = "/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type='text/javascript' id='certificates-js-js-extra'>
+	/* <![CDATA[ */
+	var localize_lp_cer_js = {
+		"base_url": "https:\/\/themes.envytheme.com\/ecademy",
+		"url_upload_cert": "https:\/\/themes.envytheme.com\/ecademy\/upload",
+		"url_ajax": "https:\/\/themes.envytheme.com\/ecademy\/wp-admin\/admin-ajax.php"
+	};
+	/* ]]> */
+</script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/ecademy-toolkit/inc/certificates/assets/js/certificates.min.js' %}"
+	id='certificates-js-js'></script>
+
+<script type='text/javascript' src="{% static '/wp-includes/js/comment-reply.min.js' %}" id='comment-reply-js'></script>
+<script type='text/javascript' id='course-review-js-extra'>
+	/* <![CDATA[ */
+	var learn_press_course_review = {
+		"localize": {
+			"empty_title": "Please enter the review title",
+			"empty_content": "Please enter the review content",
+			"empty_rating": "Please select your rating"
+		}
+	};
+	/* ]]> */
+</script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/learnpress-course-review/assets/js/course-review.js' %}" id='course-review-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react.min.js' %}" id='react-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react-dom.min.js' %}" id='react-dom-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/escape-html.min.js' %}" id='wp-escape-html-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/element.min.js' %}" id='wp-element-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/deprecated.min.js' %}" id='wp-deprecated-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/dom.min.js' %}" id='wp-dom-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/is-shallow-equal.min.js' %}"
+	id='wp-is-shallow-equal-js'></script>
+<script type='text/javascript' id='wp-keycodes-js-translations'>
+	(function (domain, translations) {
+		var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+		localeData[""].domain = domain;
+		wp.i18n.setLocaleData(localeData, domain);
+	})("default", {
+		"locale_data": {
+			"messages": {
+				"": {}
+			}
+		}
+	});
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/keycodes.min.js' %}" id='wp-keycodes-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/priority-queue.min.js' %}"
+	id='wp-priority-queue-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/compose.min.js' %}" id='wp-compose-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/redux-routine.min.js' %}" id='wp-redux-routine-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/data.min.js' %}" id='wp-data-js'></script>
+<script type='text/javascript' id='wp-data-js-after'>
+	(function () {
+		var userId = 0;
+		var storageKey = "WP_DATA_USER_" + userId;
+		wp.data
+			.use(wp.data.plugins.persistence, {
+				storageKey: storageKey
+			});
+		wp.data.plugins.persistence.__unstableMigrate({
+			storageKey: storageKey
+		});
+	})();
+</script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/learnpress/assets/js/dist/frontend/single-course.min.js' %}"
+	id='lp-single-course-js'></script>
+
+<script type='text/javascript' id='lp-woo-payment-js-js-extra'>
+	/* <![CDATA[ */
+	var localize_lp_woo_js = {
+		"url_ajax": "https:\/\/themes.envytheme.com\/ecademy\/wp-admin\/admin-ajax.php",
+		"woo_enable_signup_and_login_from_checkout": "no",
+		"woocommerce_enable_guest_checkout": "yes"
+	};
+	/* ]]> */
+</script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/ecademy-toolkit/inc/woo-payment/assets/lp_woo.min.js' %}"
+	id='lp-woo-payment-js-js'></script>
+
+
+
+{% endblock body1 %}
+
+
+
+
+
+
+<div class="lp-archive-courses">
+	<div class="page-title-area ">
+		<div class="container">
+			<div class="page-title-content">
+				<h2>{{crs.0.course_title}}</h2>
+				<div class="lp-archive-courses"> </div>
+				<div class="courses-rating rating">
+					<div class="course-review">
+						<div class="review-stars-rated">
+							<ul class="review-stars">
+								
+
+								{% for  j in "x"|ljust:"5" %}
+			
+								{% if tot > forloop.counter0 %}
+							
+								
+								<li><span class="fa fa-star"></span></li>
+											{% else %}
+										
+								<li><span class="fa fa-star-o"></span></li>
+											{% endif %}
+											
+									
+														{% endfor %}
+
+
+
+
+
+							</ul>
+							<ul class="review-stars filled" style="width: calc(0% - 2px)">
+								<li><span class="fa fa-star"></span></li>
+								<li><span class="fa fa-star"></span></li>
+								<li><span class="fa fa-star"></span></li>
+								<li><span class="fa fa-star"></span></li>
+								<li><span class="fa fa-star"></span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="reviews-total d-inline-block">
+						( {{total}} Rating )
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="shape9">
+			<img src="{% static '/wp-content/themes/ecademy/assets/img/shape8.svg' %}" alt="Shape Image One">
+		</div>
+	</div>
+
+
+	</style>
+	<div class="courses-details-area pb-100">
+		<div class="courses-details-image">
+			<img src="/media/{{crs.0.course_img}}" width="100%" height="60%"
+				style="padding-left: 70px;padding-right: 70px;" alt="">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-md-12">
+					<div class="courses-details-desc">
+						<div id="learn-press-course" class="course-summary">
+							<div class="course-content course-summary-content">
+								<div class="course-detail-info">
+									<div class="lp-content-area">
+										<div class="course-info-left">
+											<div class="course-meta course-meta-primary">
+												<div class="course-meta__pull-left">
+													<div class="meta-item meta-item-instructor">
+														<div class="meta-item__image">
+															{% if crs.0.course_instructor.img|length != 0 %}
+															<img alt='User Avatar'
+																src='/media/{{crs.0.course_instructor.img}}'
+																srcset='/media/{{crs.0.course_instructor.img}} 2x'
+																class='avatar avatar-96 photo' height='250' width='250'
+																loading='lazy' />{% else %}
+															<img alt='User Avatar' src='/media/default.png'
+																srcset='/media/default.png 2x'
+																class='avatar avatar-96 photo' height='250' width='250'
+																loading='lazy' />
+															{% endif %}
+
+
+
+														</div>
+														<div class="meta-item__value">
+															<label>Instructor</label>
+															<div><a
+																	href="{% url 'profile' crs.0.course_instructor.slug %}"><span>{{crs.0.course_instructor.name|capfirst}}</span></a>
+															</div>
+														</div>
+													</div>
+													<div class="meta-item meta-item-categories">
+														<div class="meta-item__value">
+															<label>Category</label>
+															<div>
+																<a href="{% url 'course-single' crs.0.id %}"
+																	rel="tag">{{crs.0.course_category|capfirst}}</a><span>|</span><a
+																	href="/course-category/photo-flim/" rel="tag">Photo
+																	&amp; Flim</a>
+															</div>
+														</div>
+													</div>
+													<div class="meta-item meta-item-review">
+														<div class="meta-item__value">
+															<label>Review</label>
+															<div>
+
+																<div class="review-stars-rated"
+																	title="0 out of 5 stars">
+																	<div class="review-star">
+																		<i class="far"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																		<i class="fas" style="width:0%;"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																	</div>
+																	<div class="review-star">
+																		<i class="far"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																		<i class="fas" style="width:0%;"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																	</div>
+																	<div class="review-star">
+																		<i class="far"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																		<i class="fas" style="width:0%;"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																	</div>
+																	<div class="review-star">
+																		<i class="far"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																		<i class="fas" style="width:0%;"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																	</div>
+																	<div class="review-star">
+																		<i class="far"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																		<i class="fas" style="width:0%;"><svg
+																				xmlns="http://www.w3.org/2000/svg"
+																				width="16" height="16"
+																				fill="currentColor"
+																				class="bi bi-star-fill"
+																				viewBox="0 0 16 16">
+																				<path
+																					d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																			</svg></i>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<h1 class="course-title">{{crs.0.course_title|capfirst}}
+											</h1>
+											<div class="course-meta course-meta-secondary">
+												<div class="course-meta__pull-left">
+													<div class="meta-item meta-item-duration">
+														({{crs.0.course_duration_in_weeks}}) weeks</div>
+													<div class="meta-item meta-item-level">All levels</div>
+													<div class="meta-item meta-item-lesson"><span
+															class="meta-number">{{crs.0.lession_no}}
+															lessons</span></div>
+													<div class="meta-item meta-item-quiz"><span
+															class="meta-number">{{crs.0.course_quiz}}
+															quizzes</span></div>
+													<div class="meta-item meta-item-student"><span
+															class="meta-number">{{crs.0.student_no}} students</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="lp-entry-content lp-content-area">
+									<div class="entry-content-left">
+										<div id="learn-press-course-tabs" class="course-tabs">
+											<input type="radio" name="learn-press-course-tab-radio"
+												id="tab-overview-input" checked='checked' value="overview" />
+											<input type="radio" name="learn-press-course-tab-radio"
+												id="tab-instructor-input" value="instructor" />
+											<input type="radio" name="learn-press-course-tab-radio"
+												id="tab-reviews-input" value="reviews" />
+											<ul class="learn-press-nav-tabs course-nav-tabs" data-tabs="4">
+												<li class="course-nav course-nav-tab-overview active">
+													<label for="tab-overview-input">Overview</label>
+												</li>
+												<li class="course-nav course-nav-tab-instructor">
+													<label for="tab-instructor-input">Instructor</label>
+												</li>
+												<li class="course-nav course-nav-tab-reviews">
+													<label for="tab-reviews-input">Reviews</label>
+												</li>
+											</ul>
+											<div class="course-tab-panels">
+												<div class="course-tab-panel-overview course-tab-panel"
+													id="tab-overview">
+													<div class="course-description" id="learn-press-course-description">
+														<h3>Course Description</h3>
+
+														<p>{{crs.0.course_description|safe|capfirst}}</p>
+
+														{% comment %}
+														<!-- <h3>Certification</h3>
+														<p>{{crs.0.course_certificate}}</p> -->
+														{% endcomment %}
+														{% if crs.0.who_this_course.all %}
+														<h3>Who This Course is for</h3>
+														{% for i in crs.0.who_this_course.all %}
+														<p>* {{i.title|capfirst}}</p>
+														{% endfor %}{% endif %}
+													</div>
+												</div>
+
+												<div class="course-tab-panel-instructor course-tab-panel"
+													id="tab-instructor">
+													<div class="course-author">
+														<div class="lp-course-author">
+															<div class="course-author__pull-left">
+																{% if crs.0.course_instructor.img|length != 0 %}
+																<img alt='User Avatar'
+																	src='/media/{{crs.0.course_instructor.img}}'
+																	srcset='/media/{{crs.0.course_instructor.img}} 2x'
+																	class='avatar avatar-96 photo' height='250'
+																	width='250' loading='lazy' />
+																{% else %}
+
+																<img alt='User Avatar' src='/media/default.png'
+																	srcset='/media/default.png 2x'
+																	class='avatar avatar-96 photo' height='250'
+																	width='250' loading='lazy' />{% endif %}
+
+
+
+
+															</div>
+															<div class="course-author__pull-right">
+																<div class="author-title"><a
+																		href="{% url 'profile' crs.0.course_instructor.slug %}"><span>{{crs.0.course_instructor.name|capfirst}}
+																		</span></a></div>
+																<div class="author-description margin-bottom">
+																	{{crs.0.course_instructor.about|slice:'200'|capfirst}}....
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="course-tab-panel-reviews course-tab-panel" id="tab-reviews">
+													<div class="course-rate">
+														<div class="course-rate__summary">
+															<div class="course-rate__summary-value">
+																{{total}}
+
+															</div>
+															<div class="course-rate__summary-stars">
+																<div class="review-stars-rated"
+																	title="0 out of 5 stars">
+																	<div class="review-star ">
+																	
+
+					{% for  j in "x"|ljust:"5" %}
+						
+					{% if tot > forloop.counter0 %}
+				
+					<i class="fa fa-star" style="color: #ffb60a"></i>
+
+								{% else %}
+								<i class="fa fa-star-o" style="color: #ffb60a"></i>
+
+								{% endif %}
+								{% endfor %}
+
+
+
+
+																	</div>
+
+
+
+
+																</div>
+															</div>
+															<div class="course-rate__summary-text">
+																<span>{{counts}}</span> total
+															</div>
+														</div>
+
+														<div class="course-rate__details">
+															<div class="course-rate__details-row">
+																<span class="course-rate__details-row-star">
+																	5 <i class="fas" style="color: #ffb60a">
+																		<svg xmlns="http://www.w3.org/2000/svg"
+																			width="16" height="16" fill="currentColor"
+																			class="bi bi-star-fill" viewBox="0 0 16 16">
+																			<path
+																				d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																		</svg>
+																	</i>
+																</span>
+																<div class="course-rate__details-row-value">
+																	<div class="rating-gray"></div>
+																	<div class="rating" style="width:0%;" title="0%">
+																	</div>
+																	<span class="rating-count">{{ct_5}}%</span>
+																</div>
+															</div>
+															<div class="course-rate__details-row">
+																<span class="course-rate__details-row-star">
+																	4 <i class="fas" style="color: #ffb60a">
+																		<svg xmlns="http://www.w3.org/2000/svg"
+																			width="16" height="16" fill="currentColor"
+																			class="bi bi-star-fill" viewBox="0 0 16 16">
+																			<path
+																				d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																		</svg>
+																	</i>
+																</span>
+																<div class="course-rate__details-row-value">
+																	<div class="rating-gray"></div>
+																	<div class="rating" style="width:0%;" title="0%">
+																	</div>
+																	<span class="rating-count">{{ct_4}}%</span>
+																</div>
+															</div>
+															<div class="course-rate__details-row">
+																<span class="course-rate__details-row-star">
+																	3 <i class="fas" style="color: #ffb60a">
+																		<svg xmlns="http://www.w3.org/2000/svg"
+																			width="16" height="16" fill="currentColor"
+																			class="bi bi-star-fill" viewBox="0 0 16 16">
+																			<path
+																				d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																		</svg>
+																	</i>
+																</span>
+																<div class="course-rate__details-row-value">
+																	<div class="rating-gray"></div>
+																	<div class="rating" style="width:0%;" title="0%">
+																	</div>
+																	<span class="rating-count">{{ct_3}}%</span>
+																</div>
+															</div>
+															<div class="course-rate__details-row">
+																<span class="course-rate__details-row-star">
+																	2 <i class="fas" style="color: #ffb60a">
+																		<svg xmlns="http://www.w3.org/2000/svg"
+																			width="16" height="16" fill="currentColor"
+																			class="bi bi-star-fill" viewBox="0 0 16 16">
+																			<path
+																				d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																		</svg>
+																	</i>
+																</span>
+																<div class="course-rate__details-row-value">
+																	<div class="rating-gray"></div>
+																	<div class="rating" style="width:0%;" title="0%">
+																	</div>
+																	<span class="rating-count">{{ct_2}}%</span>
+																</div>
+															</div>
+															<div class="course-rate__details-row">
+																<span class="course-rate__details-row-star">
+																	1 <i class="fas" style="color: #ffb60a">
+																		<svg xmlns="http://www.w3.org/2000/svg"
+																			width="16" height="16" fill="currentColor"
+																			class="bi bi-star-fill" viewBox="0 0 16 16">
+																			<path
+																				d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+																		</svg>
+																	</i>
+																</span>
+																<div class="course-rate__details-row-value">
+																	<div class="rating-gray"></div>
+																	<div class="rating" style="width:0%;" title="0%">
+																	</div>
+																	<span class="rating-count">{{ct_1}}%</span>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="mt-5px">
+
+														{% for r in crss %}
+														{% if r.crs.id == crs.0.id and forloop.counter < 4 %}
+
+														<div class="lp-course-author" style="border: outset;margin-bottom: 20px;">
+															<div class="course-author__pull-left" style="margin-top: 10px;">
+
+																<!-- {{r.name.user.img}}={{r.name.users.img}} -->
+																{% if r.name.instructor.img|length != 0 %}
+																<img alt='User Avatar' src='/media/{{r.name.instructor.img}}'
+																	srcset='/media/{{r.name.instructor.img}} 2x'
+																	class='avatar avatar-96 photo' height='20'
+																	width='20' loading='lazy' />
+																	 <!-- <img src="/media/{{r.name.instructor.img}}" class="shadow-sm rounded-circle"
+                                  style="border-radius: 100%;max-width: 60%;"alt="Jone Smit"> -->
+                                 
+																{% elif r.name.student.img|length != 0 %}
+																<img alt='User Avatar' src='/media/{{r.name.student.img}}'
+																	srcset='/media/{{r.name.student.img}} 2x'
+																	class='avatar avatar-96 photo' height='20'
+																	width='20' loading='lazy' />
+																	 <!-- <img src="/media/{{r.name.student.img}}" class="shadow-sm rounded-circle"
+                                  style="border-radius: 100%;max-width: 40%;"alt="Jone Smit"> -->
+                                 
+
+																{% else %}
+																<!-- <img src="/media/default.png" class="shadow-sm rounded-circle"
+																style="border-radius: 100%;max-width: 40%;"alt="Jone Smit"> -->
+																<img alt='User Avatar' src='/media/default.png'
+																	srcset='/media/default.png 2x'
+																	class='avatar avatar-96 photo' height='20'
+																	width='20' loading='lazy' />
+																	
+																	{% endif %}
+															</div>
+															<div class="course-author__pull-right" style="margin-top: 10px;">
+																<div class="author-title" style="margin-bottom: 5px;">
+																	<span>{{r.name|capfirst}}
+																	</span>
+																</div>
+																<div class="author-description ">
+																	{{r.comment|capfirst}}
+																	<p style="float: right;margin-right: 10px;font-size: 12px;">Posted:({{r.dateby|date:'d/m/Y H:i A'}})</p>
+																</div>
+															</div>
+
+
+														</div>
+														{% endif %} {% endfor %}
+
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+										{% if request.user.userType.type != '1' %}
+										<div id="comments" class="comments-area">
+											<div id="respond" class="comment-respond">
+												<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a
+															rel="nofollow" id="cancel-comment-reply-link"
+															href="/ecademy/courses/java-programming-masterclass-for-software-developers/#respond"
+															style="display:none;">Cancel reply</a></small></h3>
+												<form method="post" id="commentform" class="comment-form">
+													{% csrf_token %}
+													<p class="comment-notes"><span id="email-notes">Your email address
+															will not be published.</span> Required fields are marked
+														<span class="required">*</span>
+													</p>
+													<div class="comment-form-rating"><label for="rating">Rate this
+															Course</label><select name="rate" id="rating" required>
+															<option value="">Rate&hellip;</option>
+															<option value="5">Perfect</option>
+															<option value="4">Good</option>
+															<option value="3">Average</option>
+															<option value="2">Not that bad</option>
+															<option value="1">Very poor</option>
+														</select></div>
+													<p class="comment-form-comment">
+														<label for="comment">Comment</label>
+														<textarea id="comment" name="comment" cols="45" rows="8"
+															required maxlength="65525"></textarea>
+													</p>
+
+
+
+													<p class="comment-form-cookies-consent"><input
+															id="wp-comment-cookies-consent"
+															name="wp-comment-cookies-consent" type="checkbox" required
+															value="yes" /> <label for="wp-comment-cookies-consent">Save
+															my name in this browser for the next
+															time I comment.</label></p>
+													<p class="form-submit"><input name="submit" type="submit"
+															id="submit" class="submit" value="Post a Comment" /> <input
+															type='hidden' name='comment_post_ID' value='148'
+															id='comment_post_ID' />
+														<input type='hidden' name='comment_parent' id='comment_parent'
+															value='0' />
+													</p><input type="hidden" name="comment-post-item-course"
+														value="148" />
+												</form>
+											</div>
+										</div>
+{% endif %}
+
+									</div>
+									<aside class="course-summary-sidebar">
+										<div class="course-summary-sidebar__inner">
+											<div class="course-sidebar-top">
+												<div class="course-sidebar-preview">
+													<div class="media-preview">
+														<img width="451" height="300" src="/media/{{crs.0.course_img}}"
+															class="attachment-500x300 size-500x300 wp-post-image"
+															alt="Java Programming Masterclass for Software Developers"
+															loading="lazy"
+															title="Java Programming Masterclass for Software Developers"
+															srcset="/media/{{crs.0.course_img}} 750w,
+													/media/{{crs.0.course_img}} 300w, 
+															/media/{{crs.0.course_img}} 600w" sizes="(max-width: 451px) 100vw, 451px" />
+														<span class="lp-badge featured-course"
+															data-text="Featured"></span>
+													</div>
+													<div class="course-price">
+														<span class="price">&#36;{{crs.0.course_price}}</span>
+													</div>
+													<div class="lp-course-buttons">
+														<div class="wrap-btn-add-course-to-cart">
+															<form name="form-add-course-to-cart" method="post">
+																<input type="hidden" name="course-id" value="148" />
+																<input type="hidden" name="add-course-to-cart-nonce"
+																	value="0cbb0f728b" />
+
+																<button class="lp-button btn-add-course-to-cart">
+																	<i class="flaticon-tag"></i>
+
+																	Add to cart <span></span>
+																</button>
+															</form>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</aside>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-12">
+					<div class="courses-details-info">
+						<!-- <div class="image">
+							<img src="/media/{{crs.0.course_img}}" alt="" width="100%">
+							{% comment %} {{crs.0.YT_video_url}} {% endcomment %}
+							<a href="#" class="link-btn popup-youtube"></a>
+							<div class="content">
+								<i class="flaticon-play"></i>
+								<span>Course Preview</span>
+							</div>
+						</div> -->
+
+						<ul class="info">
+							<li class="price">
+								<div class="d-flex justify-content-between align-items-center">
+									<span><i class="flaticon-tag"></i> Price</span>
+									<div class="course-price">
+										<span class="price">&#36;{{crs.0.course_price}}</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="d-flex justify-content-between align-items-center">
+									<span><i class="flaticon-teacher"></i> Instructor</span>
+									<a href="{% url 'profile' crs.0.course_instructor.slug %}"
+										class="d-inline-block">{{crs.0.course_instructor.name|capfirst}}</a>
+								</div>
+							</li>
+							<li>
+								<div class="d-flex justify-content-between align-items-center">
+									<span><i class="flaticon-time"></i> Duration</span>
+									{{crs.0.course_duration_in_weeks}} weeks
+								</div>
+							</li>
+							<li>
+								<div class="d-flex justify-content-between align-items-center">
+									<span><i class="flaticon-distance-learning"></i> Lessons</span>
+									{{crs.0.lession_no}}
+								</div>
+							</li>
+							<li>
+								<div class="d-flex justify-content-between align-items-center">
+									<span><i class="flaticon-web"></i> Enrolled</span>
+									{{crs.0.student_no}} student
+								</div>
+							</li>
+							<li>
+								<div class="d-flex justify-content-between align-items-center">
+									<span><i class="flaticon-lock"></i> Access </span>
+									Lifetime
+								</div>
+							</li>
+						</ul>
+						{% if request.user.userType.type == '2' %}
+						<div class="btn-box">
+							<div class="wrap-btn-add-course-to-cart">
+								<form name="form-add-course-to-cart" method="post">
+									<input type="hidden" name="course-id" value="148" />
+									<input type="hidden" name="add-course-to-cart-nonce" value="0cbb0f728b" />
+									<button class="lp-button btn-add-course-to-cart default-btn">
+
+										<a href="{% url 'add-to-cart' crs.0.slug %}" style="color: blanchedalmond;">
+											<i class="flaticon-tag"></i>
+											Add to cart<span></span></a>
+									</button>
+								</form>
+							</div>
+						</div>{% endif %}
+						<div class="courses-share">
+							<div class="share-info">
+								<span>Share This Course <i class="flaticon-share"></i></span>
+								<ul class="social-link">
+									<li><a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fthemes.envytheme.com%2Fecademy%2Fcourses%2Fjava-programming-masterclass-for-software-developers%2F"
+											class="d-block" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+									<li><a href="https://twitter.com/share?url='https%3A%2F%2Fthemes.envytheme.com%2Fecademy%2Fcourses%2Fjava-programming-masterclass-for-software-developers%2F&amp;text=Java%20Programming%20Masterclass%20for%20Software%20Developers"
+											class="d-block" target="_blank"><i class="bx bxl-twitter"></i></a></li>
+									<li><a href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fthemes.envytheme.com%2Fecademy%2Fcourses%2Fjava-programming-masterclass-for-software-developers%2F &amp;description=&amp;media=https%3A%2F%2Fthemes.envytheme.com%2Fecademy%2Fwp-content%2Fuploads%2F2020%2F05%2Fcourse-img2.jpg"
+											onclick="window.open(this.href); return false;" class="d-block"
+											target="_blank"><i class="bx bxl-pinterest"></i></a></li>
+									<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fthemes.envytheme.com%2Fecademy%2Fcourses%2Fjava-programming-masterclass-for-software-developers%2F"
+											class="d-block" target="_blank"><i class="bx bxl-linkedin"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="single-course-sidebar">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="courses-area bg-f8f9f8 pt-100 pb-0">
+		<div class="container">
+			<div class="section-title">
+				<h2>More Courses You Might Like</h2>
+			</div>
+			<div class="row">
+				{% for m in more_crs %}
+				{% if forloop.counter < 4 %} <div class="col-lg-4 col-md-6">
+					<div class=" single-courses-box">
+						<div class="courses-image">
+							<a href="{% url 'course-single' m.slug %}" class="d-block image">
+								<img src="/media/{{m.course_img}}" width='100%' height="20%" alt="">
+							</a>
+							<div class="course-price">
+								<span class="price">&#36;{{m.course_price}}</span>
+							</div>
+						</div>
+						<div class="courses-content">
+							<div class="course-author d-flex align-items-center">
+								{% if m.course_instructor.img|length != 0 %}
+								<img alt='User Avatar' src='/media/{{m.course_instructor.img}}'
+									srcset='/media/{{m.course_instructor.img}} 2x' class='avatar avatar-96 photo'
+									height='250' width='250' loading='lazy' />
+								{% else %}<img alt='User Avatar' src='/media/default.png' srcset='/media/default.png 2x'
+									class='avatar avatar-96 photo' height='250' width='250' loading='lazy' />
+								{% endif %}
+
+								<span><a
+										href="{% url 'profile' m.course_instructor.slug %}"><span>{{m.course_instructor.name|capfirst}}</span></a></span>
+							</div>
+							<h3><a href="{% url 'course-single' m.slug %}">
+									{{m.course_title|safe|slice:':80'|capfirst}}</a></h3>
+							<p>{{m.course_description|safe|slice:':140'|capfirst}}...</strong></p>
+							<ul class="courses-box-footer d-flex justify-content-between align-items-center">
+								<li>
+									<i class='flaticon-agenda'></i>
+									{{m.lession_no}} Lessons
+								</li>
+								<li>
+									<i class='flaticon-people'></i> {{m.student_no}} Students
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+				{% endif %} {% endfor %}
+
+			</div>
+		</div>
+
+		<script type="text/javascript" src="{% static 'ckeditor/ckeditor-init.js' %}"></script>
+		<script type="text/javascript" src="{% static 'ckeditor/ckeditor/ckeditor.js' %}"></script>
+		{% endblock body %}

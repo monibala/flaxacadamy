@@ -1,0 +1,469 @@
+
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+{% block body1 %}
+
+
+<link rel='stylesheet' id='lp-font-awesome-5-css' href="{% static '/wp-content/plugins/learnpress/assets/src/css/vendor/font-awesome-5.min.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='lp-bundle-css' href="{% static '/wp-content/plugins/learnpress/assets/css/bundle.min.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='learnpress-css' href="{% static '/wp-content/plugins/learnpress/assets/css/learnpress.css' %}" type='text/css' media='all' />
+<script type='text/javascript' src="{% static '/wp-includes/js/utils.min.js' %}" id='utils-js'></script>
+
+
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/global.min.js' %}" id='lp-global-js'></script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/dist/utils.min.js' %}" id='lp-utils-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/moxie.min.js' %}" id='moxiejs-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/plupload.min.js' %}" id='plupload-js'></script>
+
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/mouse.min.js' %}" id='jquery-ui-mouse-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/slider.min.js' %}" id='jquery-ui-slider-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/draggable.min.js' %}" id='jquery-ui-draggable-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/jquery.ui.touch-punch.js' %}" id='jquery-touch-punch-js'></script>
+<script type='text/javascript' id='lp-profile-user-js-extra'>
+/* <![CDATA[ */
+var lpProfileUserSettings = {"processing":"Processing","redirecting":"Redirecting","avatar_size":{"width":250,"height":250}};
+/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/frontend/profile.min.js' %}" id='lp-profile-user-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/lodash.min.js' %}" id='lodash-js'></script>
+<script type='text/javascript' id='lodash-js-after'>
+window.lodash = _.noConflict();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react.min.js' %}" id='react-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react-dom.min.js'  %}" id='react-dom-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/escape-html.min.js' %}" id='wp-escape-html-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/element.min.js'  %}" id='wp-element-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/hooks.min.js'  %}" id='wp-hooks-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/deprecated.min.js'  %}" id='wp-deprecated-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/dom.min.js'  %}" id='wp-dom-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/is-shallow-equal.min.js' %}" id='wp-is-shallow-equal-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/i18n.min.js' %}" id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='wp-keycodes-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/keycodes.min.js' %}" id='wp-keycodes-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/priority-queue.min.js' %}" id='wp-priority-queue-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/compose.min.js' %}" id='wp-compose-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/redux-routine.min.js' %}" id='wp-redux-routine-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/data.min.js' %}" id='wp-data-js'></script>
+<script type='text/javascript' id='wp-data-js-after'>
+( function() {
+	var userId = 1826;
+	var storageKey = "WP_DATA_USER_" + userId;
+	wp.data
+		.use( wp.data.plugins.persistence, { storageKey: storageKey } );
+	wp.data.plugins.persistence.__unstableMigrate( { storageKey: storageKey } );
+} )();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/url.min.js' %}" id='wp-url-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/api-fetch.min.js' %}" id='wp-api-fetch-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-after'>
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "/wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "b73c1d7539" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/dist/frontend/profile.min.js' %}" id='lp-profile-v2-js'></script>
+
+<script type='text/javascript' id='fep-notification-script-js-extra'>
+/* <![CDATA[ */
+var fep_notification_script = {"root":"https:\/\/themes.envytheme.com\/ecademy\/wp-json\/front-end-pm\/v1","nonce":"b73c1d7539","interval":"120000","skip":"2","show_in_title":"1","show_in_desktop":"1","call_on_ready":"","play_sound":"1","sound_url":"https:\/\/themes.envytheme.com\/ecademy\/wp-content\/plugins\/front-end-pm\/assets\/audio\/plucky.mp3","icon_url":"https:\/\/themes.envytheme.com\/ecademy\/wp-content\/plugins\/front-end-pm\/assets\/images\/desktop-notification-32.png","mgs_notification_title":"New Message. ","mgs_notification_body":"You have received a new message. ","mgs_notification_url":"https:\/\/themes.envytheme.com\/ecademy\/private-massage\/?fepaction=messagebox","ann_notification_title":"New Announcement. ","ann_notification_body":"You have received a new announcement. ","ann_notification_url":"https:\/\/themes.envytheme.com\/ecademy\/private-massage\/?fepaction=announcements"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/front-end-pm/assets/js/notification.js' %}" id='fep-notification-script-js'></script>
+
+
+
+{% endblock body1 %}
+
+
+
+
+
+	<div class="page-main-content">
+		<div class="page-area">
+			<div class="container">
+				<div id="post-13" class="post-13 page type-page status-publish hentry pmpro-has-access">
+					<div class="entry-content ecademy-Instructor/Student Profile-un">
+						<div class="learnpress">
+							<div id="learn-press-profile" class="lp-user-profile current-user">
+								
+								<div class="lp-content-area">
+									<div class="wrapper-profile-header wrap-fullwidth">
+										<div class="lp-content-area lp-profile-content-area">
+											<div class="lp-profile-left">
+												<div class="lp-user-profile-avatar">
+													{% if instruct.0.img|length != 0 %}
+													<img alt='User Avatar'
+														src='/media/{{instruct.0.img}}'
+														srcset='/media/{{instruct.0.img}} 2x'
+														class='avatar avatar-96 photo' height='250' width='250'
+														loading='lazy' />
+
+															{% else %}
+														<img alt='User Avatar'
+														src='/media/default.png'
+														srcset='/media/default.png 2x'
+														class='avatar avatar-96 photo' height='250' width='250'
+														loading='lazy' />
+												{% endif %}
+												</div>
+											</div>
+											<div class="lp-profile-right">
+												<div class="lp-profile-username">
+												{{instruct.0.name|capfirst}} </div>
+												<ul class="social-link">
+												</ul>
+												<a href="{% url 'private-message' instruct.0.slug %}" class="default-btn">
+													<i class="flaticon-user"></i>
+													Messages<span></span>
+												</a>
+											</div>
+										</div>
+									</div>
+
+									<aside id="profile-sidebar">
+										<div id="profile-nav">
+											<ul class="lp-profile-nav-tabs">
+												
+												<li class="courses active">
+													{% if request.user.userType.type == '1' %}
+													
+													{% if instruct.0.slug == request.user.instructor.slug %}
+													<a href="{% url 'profile' request.user.instructor.slug %}"
+														data-slug="{% url 'profile' request.user.instructor.slug %}">
+														<i class="fas flaticon-user"></i> Profile </a>{% endif %}
+													  {% elif request.user.userType.type == '2' %}
+													  {% if instruct.0.slug == request.user.student.slug %}
+													  <a href="{% url 'profile' request.user.student.slug %}"
+													  data-slug="{% url 'profile' request.user.student.slug %}">
+													  <i class="fas flaticon-user"></i> Profile</a>{% endif %}
+
+											   {% endif %}
+											   {% if request.user.userType.type == '2' %}
+											   {% if instruct.0.slug != request.user.student.slug %}
+											   <a href="#"
+											   data-slug="#">
+											   <i class="fas flaticon-user"></i> Course</a>
+										{% endif %}
+										
+										{% elif request.user.userType.type == '1' %}
+										{% if instruct.0.slug != request.user.instructor.slug %}
+										<a href="#"
+										data-slug="#">
+										<i class="fas flaticon-user"></i> Course</a>
+								 {% endif %}
+
+								 {% elif request.user.is_authenticated != 'True' %}
+						
+										<a href="#"
+										data-slug="#">
+										<i class="fas flaticon-user"></i> Course</a>
+								
+										{% endif %}
+											   <!-- {% if   instruct.0.slug != request.user.student.slug %}
+                                           
+											   <li class="certificates active">
+												   <a href="{% url 'courses'  %}?inst={{instruct.0.slug}}"
+													   data-slug="{% url 'courses'  %}?inst={{instruct.0.slug}}">
+													   <i class="fas fa-book-open"></i> Courses</a>
+											   </li> {% endif %} -->
+
+												</li> {% if request.user.userType.type == '1' %}
+                                               
+												<li class="certificates ">
+													<a href="{% url 'profile-certificates' instruct.0.slug %}"
+														data-slug="{% url 'profile-certificates' instruct.0.slug %}">
+														<i class="fas fa-certificate"></i> Certificates </a>
+												</li> {% endif %}
+
+												<!-- <li class="quizzes">
+													<a href="{% url 'quzess' instruct.0.slug %}"
+														data-slug="{% url 'quzess' instruct.0.slug %}">
+														<i class="fas fa-puzzle-piece"></i> Quizzes </a>
+												</li> -->
+												
+												{% if request.user.userType.type == '2' or request.user.userType.type == '1' %}
+												{% if instruct.0.slug == request.user.instructor.slug or instruct.0.slug == request.user.student.slug %}
+												<li class="orders">
+													<a href="{% url 'orders' instruct.0.slug %}"
+														data-slug="{% url 'orders' instruct.0.slug %}">
+														<i class="fas fa-shopping-cart"></i> Orders </a>
+												</li>{% endif %}
+												
+												{% endif %}
+
+												              
+{% if request.user.is_authenticated %}
+{% if request.user.id == instruct.0.user.id %}
+
+												<li class="settings has-child">
+													<a href="{% url 'setting-genralinfo' instruct.0.slug %}"
+														data-slug="{% url 'setting-genralinfo' instruct.0.slug %}">
+														<i class="fas fa-cog"></i> Settings </a>
+													
+												</li>{% endif %}{% endif %}
+												{% if request.user.is_authenticated %}
+												
+											{% if request.user.id == instruct.0.user.id %}
+											<li class="logout">
+													<a href="{% url 'logout' %}"
+														data-slug="{% url 'logout' %}">
+														<i class="fas fa-sign-out-alt"></i> Logout </a>
+												</li>{% endif %}{% endif %}
+											</ul>
+										</div>
+									</aside>
+									<article id="profile-content" class="lp-profile-content">
+										<div id="profile-content-courses">
+											<div class="learn-press-subtab-content">
+												<!-- <div class="learn-press-profile-course__statistic"
+													data-ajax="{&quot;userID&quot;:1826}">
+													<ul class="lp-skeleton-animation" style="">
+														<li style="width: 92%; height: 30px;border-radius:4px;"></li>
+														<li style="width: 78%; height: 30px;border-radius:4px;"></li>
+														<li style="width: 85%; height: 30px;border-radius:4px;"></li>
+														<li style="width: 79%; height: 30px;border-radius:4px;"></li>
+													</ul>
+												</div> -->
+												<div class="learn-press-profile-course__tab">
+													{% if request.user.userType.type == '1' %}
+													
+													{% if instruct.0.slug == request.user.instructor.slug %}
+													<ul class="learn-press-profile-course__tab__inner">
+														<li><a class="active" data-tab="enrolled">Enrolled</a></li>
+														<li><a class="" data-tab="enrolled"><strong style="font-size: 18px;">
+															{% if stud != 0 %}{{stud}}
+													{% else %}0	{% endif %}
+													
+													
+														</strong>  Students Enrolled Your Course.</a>
+												</li>
+													</ul>{% endif %}
+
+
+
+													{% elif request.user.userType.type == '2' %}
+
+													{% if instruct.0.slug == request.user.student.slug %}
+													<ul class="learn-press-profile-course__tab__inner">
+														<li><a class="active" data-tab="enrolled">Enrolled</a></li>
+														<li><a class="" data-tab="enrolled">  You Have Enrolled In   <strong style="font-size: 18px;">
+															{% if corse_prchase != 0 %}{{corse_prchase}}
+															{% else %}0	{% endif %}
+														</strong>   Course.        </a>
+												</li>
+													</ul>{% endif %}
+													
+													
+													
+													
+													{% endif %}
+
+
+
+
+
+
+
+													{% if request.user.userType.type == '2' %}
+													{% if instruct.0.slug != request.user.student.slug %}
+													<ul class="learn-press-profile-course__tab__inner">
+														<li><a class="active" data-tab="enrolled">Instructor Course</a></li>
+														<li style="margin-left: 25px;">
+														This Instructor Have
+														<a class="" style="padding:13px ;"  data-tab="enrolled"
+														 href="{% url 'courses' %}?inst={{instruct.0.slug}}"><strong style="font-size: 18px;color: red;">
+															{% if inst_crs != 0 %}{{inst_crs}}
+															{% else %}0	{% endif %}
+														</strong></a> Courses.
+												</li>
+													</ul>
+											 {% endif %}
+											 
+											 {% elif request.user.userType.type == '1' %}
+											 {% if instruct.0.slug != request.user.instructor.slug %}
+											 <ul class="learn-press-profile-course__tab__inner">
+												<li><a class="active" data-tab="enrolled">Instructor Course</a></li>
+												<li style="margin-left: 25px;"> This Instructor Have
+													
+													<a class="" style="padding:13px ;"  data-tab="enrolled" href="{% url 'courses' %}?inst={{instruct.0.slug}}"><strong style="font-size: 18px;color: red;">
+													{% if inst_crs != 0 %}{{inst_crs}}
+													{% else %}0	{% endif %}
+												</strong></a> Courses.
+										</li>
+											</ul>
+									  {% endif %}
+
+
+									  {% elif request.user.is_authenticated != 'True' %}
+									  
+									  <ul class="learn-press-profile-course__tab__inner">
+										 <li><a class="active"  data-tab="enrolled">Instructor Course</a></li>
+										 <li style="margin-left: 25px;">This Instructor Have<a class="" style="padding:9px ;" data-tab="enrolled" href="{% url 'courses' %}?inst={{instruct.0.slug}}">
+											<strong style="font-size: 18px;color: red;">{% if inst_crs != 0 %}{{inst_crs}}
+											{% else %}0{% endif %}
+										 </strong></a>Courses.
+								 </li>
+									 </ul>
+							   
+
+
+											 {% endif %}
+													<!-- <div class="learn-press-course-tab-enrolled learn-press-course-tab-filters"
+														data-tab="enrolled" style="">
+														<ul class="learn-press-filters">
+															<li>
+																<a class="" data-tab="all">
+																	All </a>
+															</li>
+															<li>
+																<a class="active" data-tab="in-progress">
+																	In Progress </a>
+															</li>
+															<li>
+																<a class="" data-tab="finished">
+																	Finished </a>
+															</li>
+															<li>
+																<a class="" data-tab="passed">
+																	Passed </a>
+															</li>
+															<li>
+																<a class="" data-tab="failed">
+																	Failed </a>
+															</li>
+														</ul>
+														<div class="learn-press-profile-course__progress">
+															<div class="learn-press-course-tab__filter__content"
+																data-tab="all"
+																data-ajax="{&quot;userID&quot;:1826,&quot;status&quot;:&quot;&quot;,&quot;query&quot;:&quot;purchased&quot;,&quot;layout&quot;:&quot;list&quot;}"
+																style="display: none">
+																<ul class="lp-skeleton-animation" style="">
+																	<li
+																		style="width: 97%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 68%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 91%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 61%; height: 30px;border-radius:4px;">
+																	</li>
+																</ul>
+															</div>
+															<div class="learn-press-course-tab__filter__content"
+																data-tab="in-progress"
+																data-ajax="{&quot;userID&quot;:1826,&quot;status&quot;:&quot;in-progress&quot;,&quot;query&quot;:&quot;purchased&quot;,&quot;layout&quot;:&quot;list&quot;}"
+																style="">
+																<ul class="lp-skeleton-animation" style="">
+																	<li
+																		style="width: 63%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 72%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 99%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 82%; height: 30px;border-radius:4px;">
+																	</li>
+																</ul>
+															</div>
+															<div class="learn-press-course-tab__filter__content"
+																data-tab="finished"
+																data-ajax="{&quot;userID&quot;:1826,&quot;status&quot;:&quot;finished&quot;,&quot;query&quot;:&quot;purchased&quot;,&quot;layout&quot;:&quot;list&quot;}"
+																style="display: none">
+																<ul class="lp-skeleton-animation" style="">
+																	<li
+																		style="width: 95%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 97%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 76%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 84%; height: 30px;border-radius:4px;">
+																	</li>
+																</ul>
+															</div>
+															<div class="learn-press-course-tab__filter__content"
+																data-tab="passed"
+																data-ajax="{&quot;userID&quot;:1826,&quot;status&quot;:&quot;passed&quot;,&quot;query&quot;:&quot;purchased&quot;,&quot;layout&quot;:&quot;list&quot;}"
+																style="display: none">
+																<ul class="lp-skeleton-animation" style="">
+																	<li
+																		style="width: 91%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 86%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 94%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 80%; height: 30px;border-radius:4px;">
+																	</li>
+																</ul>
+															</div>
+															<div class="learn-press-course-tab__filter__content"
+																data-tab="failed"
+																data-ajax="{&quot;userID&quot;:1826,&quot;status&quot;:&quot;failed&quot;,&quot;query&quot;:&quot;purchased&quot;,&quot;layout&quot;:&quot;list&quot;}"
+																style="display: none">
+																<ul class="lp-skeleton-animation" style="">
+																	<li
+																		style="width: 62%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 71%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 66%; height: 30px;border-radius:4px;">
+																	</li>
+																	<li
+																		style="width: 71%; height: 30px;border-radius:4px;">
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</div> -->
+												</div>
+											</div>
+										</div>
+									</article>
+								</div>
+								
+								
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	{% endblock body %}

@@ -1,0 +1,399 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+{% block body1 %}
+
+
+<link rel='stylesheet' id='lp-font-awesome-5-css'
+	href="{% static '/wp-content/plugins/learnpress/assets/src/css/vendor/font-awesome-5.min.css' %}" type='text/css'
+	media='all' />
+<link rel='stylesheet' id='lp-bundle-css' href="{% static '/wp-content/plugins/learnpress/assets/css/bundle.min.css' %}"
+	type='text/css' media='all' />
+<link rel='stylesheet' id='learnpress-css'
+	href="{% static '/wp-content/plugins/learnpress/assets/css/learnpress.css' %}" type='text/css' media='all' />
+<script type='text/javascript' src="{% static '/wp-includes/js/utils.min.js' %}" id='utils-js'></script>
+
+
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/global.min.js' %}"
+	id='lp-global-js'></script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/dist/utils.min.js' %}"
+	id='lp-utils-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/moxie.min.js' %}" id='moxiejs-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/plupload.min.js' %}" id='plupload-js'></script>
+
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/mouse.min.js' %}" id='jquery-ui-mouse-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/slider.min.js' %}" id='jquery-ui-slider-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/draggable.min.js' %}"
+	id='jquery-ui-draggable-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/jquery.ui.touch-punch.js' %}"
+	id='jquery-touch-punch-js'></script>
+<script type='text/javascript' id='lp-profile-user-js-extra'>
+	/* <![CDATA[ */
+	var lpProfileUserSettings = {
+		"processing": "Processing",
+		"redirecting": "Redirecting",
+		"avatar_size": {
+			"width": 250,
+			"height": 250
+		}
+	};
+	/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/frontend/profile.min.js' %}"
+	id='lp-profile-user-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/lodash.min.js' %}" id='lodash-js'></script>
+<script type='text/javascript' id='lodash-js-after'>
+	window.lodash = _.noConflict();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react.min.js' %}" id='react-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react-dom.min.js'  %}" id='react-dom-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/escape-html.min.js' %}" id='wp-escape-html-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/element.min.js'  %}" id='wp-element-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/hooks.min.js'  %}" id='wp-hooks-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/deprecated.min.js'  %}" id='wp-deprecated-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/dom.min.js'  %}" id='wp-dom-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/is-shallow-equal.min.js' %}"
+	id='wp-is-shallow-equal-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/i18n.min.js' %}" id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+	wp.i18n.setLocaleData({
+		'text direction\u0004ltr': ['ltr']
+	});
+</script>
+<script type='text/javascript' id='wp-keycodes-js-translations'>
+	(function (domain, translations) {
+		var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+		localeData[""].domain = domain;
+		wp.i18n.setLocaleData(localeData, domain);
+	})("default", {
+		"locale_data": {
+			"messages": {
+				"": {}
+			}
+		}
+	});
+</script>
+
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/keycodes.min.js' %}" id='wp-keycodes-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/priority-queue.min.js' %}"
+	id='wp-priority-queue-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/compose.min.js' %}" id='wp-compose-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/redux-routine.min.js' %}" id='wp-redux-routine-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/data.min.js' %}" id='wp-data-js'></script>
+<script type='text/javascript' id='wp-data-js-after'>
+	(function () {
+		var userId = 1826;
+		var storageKey = "WP_DATA_USER_" + userId;
+		wp.data
+			.use(wp.data.plugins.persistence, {
+				storageKey: storageKey
+			});
+		wp.data.plugins.persistence.__unstableMigrate({
+			storageKey: storageKey
+		});
+	})();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/url.min.js' %}" id='wp-url-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-translations'>
+	(function (domain, translations) {
+		var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+		localeData[""].domain = domain;
+		wp.i18n.setLocaleData(localeData, domain);
+	})("default", {
+		"locale_data": {
+			"messages": {
+				"": {}
+			}
+		}
+	});
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/api-fetch.min.js' %}" id='wp-api-fetch-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-after'>
+	wp.apiFetch.use(wp.apiFetch.createRootURLMiddleware("/wp-json/"));
+	wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware("b73c1d7539");
+	wp.apiFetch.use(wp.apiFetch.nonceMiddleware);
+	wp.apiFetch.use(wp.apiFetch.mediaUploadMiddleware);
+	wp.apiFetch.nonceEndpoint = "/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/learnpress/assets/js/dist/frontend/profile.min.js' %}" id='lp-profile-v2-js'>
+</script>
+
+<script type='text/javascript' id='fep-notification-script-js-extra'>
+	/* <![CDATA[ */
+	var fep_notification_script = {
+		"root": "https:\/\/themes.envytheme.com\/ecademy\/wp-json\/front-end-pm\/v1",
+		"nonce": "b73c1d7539",
+		"interval": "120000",
+		"skip": "2",
+		"show_in_title": "1",
+		"show_in_desktop": "1",
+		"call_on_ready": "",
+		"play_sound": "1",
+		"sound_url": "https:\/\/themes.envytheme.com\/ecademy\/wp-content\/plugins\/front-end-pm\/assets\/audio\/plucky.mp3",
+		"icon_url": "https:\/\/themes.envytheme.com\/ecademy\/wp-content\/plugins\/front-end-pm\/assets\/images\/desktop-notification-32.png",
+		"mgs_notification_title": "New Message. ",
+		"mgs_notification_body": "You have received a new message. ",
+		"mgs_notification_url": "https:\/\/themes.envytheme.com\/ecademy\/private-massage\/?fepaction=messagebox",
+		"ann_notification_title": "New Announcement. ",
+		"ann_notification_body": "You have received a new announcement. ",
+		"ann_notification_url": "https:\/\/themes.envytheme.com\/ecademy\/private-massage\/?fepaction=announcements"
+	};
+	/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/front-end-pm/assets/js/notification.js' %}"
+	id='fep-notification-script-js'></script>
+
+
+
+{% endblock body1 %}
+
+
+
+
+
+<div class="page-main-content">
+	<div class="page-area">
+		<div class="container">
+			<div id="post-13" class="post-13 page type-page status-publish hentry pmpro-has-access">
+				<div class="entry-content ecademy-Instructor/Student Profile-un">
+					<div class="learnpress">
+						<div id="learn-press-profile" class="lp-user-profile current-user">
+							<div class="lp-content-area">
+								<div class="wrapper-profile-header wrap-fullwidth">
+									<div class="lp-content-area lp-profile-content-area">
+										<div class="lp-profile-left">
+											<div class="lp-user-profile-avatar">
+												{% if instruct.0.img|length != 0 %}
+												<img alt='User Avatar' src='/media/{{instruct.0.img}}'
+													srcset='/media/{{instruct.0.img}} 2x' class='avatar avatar-96 photo'
+													height='250' width='250' loading='lazy' />
+
+												{% else %}
+												<img alt='User Avatar' src='/media/default.png'
+													srcset='/media/default.png 2x' class='avatar avatar-96 photo'
+													height='250' width='250' loading='lazy' />
+												{% endif %}
+
+											</div>
+										</div>
+										<div class="lp-profile-right">
+											<div class="lp-profile-username">
+												{{instruct.0.name|capfirst}} </div>
+											<ul class="social-link">
+											</ul>
+											<a href="{% url 'private-message' instruct.0.slug %}" class="default-btn">
+												<i class="flaticon-user"></i>
+												Messages<span></span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<aside id="profile-sidebar">
+									<div id="profile-nav">
+										<ul class="lp-profile-nav-tabs">
+											<li class="courses">
+												{% if request.user.userType.type == '1' %}
+													<a href="{% url 'profile' request.user.instructor.slug %}"
+														data-slug="{% url 'profile' request.user.instructor.slug %}">
+														<i class="fas flaticon-user"></i> Profile </a>
+													  {% elif request.user.userType.type == '2' %}
+													  <a href="{% url 'profile' request.user.student.slug %}"
+													  data-slug="{% url 'profile' request.user.student.slug %}">
+													  <i class="fas flaticon-user"></i> Profile </a>
+											   {% endif %}
+											</li>
+											{% if request.user.userType.type == '1' %}
+                                               
+											<li class="certificates">
+												<a href="{% url 'profile-certificates' instruct.0.slug %}"
+													data-slug="{% url 'profile-certificates' instruct.0.slug %}">
+													<i class="fas fa-certificate"></i> Certificates </a>
+											</li>{% endif %} 
+											<!-- <li class="quizzes">
+												<a href="{% url 'quzess' instruct.0.slug %}"
+													data-slug="{% url 'quzess' instruct.0.slug %}">
+													<i class="fas fa-puzzle-piece"></i> Quizzes </a>
+											</li> -->
+											<li class="orders">
+												<a href="{% url 'orders' instruct.0.slug %}"
+													data-slug="{% url 'orders' instruct.0.slug %}">
+													<i class="fas fa-shopping-cart"></i> Orders </a>
+											</li>
+
+											{% if request.user.is_authenticated %}
+											{% if request.user.id == instruct.0.user.id %}
+											<li class="settings has-child active">
+												<a href="{% url 'setting-genralinfo' instruct.0.slug %}"
+													data-slug="{% url 'setting-genralinfo' instruct.0.slug %}">
+													<i class="fas fa-cog"></i> Settings </a>
+
+												<ul class="profile-tab-sections">
+													<li class="basic-information">
+														<a
+															href="{% url 'setting-genralinfo' instruct.0.slug %}">General</a>
+													</li>
+													<li class="avatar active">
+														<a href="{% url 'settings-avatar' instruct.0.slug %}">Avatar</a>
+													</li>
+													<li class="change-password">
+														<a
+															href="/profile/Navneet/settings/change-password/">Password</a>
+													</li>
+													<li class="privacy">
+														<a
+															href="{% url 'settings-privacy' instruct.0.slug %}">Privacy</a>
+													</li>
+												</ul>
+											</li>
+											{% endif %}
+											{% endif %}
+											{% if request.user.is_authenticated %}
+
+											{% if request.user.id == instruct.0.user.id %}
+											<li class="logout">
+												<a href="{% url 'logout' %}" data-slug="{% url 'logout' %}">
+													<i class="fas fa-sign-out-alt"></i> Logout </a>
+											</li>{% endif %}{% endif %}
+										</ul>
+									</div>
+								</aside>
+								<article id="profile-content" class="lp-profile-content">
+									<div id="profile-content-settings">
+										<div class="learn-press-tabs">
+											<input type="radio" name="course-tab-61c4202bca5cb>"
+												class="learn-press-tabs__checker"
+												id="course-tab-61c4202bca5cb__basic-information" />
+											<input type="radio" name="course-tab-61c4202bca5cb>"
+												class="learn-press-tabs__checker" checked='checked'
+												id="course-tab-61c4202bca5cb__avatar" />
+											<input type="radio" name="course-tab-61c4202bca5cb>"
+												class="learn-press-tabs__checker"
+												id="course-tab-61c4202bca5cb__change-password" />
+											<input type="radio" name="course-tab-61c4202bca5cb>"
+												class="learn-press-tabs__checker"
+												id="course-tab-61c4202bca5cb__privacy" />
+											<ul class="learn-press-tabs__nav" data-tabs="4">
+												<li class="learn-press-tabs__tab basic-information">
+													<label><a
+															href="{% url 'setting-genralinfo' instruct.0.slug %}">General</a></label>
+												</li>
+												<li class="learn-press-tabs__tab avatar active">
+													<label><a
+															href="{% url 'settings-avatar' instruct.0.slug %}">Avatar</a></label>
+												</li>
+												<li class="learn-press-tabs__tab change-password">
+													<label><a
+															href="/profile/Navneet/settings/change-password/">Password</a></label>
+												</li>
+												<li class="learn-press-tabs__tab privacy">
+													<label><a
+															href="{% url 'settings-privacy' instruct.0.slug %}">Privacy</a></label>
+												</li>
+											</ul>
+										</div>
+
+										<form name="profile-avatar" method="post" id='formid' enctype="multipart/form-data">
+											{% csrf_token %}
+											<div id="lp-user-edit-avatar" class="lp-edit-profile lp-edit-avatar"
+												data-custom="no">
+												<div id="profile-avatar-uploader" style="height: 250px;">
+													<div class="lp-avatar-preview" style="width: 250px; height: 250px;">
+														
+														<a class="cards-btns" onclick="document.getElementById('img').click()" />
+														<div class="profile-picture profile-avatar-current">
+																
+															<img alt='User Avatar'
+																src='https://secure.gravatar.com/avatar/af823ff41a29758f840eed12e6f15674?s=96&#038;d=mm&#038;r=g'
+																srcset='https://secure.gravatar.com/avatar/af823ff41a29758f840eed12e6f15674?s=192&#038;d=mm&#038;r=g 2x'
+																class='avatar avatar-96 photo' height='250' width='250'
+																loading='lazy' /> </div>
+														<div class="profile-picture">
+															<img alt='User Avatar'
+																src='https://secure.gravatar.com/avatar/af823ff41a29758f840eed12e6f15674?s=96&#038;d=mm&#038;r=g'
+																srcset='https://secure.gravatar.com/avatar/af823ff41a29758f840eed12e6f15674?s=192&#038;d=mm&#038;r=g 2x'
+																class='avatar avatar-96 photo' height='250' width='250'
+																loading='lazy' /> </div>
+														</a>
+														<div class="lp-avatar-upload-progress">
+															<div class="lp-avatar-upload-progress-value"></div>
+														</div>
+														<div class="lp-avatar-upload-error"> </div>
+														<p id="lp-avatar-actions">
+															
+															<input  style="display: none;" id="img" name="img" type="file" required />
+															
+
+															<i class="fas fa-upload"></i>
+															<a class="cards-btns" onclick="document.getElementById('formid').submit()" />
+															
+															<input value="Upload" style="border: none; background-color: white; color: rgb(180, 166, 166);" type="submit" >
+														</a>
+															<a href="" id="lp-remove-upload-photo"><i
+																	class="fas fa-times"></i>Remove</a>
+														</p>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+											<p>
+												<input type="hidden" name="save-profile-avatar" value="ec1b3bbc2b">
+											</p>
+										</form>
+										<script type="text/html" id="tmpl-crop-user-avatar">
+											<div class="lp-avatar-crop-image">
+												<div class="crop-container">
+													<img src="{{data.url}}?r={{data.r}}" />
+												</div>
+
+												<div class="lp-crop-area" style="width: {{data.viewWidth}}px; height: {{data.viewHeight}}px;"></div>
+
+												<div class="lp-crop-controls">
+													<div class="lp-zoom">
+														<div></div>
+													</div>
+													<a href="" class="lp-save-upload">
+														<i class="fas fa-check"></i>
+													</a>
+													<a href="" class="lp-cancel-upload">
+														<i class="fas fa-times"></i>
+													</a>
+												</div>
+												<input type="hidden" name="lp-user-avatar-crop[name]" data-name="name" value="{{data.name}}" />
+												<input type="hidden" name="lp-user-avatar-crop[width]" data-name="width" value="" />
+												<input type="hidden" name="lp-user-avatar-crop[height]" data-name="height" value="" />
+												<input type="hidden" name="lp-user-avatar-crop[points]" data-name="points" value="" />
+												<input type="hidden" name="lp-user-avatar-crop[nonce]" value="f8e60592b6" />
+												<input type="hidden" name="lp-user-avatar-custom" value="yes" />
+											</div>
+										</script>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// $("#upload").click(function(){
+	// 	$("#upload-file").trigger('click');
+	// });
+
+
+	$("#upload").click(function () {
+		$("#upload-file").click();
+	});​
+</script>
+
+{% endblock body %}

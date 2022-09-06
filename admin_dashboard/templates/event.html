@@ -1,0 +1,676 @@
+{% include 'dbasic.html' %}
+
+{% block body %}
+{% load static %}
+<style>
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.panel-body {
+    width: 100%;
+    height: 18vw;
+    object-fit: cover;
+}
+.card-title{
+    color:#2a6496;
+}
+
+ p{
+    font-size: 14px!important;
+    padding: 5px!important;
+}
+/* .pan */
+
+</style>
+ <div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header" style="text-align: center;">
+                            {% if blog  %}
+                           Blogs
+                       <a href="{% url 'add_blog' %}">   <button class="btn btn-primary "  style="float: right;">
+                           Add 
+                           </button></a>
+                           {% elif events  %}Events
+                           <a href="{% url 'add_event' %}">   <button class="btn btn-primary " style="float: right;">
+                            Add 
+                            </button></a>
+                           {% elif products  %}Products
+                           <a href="{% url 'add_product' %}">
+
+                          <button class="btn btn-primary " style="float: right;">
+                            Add 
+                            </button></a>
+                           {% elif crss  %}Courses
+                           <a href="{% url 'add_crs' %}">
+
+                           <button class="btn btn-primary " style="float: right;">
+                           Add 
+                           </button></a>
+                           {% endif  %}
+                           <!-- <small>Summary of all products</small> -->
+                        </h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+
+                                 
+            <div class="row-eq-height" >
+                {% for e in event %}
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default"> 
+                       <a href="{% url 'single-event' e.slug %}" >
+                      
+                        <div class="card-img-top" >
+                            <img src="/media/{{e.event_img}}" class="card-img-top" alt="...">
+                           
+                          </div></a>
+                        <div class="panel-body">
+                          <a href="{% url 'single-event' e.slug %}" >
+                            <h4 class="card-title">{{e.event_title|title}}</h4></a>
+                            <p>{{e.about_event|safe|capfirst|slice:':100'}}...</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary " onclick="$('#eid').val('{{e.id}}');" data-toggle="modal" data-target="#edit">
+                               Edit
+                              </button><button style="float: right;background-color: rgb(221, 47, 47);" 
+                              class="btn btn-primary " onclick="$('#evid').val('{{e.id}}');" data-toggle="modal" data-target="#delete">
+                               Delete
+                              </button>
+                        </div>
+                    </div>
+                </div>
+              
+                {% endfor %}
+               
+                {% for b in blogs %}
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                      <a href="{% url 'single-blog' b.slug %}" >
+                             <div class="card-img-top" >
+                            <img src="/media/{{b.blog_img}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                          </div></a>
+                        <div class="panel-body">
+                          <a href="{% url 'single-blog' b.slug %}" >
+                               <h4 class="card-title">{{b.blog_title|title}}</h4></a>
+                            <p>{{b.blog_description|safe|capfirst|slice:':100'}}...</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary " onclick="$('#bid').val('{{b.id}}');"data-toggle="modal" data-target="#edit">
+                               Edit
+                              </button><button style="float: right;background-color: rgb(221, 47, 47);" 
+                              class="btn btn-primary " onclick="$('#blid').val('{{b.id}}');" data-toggle="modal" data-target="#delete">
+                               Delete
+                              </button>
+                        </div>
+                    </div>
+                </div>{% endfor %}
+                
+                {% for c in crs %}
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                      <a href="{% url 'course-single' c.slug %}"
+								>
+                                <div class="card-img-top" >
+                            <img src="/media/{{c.course_img}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                          </div></a>
+                        <div class="panel-body">
+                          <a href="{% url 'course-single' c.slug %}"
+                          >
+                               <h4 class="card-title">{{c.course_title|title}}</h4></a>
+                            <p>{{c.course_description|safe|capfirst|slice:':100'}}...</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary " onclick="$('#cid').val('{{c.id}}');" data-toggle="modal" data-target="#edit">
+                               Edit
+                              </button><button style="float: right;background-color: rgb(221, 47, 47);" 
+                              class="btn btn-primary " onclick="$('#crid').val('{{c.id}}');" data-toggle="modal" data-target="#delete">
+                               Delete
+                              </button>
+                        </div>
+                    </div>
+                </div>{% endfor %}
+                
+                {% for p in product %}
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+                      <a href="{% url 'single-shop' p.slug %}">
+                                    
+                                        <div class="card-img-top" >
+                            <img src="/media/{{p.product_img}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <!-- <h5 class="card-title">Card title</h5>
+                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                              <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                            </div>
+                          </div></a>
+                        <div class="panel-body">
+                          <a href="{% url 'single-shop' p.slug %}">
+                                    
+                                        <h4 class="card-title">{{p.product_title|title}}</h4></a>
+                            <p>{{p.about_product|safe|capfirst|slice:':100'}}...</p>
+                        </div>
+                        <div class="panel-footer">
+                            <button class="btn btn-primary "
+                             onclick="$('#pid').val('{{p.id}}');"
+                              data-toggle="modal" data-target="#edit">
+                               Edit
+                              </button><button style="float: right;background-color: rgb(221, 47, 47);" 
+                              class="btn btn-primary " onclick="$('#prid').val('{{p.id}}');" data-toggle="modal" data-target="#delete">
+                               Delete
+                              </button>
+                        </div>
+                    </div>
+                </div>{% endfor %}
+
+               
+           
+        </div>
+                {% if crs %}  
+                <nav aria-label="Page navigation example text-center">
+                    <ul class="pagination justify-content-end">
+                        
+                        {% if crs.has_previous %}
+                      <li class="page-item ">
+                        <a class="page-link" href="?page={{crs.previous_page_number}}" tabindex="-1">Previous</a>
+                      </li>
+                      {% endif %}
+    
+                      <!-- {% for i in crs.paginator.page_range %}
+                      {% if crs.number == i %}
+                      <li class="page-item active"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                     {% else %}
+                      <li class="page-item "><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                      {% endif %}{% endfor %} -->
+    
+    
+                      {% for i in crs.paginator.page_range %}
+                      {% if crs.number == i %}
+                          <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                      {% elif i > crs.number|add:'-5' and i < crs.number|add:'5' %}
+                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+    
+                      {% if crs.has_next %}
+                       <li class="page-item">
+                        <a class="page-link" href="?page={{crs.next_page_number}}">Next</a>
+                      </li> {% endif %}
+                    </ul>
+                  </nav> 
+               {% elif product %} 
+                
+               <nav aria-label="Page navigation example text-center">
+                <ul class="pagination justify-content-end">
+                    
+                    {% if product.has_previous %}
+                  <li class="page-item ">
+                    <a class="page-link" href="?page={{product.previous_page_number}}" tabindex="-1">Previous</a>
+                  </li>
+                  {% endif %}
+
+                  {% for i in product.paginator.page_range %}
+                  {% if product.number == i %}
+                      <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                  {% elif i > product.number|add:'-5' and i < product.number|add:'5' %}
+                      <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                  {% endif %}
+              {% endfor %}
+
+
+
+
+                  {% if product.has_next %}
+                   <li class="page-item">
+                    <a class="page-link" href="?page={{product.next_page_number}}">Next</a>
+                  </li> {% endif %}
+                </ul>
+              </nav>  
+              {% elif blogs %} 
+                
+              <nav aria-label="Page navigation example text-center">
+               <ul class="pagination justify-content-end">
+                   
+                   {% if blogs.has_previous %}
+                 <li class="page-item ">
+                   <a class="page-link" href="?page={{blogs.previous_page_number}}" tabindex="-1">Previous</a>
+                 </li>
+                 {% endif %}
+                 {% for i in blogs.paginator.page_range %}
+                 {% if blogs.number == i %}
+                     <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                 {% elif i > blogs.number|add:'-5' and i < blogs.number|add:'5' %}
+                     <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                 {% endif %}
+             {% endfor %}
+ 
+ 
+ 
+ 
+                 {% if blogs.has_next %}
+                  <li class="page-item">
+                   <a class="page-link" href="?page={{blogs.next_page_number}}">Next</a>
+                 </li> {% endif %}
+               </ul>
+             </nav>  
+                
+
+              {% elif event %} 
+                
+<nav aria-label="Page navigation example text-center"> 
+               <ul class="pagination justify-content-end">
+                   
+                   {% if event.has_previous %}
+                 <li class="page-item ">
+                   <a class="page-link" href="?page={{event.previous_page_number}}" tabindex="-1">Previous</a>
+                 </li>
+                 {% endif %}
+
+                 {% for i in event.paginator.page_range %}
+                      {% if event.number == i %}
+                          <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                      {% elif i > event.number|add:'-5' and i < event.number|add:'5' %}
+                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+
+
+
+                 {% if event.has_next %}
+                  <li class="page-item">
+                   <a class="page-link" href="?page={{event.next_page_number}}">Next</a>
+                 </li> {% endif %}
+               </ul>
+             </nav> 
+            
+
+               {% endif %}
+                
+                
+                
+ </div>  
+                
+           
+</div>
+                
+
+
+            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title text-center" id="myModalLabel">Delete</h4>
+                      </div>
+                      <form action="" method="post">{% csrf_token %}
+                      <div class="modal-body text-center" style="font-size:20px;">
+                    
+                        <input type="hidden" name="evid" id="evid">
+                        <input type="hidden" name="prid" id="prid">
+                        <input type="hidden" name="crid" id="crid">
+                        <input type="hidden" name="blid" id="blid">
+                      Are You Sure You want to delete?  </div>
+                      <div class="modal-footer">
+                          <button type="close" class="btn btn-primary" data-dismiss="modal">No</button>
+                          <button type="submit" class="btn btn-danger">Yes</button>
+                      </div></form>
+                  </div>
+              </div>
+          </div>
+            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        
+        
+   <div class="modal-dialog " style="width: 70%;" >
+                  <div class="modal-content" >
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title" id="myModalLabel">Edit</h4>
+                      </div>
+                      <div class="modal-body">
+                    {% if blogs %}
+                    <form action="" method="post" >{% csrf_token %}
+                      <div class="row">
+                        
+                    <input type="hidden" name="eid" id="eid">
+                    
+                    <input type="hidden" name="pid" id="pid">
+                    <input type="hidden" name="cid" id="cid">
+                    <input type="hidden" name="bid" id="bid">
+                     <div class="col-lg-12">
+                         <div class="panel panel-default">
+                             <div class="panel-heading">
+                                Information
+                             </div>
+                             <!-- <div class="panel-body"> -->
+                                 <div class="row" style="margin: 15px;"> 
+                                     
+                                    <div class="col-lg-6">
+                                       
+                                            
+                                             <div class="form-group">
+                                                 <label>Blog Title</label>
+                                                 <input class="form-control" name="title" type="text">
+                                             </div>
+                                             <div class="form-group">
+                                                 <label>Blog Tag</label>
+                                                 <input class="form-control" name="tag" type="text">
+                                             </div>
+                                            
+                                             <div class="form-group">
+                                              <label>About</label>
+                                              <textarea class="form-control" name="about" rows="3"></textarea>
+                                          </div>
+                                                
+                                     </div>
+                                     <!-- /.col-lg-6 (nested) -->
+                                     <div class="col-lg-6">
+                                         <div class="form-group">
+                                             <label>Blog Category</label>
+                                             <input class="form-control" name="cat" type="text">
+                                         </div> 
+                                         
+                                         <div class="form-group">
+                                             <label>Instructors</label>
+                                             <select name="inst" class="form-control">
+                                              <option value="0">select</option>
+                                                {% for i in inst %}
+                                               
+                                                 <option value="{{i.id}}">{{i.name}}</option>
+                                                 {% endfor %}
+                                             </select>  </div> 
+                                       
+                                             <div class="form-group">
+                                              <label>Description</label>
+                                              <textarea class="form-control" name="desc" rows="3"></textarea>
+                                          </div>
+                                        
+                                     </div> 
+                                   
+                                   <div class="form-group">
+                                      <label>Blog Image</label>
+                                      <input class="form-control" type="file" name="img">
+                                  </div>
+                                     
+                                    
+                                  <button class="btn btn-primary " type="submit" style="float: right;">
+                                    Save Change</button>
+                                 </div>  
+                                 
+                 <!-- </div> -->
+                </form>
+                {% elif event %}
+                <form action="" method="post" >{% csrf_token %}
+                  <div class="row">
+                    
+                <input type="hidden" name="eid" id="eid">
+                
+                <input type="hidden" name="pid" id="pid">
+                <input type="hidden" name="cid" id="cid">
+                <input type="hidden" name="bid" id="bid">
+                 <div class="col-lg-12">
+                     <div class="panel panel-default">
+                         <div class="panel-heading">
+                            Information
+                         </div>
+                         <!-- <div class="panel-body"> -->
+                             <div class="row" style="margin: 15px;"> 
+                                 
+                                <div class="col-lg-4">
+                                   
+                                        
+                                         <div class="form-group">
+                                             <label>Event Title</label>
+                                             <input class="form-control" name="title" type="text">
+                                         </div>
+                                         <div class="form-group">
+                                             <label>Event Cost</label>
+                                             <input class="form-control" name="cost" type="number">
+                                         </div>
+                                         <div class="form-group">
+                                          <label>Event Date</label>
+                                          <input class="form-control" name="date" type="date">
+                                      </div>
+                                      <div class="form-group">
+                                        <label>Event Country</label>
+                                        <input class="form-control" name="country" type="text">
+                                    </div>
+                                            
+                                 </div><div class="col-lg-4">
+                                   
+                                        
+                                  <div class="form-group">
+                                      <label>Event StartDate</label>
+                                      <input class="form-control" name="startdate" type="date">
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Event StartTime</label>
+                                      <input class="form-control" name="starttime" type="time">
+                                  </div>
+                                  <div class="form-group">
+                                    <label>Event TotalSlot</label>
+                                    <input class="form-control" name="slot" type="number">
+                                </div>
+                                  <div class="form-group">
+                                   <label>About</label>
+                                   <textarea class="form-control" name="about" rows="3"></textarea>
+                               </div>
+                                     
+                          </div>
+                                 <!-- /.col-lg-6 (nested) -->
+                                 <div class="col-lg-4">
+                                     <div class="form-group">
+                                         <label>Event EndDate</label>
+                                         <input class="form-control" name="enddate" type="date">
+                                     </div> 
+                                     
+                                     <div class="form-group">
+                                      <label>Event EndTime</label>
+                                      <input class="form-control" name="endtime" type="time">
+                                  </div> 
+                                  <div class="form-group">
+                                    <label>Event State</label>
+                                    <input class="form-control" name="state" type="text">
+                                </div>
+                                         <div class="form-group">
+                                          <label>Description</label>
+                                          <textarea class="form-control" name="desc" rows="3"></textarea>
+                                      </div>
+                                    
+                                 </div> 
+                               
+                               <div class="form-group">
+                                  <label>Event Image</label>
+                                  <input class="form-control" type="file" name="img">
+                              </div>
+                                 
+                                
+                              <button class="btn btn-primary " type="submit" style="float: right;">
+                                Save Change</button>
+                             </div>  
+                             
+             <!-- </div> -->
+            </form> {% elif product %}
+            <form action="" method="post" >{% csrf_token %}
+              <div class="row">
+                
+            <input type="hidden" name="eid" id="eid">
+            
+            <input type="hidden" name="pid" id="pid">
+            <input type="hidden" name="cid" id="cid">
+            <input type="hidden" name="bid" id="bid">
+             <div class="col-lg-12">
+                 <div class="panel panel-default">
+                     <div class="panel-heading">
+                        Information
+                     </div>
+                     <!-- <div class="panel-body"> -->
+                         <div class="row" style="margin: 15px;"> 
+                             
+                            <div class="col-lg-6">
+                               
+                                    
+                                     <div class="form-group">
+                                         <label>Product Title</label>
+                                         <input class="form-control" name="title" type="text">
+                                     </div>
+                                     <div class="form-group">
+                                         <label>Product Tag</label>
+                                         <input class="form-control" name="tag" type="text">
+                                     </div>
+                                     <div class="form-group">
+                                      <label>Product Discount</label>
+                                      <input class="form-control" name="dis" type="number">
+                                  </div> 
+                                  <div class="form-group">
+                                    <label>Product SKU</label>
+                                    <input class="form-control" name="sku" type="number">
+                                </div> 
+                                     <div class="form-group">
+                                      <label>About</label>
+                                      <textarea class="form-control" name="about" rows="3"></textarea>
+                                  </div>
+                                        
+                             </div>
+                             <!-- /.col-lg-6 (nested) -->
+                             <div class="col-lg-6">
+                                 <div class="form-group">
+                                     <label>Product Category</label>
+                                     <input class="form-control" name="cat" type="text">
+                                 </div> 
+                                 
+                                 <div class="form-group">
+                                  <label>Product Price</label>
+                                  <input class="form-control" name="price" type="number">
+                              </div> 
+                              <div class="form-group">
+                                <label>Product Quntity</label>
+                                <input class="form-control" name="qunt" type="number">
+                            </div>  <div class="form-group">
+                              <label>Product Image</label>
+                              <input class="form-control" type="file" name="img">
+                          </div>
+                                     <div class="form-group">
+                                      <label>Description</label>
+                                      <textarea class="form-control" name="desc" rows="3"></textarea>
+                                  </div>
+                                
+                             </div> 
+                           
+                          
+                             
+                            
+                          <button class="btn btn-primary " type="submit" style="float: right;">
+                            Save Change</button>
+                         </div>  
+                         
+         <!-- </div> -->
+        </form> {% elif crs %}
+        
+        <form action="" method="post" >{% csrf_token %}
+          <div class="row">
+            
+        <input type="hidden" name="eid" id="eid">
+        
+        <input type="hidden" name="pid" id="pid">
+        <input type="hidden" name="cid" id="cid">
+        <input type="hidden" name="bid" id="bid">
+         <div class="col-lg-12">
+             <div class="panel panel-default">
+                 <div class="panel-heading">
+                    Information
+                 </div>
+                 <!-- <div class="panel-body"> -->
+                     <div class="row" style="margin: 15px;"> 
+                         
+                        <div class="col-lg-6">
+                           
+                                
+                                 <div class="form-group">
+                                     <label>Course Title</label>
+                                     <input class="form-control" name="title" type="text">
+                                 </div>
+                                 <div class="form-group">
+                                     <label>Course Price</label>
+                                     <input class="form-control" name="price" type="number">
+                                 </div>
+                                
+                                 <div class="form-group">
+                                  <label>Course Image</label>
+                                  <input class="form-control" type="file" name="img">
+                              </div>   
+                         </div>
+                         <!-- /.col-lg-6 (nested) -->
+                         <div class="col-lg-6">
+                             <div class="form-group">
+                                 <label>Course Category</label>
+                                 <input class="form-control" name="cat" type="text">
+                             </div> 
+                             
+                             <div class="form-group">
+                                 <label>Instructors</label>
+                                 <select name="inst" class="form-control">
+                                  <option value="0">select</option>
+                                   {% for i in inst %}
+                                     
+                                     <option value="{{i.id}}">{{i.name}}</option>
+                                     {% endfor %}
+                                 </select>  </div> 
+                           
+                                 <div class="form-group">
+                                  <label>Course Certificate</label>
+                                  <input type="file" class="form-control" name="certificate">
+                              </div>
+                               
+                            
+                         </div> 
+                       
+                         <div class="form-group">
+                          <label>Description</label>
+                          <textarea class="form-control" name="desc" rows="3"></textarea>
+                      </div>
+                         
+                        
+                      <button class="btn btn-primary " type="submit" style="float: right;">
+                        Save Change</button>
+                     </div>  
+                     
+     <!-- </div> -->
+    </form>
+                    {% endif %}                    
+                  </div>
+              </div>
+            
+          </div>
+          </div>
+          <!-- <script>
+
+            $(function() {
+            
+            $('#chkveg').multiselect({
+              includeSelectAllOption: true
+            });
+            
+            $('#btnget').click(function() {
+              data=($('#chkveg').val());
+            });
+            });
+                        </script>
+         -->
+{% endblock body %}

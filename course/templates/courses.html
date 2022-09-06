@@ -1,0 +1,224 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+
+
+
+
+{% block body1 %}
+
+<link rel='stylesheet' id='learn-press-pmpro-style-css'
+href="{% static '/wp-content/plugins/ecademy-toolkit/inc/paid-membership-pro/assets/lp-pms-style.min.css' %}"
+type='text/css' media='all' />
+<link rel='stylesheet' id='redux-google-fonts-ecademy_opt-css'
+href='https://fonts.googleapis.com/css?family=Nunito&#038;ver=1635007015' type='text/css' media='all' />
+<link rel='stylesheet' id='lp-font-awesome-5-css'
+href="{% static '/wp-content/plugins/learnpress/assets/src/css/vendor/font-awesome-5.min.css' %}" type='text/css'
+media='all' />
+<link rel='stylesheet' id='lp-bundle-css'
+href="{% static '/wp-content/plugins/learnpress/assets/css/bundle.min.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='learnpress-css'
+href="{% static '/wp-content/plugins/learnpress/assets/css/learnpress.css' %}" type='text/css' media='all' />
+
+
+<script type='text/javascript' src="{% static '/wp-includes/js/underscore.min.js' %}" id='underscore-js'></script>
+	
+<script type='text/javascript' src="{% static '/wp-includes/js/utils.min.js' %}" id='utils-js'></script>
+	
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/global.min.js' %}"
+id='lp-global-js'></script>
+
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/frontend/courses.min.js' %}"
+		id='lp-courses-js'></script>
+	
+
+		{% endblock body1 %}
+
+
+<div class="lp-archive-courses">
+	<div class="page-title-area" style="background-image:url();">
+
+		<div class="container">
+			<div class="page-title-content" style="margin-top:-60px;">
+				<h2>Courses</h2>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li>Courses</li>
+				</ul>
+			</div>
+		</div>
+		<div class="shape9">
+			<img src="{% static '/wp-content/themes/ecademy/assets/img/shape8.svg' %}" alt="Shape Image One">
+		</div>
+	</div>
+	<div class="courses-area courses-section pt-100 pb-70 lp-content-area " >
+		<div class="container" style="margin-top:-90px;">
+			<div class="row">
+				<div class="col-lg-12 col-md-12" >
+					<div class="ecademy-grid-sorting row align-items-center">
+						
+						<div class="col-lg-6 col-md-6 result-count"  >
+							{% if crs|length != 0 %}
+								<p>Showing 1-{{count}} of {{cnt}} results</p>{% endif %}
+						</div>
+						<div class="col-lg-6 col-md-6 ordering">
+							<div class="topbar-search">
+								<form method="POST">{% csrf_token %}
+									<label><i class="bx bx-search"></i></label>
+									<input type="text" value="" name="search" placeholder="Search our courses"
+										class="input-search" autocomplete="off">
+									<input type="hidden" value="course" name="ref">
+									<input type="hidden" name="post_type" value="lp_course">
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="row justify-content-center" >
+						
+				<ul class="row learn-press-courses" >
+						
+						{% comment %} {% for c in crs %}
+							<div id="post-604"
+								class="col-lg-4 col-md-6 post-604 lp_course type-lp_course status-publish has-post-thumbnail hentry course_category-python course_category-web-development course_tag-python course_tag-web-development pmpro-has-access course">
+								<div class="single-courses-box">
+									<div class="courses-image">
+										<a href="{% url 'course-single' c.slug %}"
+											class="d-block image">
+											{% if c.course_img|length != 0 %}
+											<img src="/media/{{c.course_img}}" width="100%"
+												alt="">{% else %}
+												<img src="/media/default.png"  width="100%"
+												alt="">{% endif %}
+										</a>
+										<div class="course-price">
+											<span class="price">${{c.course_price}}</span>
+
+										</div>
+									</div>
+									<div class="courses-content">
+										<div class="course-author d-flex align-items-center">
+											{% if c.course_instructor.img|length != 0 %}
+											<img alt="User Avatar"
+												src="/media/{{c.course_instructor.img}}"
+												class="avatar avatar-96 photo" height="250" width="250" loading="lazy">
+											{% else %}
+											<img alt="User Avatar"
+											src="/media/default.png"
+											class="avatar avatar-96 photo" height="250" width="250" loading="lazy">
+									{% endif %}
+
+
+											<span><a href="{% url 'profile' c.course_instructor.slug %}"><span>
+														{{c.course_instructor.name|capfirst}}</span></a></span>
+										</div>
+										<h3><a
+												href="{% url 'course-single' c.slug %}">
+												{{c.course_title|capfirst|safe|slice:':60'}}</a></h3>
+										<p></p>
+										<p>{{c.course_description|safe|slice:':200'|capfirst}}...</strong></p>
+										<p></p>
+										<ul
+											class="courses-box-footer d-flex justify-content-between align-items-center">
+
+											<li>
+												<i class="flaticon-agenda"></i> {{c.lession_no}} Lessons </li>
+											<li>
+												<i class="flaticon-people"></i> {{c.student_no}} Students </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						{% endfor %} {% endcomment %}
+							
+						{% for c in crs %} 
+						<div class='col-lg-6 col-md-6' >
+							
+							<section style="width:590px;margin-left:-30px;" >
+			
+								<div class="container" style='height:400px;border-radius:15px;width:570px;'>
+									<div class="get-instant-courses-inner-area">
+										<div class="row align-items-center" style='border-radius:10px;box-shadow:0px 0px 5px 5px #e6e6e6;'>
+											<button style='border-radius:0px 0px 5px 5px ;font-size:20px;margin-left:200px;height:40px;font-weight:bolder;width:150px;background: #ff4d4d;color:white;'>${{c.course_price}}</button>
+							
+																		
+							
+												<div style='display:flex '>
+													{% comment %} <a href="{% url 'course-single' c.slug %}"> {% endcomment %}
+												<img src="/media/{{c.course_img}}" style='margin-left:10px;height:200px;margin-top:10px;width:250px;border-radius:10px;'>
+												{% comment %} </a>			 {% endcomment %}
+												<div>
+													<a href="{% url 'course-single' c.slug %}">
+													<h3 style='font-size:20px;margin-top:70px;color: black;margin-left:10px;font-weight:800;'>{{c.course_title|slice:':40'|capfirst}}</h3></a>	
+													<h6 style='font-size:15px;margin-left:;margin-top:30px;margin-left:10px;color:black;'>{{c.short_course_description|safe|slice:":90"|capfirst}}...</h6>
+														<button style='border-radius:10px;font-size:20px;background:#ff4d4d;color:white;margin-top:20px;height:40px;width:120px;margin-bottom:15px;margin-left:10px;'><a style='color:white;' href="">Explore</a></button>
+				
+													</div>
+											</div>
+														
+										</div>
+									  {% comment %} <div class="shape5" data-speed="0.02" data-revert="true">
+											<img src="{% static '/wp-content/uploads/2020/05/shape5.png' %}"
+												alt="Shape Image">
+										</div>   {% endcomment %}
+									</div>
+								</div>
+							</section>
+				
+							
+			
+						</div>
+						
+						
+
+					
+						{% endfor %} 
+
+
+					
+
+					</ul>
+				
+						{% if crs|length != 0 %}
+						<nav class="pagination-area text-center learn-press-pagination navigation pagination">
+						
+								
+								{% if crs.has_previous %}
+								<a class="previous page-numbers"
+								href="?page={{crs.previous_page_number}}"><i
+									class="bx bxs-chevrons-left"></i></a>
+								{% endif %}
+								{% for i in crs.paginator.page_range %}
+								{% if crs.number == i %}
+								<a 
+									href="?page={{i}}">
+								<span aria-current="page" class="page-numbers current">{{i}}</span></a>
+								{% else %} <a 
+								href="?page={{i}}"> <span aria-current="page" class="page-numbers ">{{i}}</span>
+			</a>
+									{% endif %}{% endfor %}
+
+				
+								 {% if crs.has_next %}
+									<a class="next page-numbers"
+									href="?page={{crs.next_page_number}}"><i
+										class="bx bxs-chevrons-right"></i></a>
+									{% endif %}
+									
+							
+								
+								</nav>
+								{% endif %}
+
+
+
+
+								
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+	{% endblock body %}

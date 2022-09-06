@@ -1,0 +1,274 @@
+{% load static %}
+{% load newfilter %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	{% with ''|getContact as abouts %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>{{abouts.0.title}}</title>
+    <!-- Bootstrap Styles-->
+    <link href="/static/file/assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="/static/file/assets/css/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="/static/file/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="/static/file/assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <link rel="icon" type="image/x-icon" href="/media/{{abouts.0.favicon}}">
+</head>
+{% endwith %}
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'ad_dash' %}">Admin</a>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Doe</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Today</em>
+                                    </span>
+                                </div>
+                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+                                </div>
+                                <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>Read All Messages</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                   
+                </li> -->
+                <!-- /.dropdown -->
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user fa-fw" style="font-size: 20px;"></i> <i class="fa fa-caret-down"
+                            style="font-size: 20px;"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="{% url 'ad_profile' %}"><i class="fa fa-user fa-fw"></i>Profile</a>
+                        </li>
+                        <li><a href="{% url 'ad_profile' %}"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="{% url 'ad_logout' %}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" style="background-color: black;" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    {% url 'ad_dash' as ad_dash %}
+                    <li>
+                        <a class="{% if request.path == ad_dash %}active-menu{% endif %}" href="{{ad_dash}}"><i
+                                class="fa fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    {% url 'ad_course' as ad_course %}
+                    <li>
+                        <a class="{% if request.path == ad_course %}active-menu{% endif %}" href="{{ad_course}}"><i
+                                class="fa fa-qrcode"></i> Courses</a>
+                    </li>
+                    {% url 'ad_blog' as ad_blog %}
+                    <li>
+                        <a class="{% if request.path == ad_blog %}active-menu{% endif %}" href="{{ad_blog}}"><i
+                                class="fa fa-desktop"></i>Blogs</a>
+                    </li>
+                    {% url 'ad_event' as ad_event %}
+                    <li>
+                        <a class="{% if request.path == ad_event %}active-menu{% endif %}" href="{{ad_event}}"><i
+                                class="fa fa-bar-chart-o"></i>Events</a>
+                    </li>
+
+                    {% url 'ad_product' as ad_product %}
+                    <li>
+                        <a class="{% if request.path == ad_product %}active-menu{% endif %}" href="{{ad_product}}"><i
+                                class="fa fa-table"></i> Products</a>
+                    </li>
+                    {% url 'payments' as payments %}
+                    <li>
+                        <a class="{% if request.path == payments %}active-menu{% endif %}" href="{{payments}}"><i
+                                class="fa fa-shopping-cart"></i> Payments </a>
+                    </li>
+                    {% url 'inst' as inst %}
+                    <li>
+                        <a class="{% if request.path == inst %}active-menu{% endif %}" href="{{inst}}"><i
+                                class="fa fa-users"></i> Instructors </a>
+                    </li>
+                    {% url 'stud' as studurl %}
+                    <li>
+                        <a class="{% if request.path == studurl %}active-menu{% endif %}" href="{{studurl}}"><i
+                                class="fa fa-user"></i> Students </a>
+                    </li>
+                    {% url 'coupons' as couponurl %}
+                    <li>
+                        <a class="{% if request.path == couponurl %}active-menu{% endif %}" href="{{couponurl}}"><i
+                                class="fa  fa-file-text-o"></i> Coupons </a>
+                    </li>
+                    {% url 'who' as whourl %}
+                    <li>
+                        <a class="{% if request.path == whourl %}active-menu{% endif %}" href="{{whourl}}"><i
+                                class="fa fa-book"></i>
+                                
+                                Who For Courses </a>
+                    </li>
+
+                    {% url 'blgele' as blgsurl %}
+                    <li>
+                        <a class="{% if request.path == blgsurl %}active-menu{% endif %}" href="{{blgsurl}}"><i
+                                class="fa fa-tachometer"></i> Blog Elements </a>
+                    </li>
+                    <!-- 
+                    <li>
+                        <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Third Level Link</a>
+                                    </li>
+
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                    </li> -->
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        {% if messages %}
+
+
+        <div class="panel-body" style="background-color: white;">
+            {% for m in messages %}
+            {% if m.tags == 'success' %}
+            <div class="alert alert-success" style="margin-left: 20%;margin-right: 10px">
+                &nbsp;&nbsp; <strong>Success!</strong>&nbsp;&nbsp;{{m}} <button type="button" data-dismiss="alert"
+                    class="close" aria-hidden="true">&times;</button>
+
+            </div>
+            {% endif %} {% if m.tags == 'info' %}
+            <div class="alert alert-info" style="margin-left: 20%;margin-right: 10px">
+                &nbsp;&nbsp; <strong>Heads up!</strong>&nbsp;&nbsp; {{m}} <button type="button" data-dismiss="alert"
+                    class="close" aria-hidden="true">&times;</button>
+
+            </div>{% endif %} {% if m.tags == 'warning' %}
+            <div class="alert alert-warning" style="margin-left: 20%;margin-right: 10px">
+                &nbsp;&nbsp; <strong>Warning!</strong>&nbsp;&nbsp;{{m}} <button type="button" data-dismiss="alert"
+                    class="close" aria-hidden="true">&times;</button>
+
+            </div>{% endif %} {% if m.tags == 'error' %}
+            <div class="alert alert-danger" style="margin-left: 20%;margin-right: 10px">
+                &nbsp;&nbsp; <strong>Error!</strong> &nbsp;&nbsp;{{m}} <button type="button" data-dismiss="alert"
+                    class="close" aria-hidden="true">&times;</button>
+
+            </div>{% endif %}
+            {% endfor %}</div>
+
+        {% endif %}
+        {% block body %}
+        {% endblock body %}
+
+
+        {% block body1 %}
+        {% endblock body1 %}
+        <!-- /. ROW  -->
+        <!-- <footer><p>All right reserved. Template by:
+       <a href="http://webthemez.com">WebThemez</a></p></footer>
+</div> -->
+        <!-- /. PAGE INNER  -->
+        <!-- </div> -->
+
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script src="/static/file/assets/js/jquery-1.10.2.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/static/file/assets/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="/static/file/assets/js/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <script src="/static/file/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/static/file/assets/js/morris/morris.js"></script>
+    <!-- Custom Js -->
+    <script src="/static/file/assets/js/custom-scripts.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+<div class="page-title-area">
+    <div class="container">
+        <div class="page-title-content">
+            <h2>Instructor</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li class="item-current item-312">Instructor</li>
+            </ul>
+        </div>
+    </div>
+    <div class="shape9">
+        <img src="{% static '/wp-content/themes/ecademy/assets/img/shape8.svg' %}" alt="Shape Image One">
+    </div>
+</div>
+<div class="page-area">
+    <div id="post-312" class="post-312 page type-page status-publish hentry pmpro-has-access">
+        <div class="entry-content ecademy-Instructor-un">
+            <div data-elementor-type="wp-page" data-elementor-id="312" class="elementor elementor-312"
+                 data-elementor-settings="[]">
+                <div class="elementor-inner">
+                    <div class="elementor-section-wrap">
+
+                        
+                        <section
+                                class="elementor-section elementor-top-section elementor-element elementor-element-feb7f5e elementor-section-full_width advisor-area pt-100 pb-70 sc-bor-1 elementor-section-height-default elementor-section-height-default"
+                                data-id="feb7f5e" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-no">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1fcba63"
+                                         data-id="1fcba63" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-8115dcf elementor-widget elementor-widget-eCademy_Instructors"
+                                                     data-id="8115dcf" data-element_type="widget"
+                                                     data-widget_type="eCademy_Instructors.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                {% for i in instructor %}
+                                                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                                                    <div class="start-with-success-box">
+                                                                        <div class="image">
+                                                                            <a href="{% url 'profile' i.slug %}">
+                                                                                {% if i.img|length != 0 %}
+                                                                                <img width="590" height="570"
+                                                                                     src="/media/{{i.img}}"
+                                                                                     class="attachment-ecademy_advisor_thumb_two size-ecademy_advisor_thumb_two"
+                                                                                     alt="" loading="lazy"
+                                                                                     srcset="/media/{{i.img}} 590w, /media/{{i.img}} 300w"
+                                                                                     sizes="(max-width: 590px) 100vw, 590px"/>
+                                                                                                        {% else %}
+
+                                                                                     <img width="590" height="570"
+                                                                                     src="/media/default.png"
+                                                                                     class="attachment-ecademy_advisor_thumb_two size-ecademy_advisor_thumb_two"
+                                                                                     alt="" loading="lazy"
+                                                                                     srcset="/media/default.png 590w, /media/default.png 300w"
+                                                                                     sizes="(max-width: 590px) 100vw, 590px"/>
+                                                                         {% endif %}
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="content">
+                                                                            <a href="{% url 'profile' i.slug %}"
+                                                                               class="link-btn"><i
+                                                                                    class="flaticon-right"></i></a>
+                                                                            <h3>{{i.name|capfirst}}</h3>
+                                                                            <span>{{i.expert|capfirst}}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                               {% endfor %}
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section
+                                class="elementor-section elementor-top-section elementor-element elementor-element-fb8e6e2 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+                                data-id="fb8e6e2" data-element_type="section">
+                            <div class="elementor-container elementor-column-gap-no">
+                                <div class="elementor-row">
+                                    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-b87b9ba"
+                                         data-id="b87b9ba" data-element_type="column">
+                                        <div class="elementor-column-wrap elementor-element-populated">
+                                            <div class="elementor-widget-wrap">
+                                                <div class="elementor-element elementor-element-647f8c4 elementor-widget elementor-widget-Section"
+                                                     data-id="647f8c4" data-element_type="widget"
+                                                     data-widget_type="Section.default">
+                                                    <div class="elementor-widget-container">
+                                                        <div class="premium-access-area ptb-100">
+                                                            <div class="container">
+                                                                <div class="premium-access-content">
+                                                                    <span class="sub-title">Online Certification</span>
+                                                                    <h2>You Can Be Your Own Guiding Star With Our
+                                                                        Help!</h2>
+                                                                    <p>Lorem ipsum dolor sit amet, consectetur
+                                                                        adipiscing elit, sed do eiusmod tempor
+                                                                        incididunt ut labore et dolore magna aliqua.</p>
+                                                                    <a href="/become-a-teacher/" class="default-btn"><i
+                                                                            class="flaticon-agenda"></i> Get Started Now<span></span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="shape3">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape3.png' %}"
+                                                                     alt="Shape Image">
+                                                            </div>
+                                                            <div class="shape4">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape4.png' %}"
+                                                                     alt="Shape Image">
+                                                            </div>
+                                                            <div class="shape8">
+                                                                <img src="{% static '/wp-content/uploads/2020/05/shape7.png' %}"
+                                                                     alt="Shape Image">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

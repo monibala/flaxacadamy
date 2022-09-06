@@ -1,0 +1,1854 @@
+{% load static %}
+{% load newfilter %}
+<!doctype html>
+<html lang="en-US">
+
+	{% with ''|getContact as abouts %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<!-- cyberCademy &#8211; Elementor LMS &amp; Online Courses Theme -->
+	<title>
+		{{abouts.0.title}}
+	</title>
+	<meta name='robots' content='noindex, nofollow' />
+	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+	<link rel='dns-prefetch' href='//s.w.org' />
+	<link rel="alternate" type="application/rss+xml" title="cyberCademy &raquo; Feed" href="/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="cyberCademy &raquo; Comments Feed" href="/comments/feed/" />
+	<script type="text/javascript">
+		window._wpemojiSettings = {
+			"baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/",
+			"ext": ".png",
+			"svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/",
+			"svgExt": ".svg",
+			"source": {
+				"concatemoji": "https:\/\/themes.envytheme.com\/ecademy\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.2"
+			}
+		};
+		! function (e, a, t) {
+			var n, r, o, i = a.createElement("canvas"),
+				p = i.getContext && i.getContext("2d");
+
+			function s(e, t) {
+				var a = String.fromCharCode;
+				p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0);
+				e = i.toDataURL();
+				return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
+			}
+
+			function c(e) {
+				var t = a.createElement("script");
+				t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
+			}
+			for (o = Array("flag", "emoji"), t.supports = {
+					everything: !0,
+					everythingExceptFlag: !0
+				}, r = 0; r < o.length; r++) t.supports[o[r]] = function (e) {
+				if (!p || !p.fillText) return !1;
+				switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
+					case "flag":
+						return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356,
+							56826, 55356, 56819
+						], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128,
+							56421, 56128, 56430, 56128, 56423, 56128, 56447
+						], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128,
+							56430, 8203, 56128, 56423, 8203, 56128, 56447
+						]);
+					case "emoji":
+						return !s([10084, 65039, 8205, 55357, 56613], [10084, 65039, 8203, 55357, 56613])
+				}
+				return !1
+			}(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports
+				.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+			t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
+				.readyCallback = function () {
+					t.DOMReady = !0
+				}, t.supports.everything || (n = function () {
+					t.readyCallback()
+				}, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !
+					1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () {
+					"complete" === a.readyState && t.readyCallback()
+				})), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n
+					.wpemoji)))
+		}(window, document, window._wpemojiSettings);
+	</script>
+	
+	
+	<!-- changessssssss -->
+	<style>.default-btn{
+	z-index: auto!important;
+	}</style>
+	<style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+
+
+<style>
+	#navid .default-btn {
+
+		padding-right: 15px!important;
+		padding-left: 35px!important;
+	}
+	
+
+	#navid .default-btn i {
+  font-size: 14px!important;
+  top:12px!important;
+  left: 14px!important;
+ 
+}
+
+#navid .ecademy-nav .navbar .navbar-nav .nav-item a {
+  margin-right: 1px!important;}
+
+#navid .ecademy-nav .others-option .option-item {
+  margin-left: 0px!important;
+}
+
+#navid .ecademy-nav .others-option .option-item:first-child {
+  margin-right: 15px!important;
+}
+
+#navid .ecademy-nav .others-option {
+  margin-left: 10px!important;
+}
+
+
+
+	</style>
+
+
+
+
+
+
+
+
+	<link rel='stylesheet' id='gradebook-css'
+		href="{% static '/wp-content/plugins/ecademy-toolkit/inc/gradebook/assets/css/gradebook.css' %}" type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='course-review-css'
+		href="{% static '/wp-content/plugins/learnpress-course-review/assets/css/course-review.css' %}" type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='wp-block-library-css'
+		href="{% static '/wp-includes/css/dist/block-library/style.min.css' %}" type='text/css' media='all' />
+	<link rel='stylesheet' id='wc-blocks-vendors-style-css'
+		href="{% static '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='wc-blocks-style-css'
+		href="{% static '/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='contact-form-7-css'
+		href="{% static '/wp-content/plugins/contact-form-7/includes/css/styles.css' %}" type='text/css' media='all' />
+	<link rel='stylesheet' id='font-awesome-4.7-css'
+		href="{% static '/wp-content/plugins/ecademy-toolkit/assets/css/font-awesome.min.css' %}" type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='fep-common-style-css'
+		href="{% static '/wp-content/plugins/front-end-pm/assets/css/common-style.css' %}" type='text/css'
+		media='all' />
+	<style id='fep-common-style-inline-css' type='text/css'>
+		#fep-wrapper {
+			background-color: ;
+			color: #000000;
+		}
+
+		#fep-wrapper a:not(.fep-button, .fep-button-active) {
+			color: #000080;
+		}
+
+		.fep-button {
+			background-color: #F0FCFF;
+			color: #000000;
+		}
+
+		.fep-button:hover,
+		.fep-button-active {
+			background-color: #D3EEF5;
+			color: #000000;
+		}
+
+		.fep-odd-even>div:nth-child(odd) {
+			background-color: #F2F7FC;
+		}
+
+		.fep-odd-even>div:nth-child(even) {
+			background-color: #FAFAFA;
+		}
+
+		.fep-message .fep-message-title-heading,
+		.fep-per-message .fep-message-title {
+			background-color: #F2F7FC;
+		}
+
+		#fep-content-single-heads .fep-message-head:hover,
+		#fep-content-single-heads .fep-message-head-active {
+			background-color: #D3EEF5;
+			color: #000000;
+		}
+	</style>
+	<link rel='stylesheet' id='pmpro_frontend-css'
+		href="{% static '/wp-content/plugins/paid-memberships-pro/css/frontend.css' %}" type='text/css'
+		media='screen' />
+	<link rel='stylesheet' id='pmpro_print-css'
+		href="{% static '/wp-content/plugins/paid-memberships-pro/css/print.css' %}" type='text/css' media='print' />
+	<link rel='stylesheet' id='woocommerce-layout-css'
+		href="{% static '/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css' %}" type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='woocommerce-smallscreen-css'
+		href="{% static '/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css' %}" type='text/css'
+		media='only screen and (max-width: 768px)' />
+	<link rel='stylesheet' id='woocommerce-general-css'
+		href="{% static '/wp-content/plugins/woocommerce/assets/css/woocommerce.css' %}" type='text/css' media='all' />
+	<style id='woocommerce-inline-inline-css' type='text/css'>
+		.woocommerce form .form-row .required {
+			visibility: visible;
+		}
+	</style>
+	<link rel='stylesheet' id='wpems-countdown-css-css'
+		href="{% static '/wp-content/plugins/wp-events-manager/inc/libraries//countdown/css/jquery.countdown.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='wpems-magnific-popup-css-css'
+		href="{% static '/wp-content/plugins/wp-events-manager/inc/libraries//magnific-popup/css/magnific-popup.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='ecademy-style-css' href="{% static '/wp-content/themes/ecademy/style.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='vendor-css' href="{% static '/wp-content/themes/ecademy/assets/css/vendor.min.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='ecademy-woocommerce-css'
+		href="{% static '/wp-content/themes/ecademy/assets/css/woocommerce.css' %}" type='text/css' media='all' />
+	<link rel='stylesheet' id='ecademy-main-style-css'
+		href="{% static '/wp-content/themes/ecademy/assets/css/style.css' %}" type='text/css' media='all' />
+
+
+	<style id='ecademy-main-style-inline-css' type='text/css'>
+		.default-btn,
+		.ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget:hover .icon,
+		.ecademy-nav .navbar .others-option .cart-btn a span,
+		.others-option-for-responsive .dot-menu:hover .inner .circle,
+		.others-option-for-responsive .option-inner .others-option .cart-btn a span,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget:hover .icon,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .others-option .cart-btn a span,
+		.banner-wrapper-content form button,
+		.home-banner-area,
+		.about-video-box .video-btn,
+		.single-courses-box .courses-image .price,
+		.single-courses-item-box .courses-image .price,
+		.courses-slides.owl-theme .owl-dots .owl-dot:hover span::before,
+		.courses-slides.owl-theme .owl-dots .owl-dot.active span::before,
+		.courses-slides.owl-theme .owl-nav [class*=owl-]:hover,
+		.shorting-menu.shorting-menu-style-two .filter::before,
+		.load-more-btn .load-more:hover,
+		.courses-details-desc .nav .nav-item .nav-link::before,
+		.courses-details-info .image .content i,
+		.courses-details-info .courses-share .share-info .social-link li a:hover,
+		.courses-details-desc-style-two .courses-author .author-profile-header,
+		.courses-sidebar-information .courses-share .share-info .social-link li a:hover,
+		.single-advisor-box .advisor-content .social-link li a:hover,
+		.advisor-slides.owl-theme .owl-dots .owl-dot:hover span::before,
+		.advisor-slides.owl-theme .owl-dots .owl-dot.active span::before,
+		.single-advisor-item .advisor-image .social-link li a:hover,
+		.advisor-slides-two.owl-theme .owl-dots .owl-dot:hover span::before,
+		.advisor-slides-two.owl-theme .owl-dots .owl-dot.active span::before,
+		.start-with-success-box .content .link-btn:hover,
+		.single-feedback-item::after,
+		.feedback-slides.owl-theme .owl-dots .owl-dot:hover span::before,
+		.feedback-slides.owl-theme .owl-dots .owl-dot.active span::before,
+		.testimonials-slides.owl-theme .owl-dots .owl-dot:hover span::before,
+		.testimonials-slides.owl-theme .owl-dots .owl-dot.active span::before,
+		.feedback-slides-two.owl-theme .owl-dots .owl-dot:hover span::before,
+		.feedback-slides-two.owl-theme .owl-dots .owl-dot.active span::before,
+		.profile-box .content .social-link li a:hover,
+		.profile-courses-quizzes .nav .nav-item .nav-link::before,
+		.profile-courses-quizzes .tab-content .nav .nav-item .nav-link:hover,
+		.profile-courses-quizzes .tab-content .nav .nav-item .nav-link.active,
+		.video-box .video-btn,
+		.events-details-image #timer .countdown-section::before,
+		.events-details-info .events-share .share-info .social-link li a:hover,
+		.blog-slides.owl-theme .owl-dots .owl-dot:hover span::before,
+		.blog-slides.owl-theme .owl-dots .owl-dot.active span::before,
+		.blog-slides.owl-theme .owl-nav [class*=owl-]:hover,
+		.blog-details .article-image-slides.owl-theme .owl-nav [class*=owl-]:hover,
+		.blog-details .article-footer .article-share .social li a,
+		.blog-details .article-author .author-profile-header,
+		blockquote::after,
+		.blockquote::after,
+		.prev-link-wrapper .image-prev::after,
+		.next-link-wrapper .image-next::after,
+		.become-instructor-partner-content.bg-color,
+		.teacher-register-box,
+		.apply-instructor-content .nav .nav-item .nav-link::before,
+		.single-products-box .products-image .products-button ul li a .tooltip-label,
+		.single-products-box .products-image .products-button ul li a .tooltip-label::before,
+		.single-products-box .products-image .products-button ul li a:hover,
+		.membership-levels-table .table thead th,
+		.membership-levels-table .table tbody tr td .select-btn:hover,
+		.pagination-area .page-numbers:hover,
+		.pagination-area .page-numbers.current,
+		.faq-accordion-tab .tabs li a:hover,
+		.faq-accordion-tab .tabs li.current a,
+		.login-form form .lost-your-password-wrap a::after,
+		.login-form form button,
+		.register-form form button,
+		.contact-info ul li:hover .icon,
+		.contact-form,
+		.single-footer-widget .social-link li a:hover,
+		.go-top:hover,
+		.wp-block-search .wp-block-search__button,
+		.wp-block-tag-cloud a:hover,
+		.wp-block-tag-cloud a:focus,
+		.page-links .post-page-numbers:hover,
+		.post-password-form input[type="submit"],
+		.comment-navigation .nav-links .nav-previous a:hover,
+		.comment-navigation .nav-links .nav-next a:hover,
+		.footer-area .single-footer-widget ul li::before,
+		.footer-area .tagcloud a:hover,
+		.sidebar .widget .widget-title::before,
+		.sidebar .widget_search form button:hover,
+		.sidebar .widget_search form button:focus,
+		.sidebar .tagcloud a:hover,
+		.comments-area .comment-body .reply a:hover,
+		#comments .comment-list .comment-body .reply a:hover,
+		lp-profile-content button,
+		#course-item-content-header .form-button.lp-button-back button,
+		.login-content .login-form form button,
+		.sidebar .tagcloud a:hover,
+		.footer-area .widget_search form button,
+		body.single-lp_course.course-item-popup .course-item-nav a:hover,
+		.learnpress .become-teacher-form button,
+		.learnpress #learn-press-checkout-login button,
+		.learnpress #learn-press-user-profile button,
+		.no-results form button,
+		.single-course-sidebar .widget ul li::before,
+		.single-course-sidebar .widget_lp-widget-popular-courses .widget-footer a:hover::before,
+		.single-course-sidebar .widget_lp-widget-featured-courses .widget-footer a:hover::before,
+		.single-course-sidebar .widget_lp-widget-recent-courses .widget-footer a:hover::before,
+		.sidebar .widget_lp-widget-popular-courses .widget-footer a:hover::before,
+		.sidebar .widget_lp-widget-featured-courses .widget-footer a:hover::before,
+		.sidebar .widget_lp-widget-recent-courses .widget-footer a:hover::before,
+		.wp-block-button__link,
+		.single-language-courses-box:hover .default-btn,
+		.single-language-courses-box .default-btn span,
+		.feedback-slides-style-two.feedback-slides.owl-theme::before,
+		.information-content .apply-details li .icon,
+		.products_details div.product .woocommerce-tabs ul#tabs .nav-item .nav-link::before,
+		.newsletter-modal .newsletter-modal-content .modal-inner-content form button,
+		.free-trial-form form button,
+		button#bbp_reply_submit,
+		.bg-fe4a55,
+		.experience-content .features-list li:hover i,
+		.single-pricing-box .default-btn span,
+		.experience-image .title,
+		.experience-image .video-btn:hover,
+		.experience-image::before,
+		#fep-menu .fep-button,
+		.fep-button,
+		.fep-button-active,
+		#event-lightbox .event_auth_button,
+		.event-auth-form input#wp-submit,
+		.about-content .about-list li span:hover i,
+		.feedback-slides-three.owl-theme .owl-nav [class*=owl-]:hover::before,
+		.courses-slides-two.owl-theme .owl-nav [class*=owl-]:hover::before,
+		.owl-item:nth-child(2) .single-kindergarten-courses-box,
+		.services-slides.owl-theme .owl-nav [class*=owl-]:hover::before,
+		.about-content .about-list li span:hover i,
+		.default-btn-style-two::before,
+		.experience-img::before,
+		.single-pricing-box .default-btn span,
+		.tutor-form-group.tutor-reg-form-btn-wrap .tutor-button,
+		.tutor-login-form-wrap input[type="submit"],
+		.pmpro_login_wrap #content-item-quiz button,
+		input[type=submit],
+		#popup_ok {
+			background-color: #fe4a55;
+		}
+
+		.ecademy-grid-sorting .ordering .nice-select .list .option:hover,
+		.ecademy-grid-sorting .ordering .nice-select .list .option.selected:hover,
+		.page-links .current,
+		.wp-block-file .wp-block-file__button,
+		.learnpress-page .lp-button,
+		#learn-press-course-curriculum.courses-curriculum ul li.current a,
+		.elementor-1114 .elementor-element.elementor-element-59893a7:not(.elementor-motion-effects-element-type-background),
+		.download-syllabus-form form .form-group .nice-select .list .option.selected:hover,
+		.download-syllabus-form form .form-group .nice-select .list .option:hover,
+		.fep-button:hover,
+		.learn-press-pmpro-buy-membership .purchase-button {
+			background-color: #fe4a55 !important;
+		}
+
+		.comments-area .form-submit input,
+		.coming-soon-content form .form-group .label-title::before,
+		.login-form form .remember-me-wrap [type="checkbox"]:checked+label:after,
+		.login-form form .remember-me-wrap [type="checkbox"]:not(:checked)+label:after,
+		.footer-area .widget_search form button,
+		.sidebar .widget .widget-title::after,
+		.sidebar .widget ul li::before,
+		.sidebar .widget_search form button,
+		learn-press-pagination .page-numbers>li a:hover,
+		.learn-press-pagination .page-numbers>li a.current,
+		.learn-press-pagination .page-numbers>li a:hover,
+		.learn-press [type=button],
+		.learn-press [type=reset],
+		.learn-press [type=submit],
+		.learn-press button,
+		body.single-lp_course.course-item-popup .curriculum-sections .section .section-content .course-item.current,
+		.learnpress .become-teacher-form .learn-press-message:before,
+		.learnpress #learn-press-checkout-login .learn-press-message:before,
+		#user-submit,
+		#bbp_search_submit,
+		.owl-item:nth-child(2) .single-kindergarten-courses-box .price,
+		.tutor-button.tutor-success,
+		.pmpro-has-access a.pmpro_btn,
+		.pmpro-has-access input.pmpro_btn,
+		.learnpress #learn-press-checkout-register button {
+			background: #fe4a55;
+		}
+
+		.learn-press-message:before,
+		.guest-and-class a {
+			background: #fe4a55 !important;
+		}
+
+		a:hover,
+		.section-title .sub-title,
+		.ecademy-nav .navbar .search-box button,
+		.ecademy-nav .navbar .navbar-nav .nav-item a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item:hover a,
+		.ecademy-nav .navbar .navbar-nav .nav-item.active a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li.active a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li.active a,
+		.ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a:hover,
+		.ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a.active,
+		.ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget .sub-title,
+		.ecademy-nav .navbar .others-option .cart-btn a:hover,
+		.others-option-for-responsive .option-inner .search-box button,
+		.others-option-for-responsive .option-inner .others-option .cart-btn a:hover,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .mean-nav ul li a.active,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a:hover,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a.active,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget .sub-title,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .search-box button,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .others-option .cart-btn a:hover,
+		.banner-wrapper-content form label,
+		.banner-wrapper-content .popular-search-list li a:hover,
+		.single-banner-box:hover .icon,
+		.single-box-item .link-btn,
+		.single-features-box .link-btn,
+		.about-content .sub-title,
+		.about-content .features-list li span i,
+		.about-content-box .sub-title,
+		.about-content-box .link-btn,
+		.single-courses-box .courses-image .fav:hover,
+		.single-courses-box .courses-content .course-author span a,
+		.single-courses-box .courses-content .courses-box-footer li i,
+		.single-courses-item .courses-content .fav:hover,
+		.single-courses-item .courses-content .price,
+		.single-courses-item .courses-content .courses-content-footer li i,
+		.single-courses-item-box .courses-image .fav:hover,
+		.single-courses-item-box .courses-content .course-author span,
+		.courses-info p a,
+		.shorting-menu .filter.active,
+		.shorting-menu .filter:hover,
+		.ecademy-grid-sorting .ordering .nice-select .list .option::before,
+		.load-more-btn .load-more,
+		.courses-details-desc .tab-content .courses-curriculum ul li a::before,
+		.courses-details-desc .tab-content .courses-curriculum ul li a .courses-meta .duration,
+		.courses-details-desc .tab-content .courses-curriculum ul li a:hover,
+		.courses-details-info .info li span i,
+		.courses-details-info .info li.price,
+		.courses-details-info .courses-share .share-info span,
+		.courses-details-header .courses-meta ul li span,
+		.courses-details-header .courses-meta ul li a:hover,
+		.courses-details-header .courses-meta ul li a:focus,
+		.courses-details-desc-style-two .why-you-learn ul li span i,
+		.courses-details-desc-style-two .courses-curriculum ul li a::before,
+		.courses-details-desc-style-two .courses-curriculum ul li a .courses-meta .duration,
+		.courses-details-desc-style-two .courses-curriculum ul li a:hover,
+		.courses-sidebar-information .info li span i,
+		.courses-sidebar-information .info li.price,
+		.courses-sidebar-information .courses-share .share-info span,
+		.slogan-content span,
+		.single-advisor-box .advisor-content .sub-title,
+		.single-advisor-item .advisor-content span,
+		.start-with-success-box .content .link-btn,
+		.start-with-success-box .content span,
+		.single-funfacts-box h3,
+		.single-funfacts-item h3,
+		.single-funfacts h3,
+		.feedback-content .sub-title,
+		.feedback-content .feedback-info p a,
+		.single-feedback-item .client-info .title h3,
+		.single-testimonials-item h3,
+		.single-feedback-box .client-info .title h3,
+		.single-testimonials-box h3,
+		.profile-box .content .sub-title,
+		.profile-courses-quizzes .tab-content .table tbody tr td a:hover,
+		.get-instant-courses-content .sub-title,
+		.single-events-box .image .date,
+		.single-events-box .content .location i,
+		.events-details-header ul li i,
+		.events-details-info .info li.price,
+		.events-details-info .btn-box p a,
+		.events-details-info .events-share .share-info span,
+		.single-blog-post .post-content .category:hover,
+		.single-blog-post .post-content .post-content-footer li i,
+		.single-blog-post-item .post-content .category:hover,
+		.single-blog-post-item .post-content .post-content-footer li .post-author span,
+		.single-blog-post-item .post-content .post-content-footer li i,
+		.blog-post-info p a,
+		.single-blog-post-box .post-content .category:hover,
+		.single-blog-post-box .post-content .post-content-footer li .post-author span,
+		.single-blog-post-box .post-content .post-content-footer li i,
+		.blog-details .article-content .entry-meta ul li span,
+		.blog-details .article-content .features-list li i,
+		.blog-details .article-footer .article-share .social li a:hover,
+		.blog-details .article-footer .article-share .social li a:focus,
+		.prev-link-wrapper a:hover .prev-link-info-wrapper,
+		.next-link-wrapper a:hover .next-link-info-wrapper,
+		.view-all-courses-content .sub-title,
+		.teacher-register-box form .default-btn:hover,
+		.premium-access-content .sub-title,
+		.page-title-content ul li a:hover,
+		.subscribe-content .sub-title,
+		.single-products-box .products-content .add-to-cart:hover,
+		.products-details-desc .price,
+		.contact-info .sub-title,
+		.contact-info ul li .icon,
+		.contact-form form .default-btn:hover,
+		.single-footer-widget .footer-links-list li a:hover,
+		.single-footer-widget .footer-contact-info li a:hover,
+		.footer-bottom-area p a,
+		.footer-bottom-area ul li a:hover,
+		.footer-area .calendar_wrap .wp-calendar-nav-prev a:hover,
+		.footer-area .single-footer-widget ul li a:hover,
+		body.single-lp_course.course-item-popup .curriculum-sections .section .section-content .course-item .section-item-link::before,
+		body.single-lp_course.course-item-popup .curriculum-sections .section .section-content .course-item .course-item-meta .item-meta.course-item-status,
+		.learnpress .become-teacher-form .message-info::before,
+		.learnpress #learn-press-checkout-login #checkout-form-login .row a:hover,
+		.learnpress #learn-press-user-profile .learn-press-form-login .row a:hover,
+		.learnpress #learn-press-user-profile .learn-press-form-register .row a:hover,
+		.learnpress .become-teacher-form .form-fields .form-field label span,
+		.single-course-sidebar .widget_lp-widget-popular-courses .course-entry .course-detail a:hover,
+		.single-course-sidebar .widget_lp-widget-popular-courses .course-entry .course-detail h3:hover,
+		.single-course-sidebar .widget_lp-widget-featured-courses .course-entry .course-detail a:hover,
+		.single-course-sidebar .widget_lp-widget-featured-courses .course-entry .course-detail h3:hover,
+		.single-course-sidebar .widget_lp-widget-recent-courses .course-entry .course-detail a:hover,
+		.single-course-sidebar .widget_lp-widget-recent-courses .course-entry .course-detail h3:hover,
+		.sidebar .widget_lp-widget-popular-courses .course-entry .course-detail a:hover,
+		.sidebar .widget_lp-widget-popular-courses .course-entry .course-detail h3:hover,
+		.sidebar .widget_lp-widget-featured-courses .course-entry .course-detail a:hover,
+		.sidebar .widget_lp-widget-featured-courses .course-entry .course-detail h3:hover,
+		.sidebar .widget_lp-widget-recent-courses .course-entry .course-detail a:hover,
+		.sidebar .widget_lp-widget-recent-courses .course-entry .course-detail h3:hover,
+		.lp-user-profile #learn-press-profile-content .learn-press-subtab-content .lp-sub-menu li span,
+		#learn-press-course-curriculum.courses-curriculum ul li a::before,
+		.sidebar .calendar_wrap table #today a,
+		.footer-area .calendar_wrap table #today,
+		.footer-area .single-footer-widget .wp-calendar-nav .wp-calendar-nav-next a:hover,
+		.sidebar .widget_rss ul li .rsswidget:hover,
+		.sidebar .calendar_wrap table th a,
+		.sidebar .calendar_wrap table #today,
+		.wp-block-calendar a,
+		.wp-block-image figcaption a,
+		blockquote a,
+		table td a,
+		dd a,
+		p a,
+		.page-main-content .wp-caption .wp-caption-text a,
+		.blog-details .wp-caption .wp-caption-text a,
+		.blog-details table a,
+		.blog-details .blog-details-content ul li a,
+		.sticky .single-blog-post .post-content .post-content-footer li a:hover,
+		.sticky .single-blog-post .post-content h3 a:hover,
+		.blog-details .blog-details-content .entry-meta li a:hover,
+		.blog-details .blog-details-content ol li a,
+		.wp-block-file a,
+		.blog-details .blog-details-content ol li a,
+		#comments .comment-metadata a:hover,
+		.page-main-content table a,
+		.products_details div.product .woocommerce-product-rating a.woocommerce-review-link:hover,
+		.products_details div.product .product_meta span.sku_wrapper span,
+		.single-language-courses-box .default-btn,
+		.information-content .sub-title,
+		.bbpress-wrapper a,
+		#bbpress-forums div.bbp-topic-author a.bbp-author-name,
+		#bbpress-forums div.bbp-reply-author a.bbp-author-name,
+		#bbpress-forums #bbp-single-user-details #bbp-user-navigation a:hover,
+		a.bbp-register-link,
+		a.bbp-lostpass-link,
+		.right-sidebar ul li a:hover,
+		.bbp-author-name:hover,
+		.download-syllabus-form form span.wpcf7-list-item-label a:hover,
+		.preloader .loader .sbl-half-circle-spin,
+		.boxes-info p a,
+		.overview-box .overview-content .sub-title,
+		.single-training-box .link-btn,
+		.experience-content .sub-title,
+		.download-syllabus-form form .form-group .nice-select .list .option::before,
+		#fep-content a,
+		.fep-error a,
+		.about-content .about-list li span:hover i,
+		.single-kindergarten-services-box .content .icon,
+		.single-kindergarten-courses-box .courses-image .fav:hover,
+		.single-blog-item .post-content .category:hover,
+		.events-box .content .location i,
+		.col-lg-3:nth-child(2) .single-selected-ages-box h3,
+		.col-lg-3:nth-child(2) .single-selected-ages-box .ages-number,
+		.tutor-container .tutor-course-loop-title h2 a:hover,
+		.lp-pmpro-membership-list .item-td.item-desc,
+		.lp-pmpro-membership-list .item-td.item-check,
+		.lp-pmpro-membership-list .item-td a:hover,
+		#pmpro_account-profile a,
+		a.ld-enroll-btn {
+			color: #fe4a55;
+		}
+
+		.single-footer-widget .footer-contact-info li a:hover,
+		.footer-area .single-footer-widget ul li a:hover,
+		span.bbp-admin-links a {
+			color: #fe4a55 !important;
+		}
+
+		.form-control:focus,
+		.ecademy-nav .navbar .search-box .input-search:focus,
+		.others-option-for-responsive .option-inner .search-box .input-search:focus,
+		.ecademy-responsive-nav .ecademy-responsive-menu.mean-container .search-box .input-search:focus,
+		.banner-wrapper-content form .input-search:focus,
+		.courses-slides.owl-theme .owl-dots .owl-dot:hover span,
+		.courses-slides.owl-theme .owl-dots .owl-dot.active span,
+		.ecademy-grid-sorting .ordering .nice-select:hover,
+		.advisor-slides.owl-theme .owl-dots .owl-dot:hover span,
+		.advisor-slides.owl-theme .owl-dots .owl-dot.active span,
+		.advisor-slides-two.owl-theme .owl-dots .owl-dot:hover span,
+		.advisor-slides-two.owl-theme .owl-dots .owl-dot.active span,
+		.funfacts-list .row .col-lg-6:nth-child(2) .single-funfacts-box,
+		.single-funfacts-box:hover,
+		.feedback-slides.owl-theme .owl-dots .owl-dot:hover span,
+		.feedback-slides.owl-theme .owl-dots .owl-dot.active span,
+		.testimonials-slides.owl-theme .owl-dots .owl-dot:hover span,
+		.testimonials-slides.owl-theme .owl-dots .owl-dot.active span,
+		.feedback-slides-two.owl-theme .owl-dots .owl-dot:hover span,
+		.feedback-slides-two.owl-theme .owl-dots .owl-dot.active span,
+		.blog-slides.owl-theme .owl-dots .owl-dot:hover span,
+		.blog-slides.owl-theme .owl-dots .owl-dot.active span,
+		.blog-details .article-image-slides.owl-theme .owl-nav [class*=owl-]:hover,
+		.login-form form .remember-me-wrap [type="checkbox"]:hover+label:before,
+		.login-form form .remember-me-wrap [type="checkbox"]:checked+label:before,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu,
+		.about-video-box .video-btn::after,
+		.about-video-box .video-btn::before,
+		.video-box .video-btn::after,
+		.video-box .video-btn::before,
+		.blog-details .article-footer .article-share .social li a,
+		.products-details-desc .products-share .social li a,
+		.user-actions,
+		.is-style-outline .wp-block-button__link,
+		#comments .comment-list .comment-body .reply a:hover,
+		.products_details div.product .woocommerce-product-rating a.woocommerce-review-link:hover,
+		.single-language-courses-box .default-btn,
+		.services-slides.owl-theme .owl-nav [class*=owl-],
+		.courses-slides-two.owl-theme .owl-nav [class*=owl-],
+		.default-btn-style-two,
+		.tutor-form-group.tutor-reg-form-btn-wrap .tutor-button,
+		.tutor-login-form-wrap input[type="submit"] {
+			border-color: #fe4a55;
+		}
+
+		.navbar-area {
+			background-color: #ffffff !important;
+		}
+
+		.footer-area .single-footer-widget p,
+		.footer-area .single-footer-widget ul li,
+		.single-footer-widget .footer-contact-info li a,
+		.footer-area .single-footer-widget ul li a {
+			color: #e4e4e4 !important;
+		}
+
+		.footer-area {
+			background-color: #100f1f;
+		}
+
+		.single-footer-widget .social-link li .d-block:hover {
+			color: var(--whiteColor) !important;
+		}
+
+		.single-products .sale-btn,
+		.single-products .products-image ul li a:hover,
+		.productsQuickView .modal-dialog .modal-content .products-content form button,
+		.productsQuickView .modal-dialog .modal-content button.close:hover,
+		.productsQuickView .modal-dialog .modal-content button.close:hover,
+		.woocommerce ul.products li.product:hover .add-to-cart-btn,
+		.shop-sidebar .widget_product_search form button,
+		.shop-sidebar a.button,
+		.shop-sidebar .woocommerce-widget-layered-nav-dropdown__submit,
+		.shop-sidebar .woocommerce button.button,
+		.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+		.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+		.woocommerce #respond input#submit.alt,
+		.woocommerce a.button.alt,
+		.woocommerce button.button.alt,
+		.woocommerce input.button.alt,
+		.products_details div.product .woocommerce-tabs .panel #respond input#submit,
+		.products_details div.product .product_title::before,
+		.woocommerce #respond input#submit.alt.disabled,
+		.woocommerce #respond input#submit.alt.disabled:hover,
+		.woocommerce #respond input#submit.alt:disabled,
+		.woocommerce #respond input#submit.alt:disabled:hover,
+		.woocommerce #respond input#submit.alt:disabled[disabled],
+		.woocommerce #respond input#submit.alt:disabled[disabled]:hover,
+		.woocommerce a.button.alt.disabled,
+		.woocommerce a.button.alt.disabled:hover,
+		.woocommerce a.button.alt:disabled,
+		.woocommerce a.button.alt:disabled:hover,
+		.woocommerce a.button.alt:disabled[disabled],
+		.woocommerce a.button.alt:disabled[disabled]:hover,
+		.woocommerce button.button.alt.disabled,
+		.woocommerce button.button.alt.disabled:hover,
+		.woocommerce button.button.alt:disabled,
+		.woocommerce button.button.alt:disabled:hover,
+		.woocommerce button.button.alt:disabled[disabled],
+		.woocommerce button.button.alt:disabled[disabled]:hover,
+		.woocommerce input.button.alt.disabled,
+		.woocommerce input.button.alt.disabled:hover,
+		.woocommerce input.button.alt:disabled,
+		.woocommerce input.button.alt:disabled:hover,
+		.woocommerce input.button.alt:disabled[disabled],
+		.woocommerce input.button.alt:disabled[disabled]:hover,
+		.btn-primary:hover,
+		.woocommerce #respond input#submit,
+		.woocommerce a.button,
+		.woocommerce button.button,
+		.woocommerce input.button,
+		.woocommerce .woocommerce-MyAccount-navigation ul .is-active a,
+		.woocommerce .woocommerce-MyAccount-navigation ul li a:hover,
+		.products_details div.product span.sale-btn,
+		.shop-sidebar .tagcloud a:focus,
+		.shop-sidebar .widget_search form button,
+		.shop-sidebar .widget .widget-title::before,
+		.shop-sidebar .widget ul li::before,
+		.shop-sidebar .tagcloud a:hover,
+		.shop-sidebar .tagcloud a:focus {
+			background-color: #fe4a55;
+		}
+
+		.btn-primary,
+		.btn-primary.disabled,
+		.btn-primary:disabled {
+			background-color: #fe4a55;
+		}
+
+		.productsQuickView .modal-dialog .modal-content .products-content .product-meta span a:hover,
+		.woocommerce ul.products li.product h3 a:hover,
+		.woocommerce ul.products li.product .add-to-cart-btn,
+		.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
+		.products_details div.product .woocommerce-tabs ul.tabs li a:hover,
+		.products_details div.product .woocommerce-tabs ul.tabs li.active,
+		.products_details div.product .woocommerce-tabs ul.tabs li.active a:hover,
+		.products_details div.product .product_meta span.posted_in a:hover,
+		.products_details div.product .product_meta span.tagged_as a:hover,
+		.products_details div.product span.price,
+		.cart-table table tbody tr td.product-name a,
+		.woocommerce-message::before,
+		.woocommerce-info::before,
+		.shop-sidebar .widget ul li a:hover,
+		.shop-sidebar .widget_rss .widget-title .rsswidget {
+			color: #fe4a55;
+		}
+
+		.woocommerce-info,
+		.woocommerce-message {
+			border-top-color: #fe4a55;
+		}
+
+		.shop-sidebar .widget_shopping_cart .cart_list li a:hover,
+		.shop-sidebar ul li a:hover {
+			color: #fe4a55 !important;
+		}
+
+		.woocommerce ul.products li.product:hover .add-to-cart-btn,
+		.form-control:focus,
+		.woocommerce .form-control:focus,
+		.shop-sidebar .tagcloud a:hover,
+		.shop-sidebar .tagcloud a:focus,
+		.tutor-button.tutor-success {
+			border-color: #fe4a55;
+		}
+
+		.navbar-area.no-sticky.is-sticky {
+			display: none !important;
+		}
+
+		.courses-curriculum .scroll-wrapper>.scroll-content {
+			overflow: inherit !important;
+		}
+
+		.courses-curriculum .scroll-wrapper {
+			overflow: initial !important;
+		}
+
+		.single-blog-post .post-image a img {
+			width: 100%;
+		}
+
+		.pmpro-has-access .entry-content ul {
+			list-style-type: none;
+		}
+
+		.lp-profile-content button,
+		#course-item-content-header .form-button.lp-button-back button {
+			background: #fe4a55;
+		}
+
+		.lp-profile-content button:hover,
+		.lp-profile-content button:focus,
+		#course-item-content-header .form-button.lp-button-back button:hover,
+		#course-item-content-header .form-button.lp-button-back button:focus {
+			color: #ffffff !important;
+		}
+
+		@media only screen and (max-width: 767px) {
+			#learn-press-profile .lp-content-area {
+				display: unset !important;
+			}
+		}
+	</style>
+	<link rel='stylesheet' id='ecademy-responsive-css'
+		href="{% static '/wp-content/themes/ecademy/assets/css/responsive.css' %}" type='text/css' media='all' />
+	<link rel='stylesheet' id='ecademy-fonts-css'
+		href='//fonts.googleapis.com/css2?family=Nunito%3Aital%2Cwght%400%2C300%3B0%2C400%3B0%2C600%3B0%2C700%3B0%2C800%3B0%2C900%3B1%2C600%3B1%2C700%3B1%2C800%3B1%2C900&#038;display=swap&#038;ver=1.0.0'
+		type='text/css' media='screen' />
+	<link rel='stylesheet' id='cookie-notice-front-css'
+		href="{% static '/wp-content/plugins/cookie-notice/includes/../css/front.min.css' %}" type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='dashicons-css' href="{% static '/wp-includes/css/dashicons.min.css' %}" type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='elementor-icons-css'
+		href="{% static '/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-frontend-legacy-css'
+		href="{% static '/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css' %}" type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='elementor-frontend-css'
+		href="{% static '/wp-content/plugins/elementor/assets/css/frontend.min.css' %}" type='text/css' media='all' />
+	<style id='elementor-frontend-inline-css' type='text/css'>
+		@font-face {
+			font-family: eicons;
+			src: url("{% static '/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0' %}");
+			src: url("{% static '/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.eot?5.10.0#iefix' %}") format("embedded-opentype"),
+			url("{% static '/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff2' %}") format("woff2"),
+			url("{% static '/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.woff' %}") format("woff"),
+			url("{% static '/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.ttf' %}") format("truetype"),
+			url("{% static '/wp-content/plugins/elementor/assets/lib/eicons/fonts/eicons.svg?5.10.0#eicon' %}") format("svg");
+			font-weight: 400;
+			font-style: normal
+		}
+	</style>
+	<link rel='stylesheet' id='elementor-post-17-css'
+		href="{% static '/wp-content/uploads/elementor/css/post-17.css' %}" type='text/css' media='all' />
+	<link rel='stylesheet' id='elementor-post-30-css'
+		href="{% static '/wp-content/uploads/elementor/css/post-30.css' %}" type='text/css' media='all' />
+	<link rel='stylesheet' id='video-conferencing-with-zoom-api-css'
+		href="{% static '/wp-content/plugins/video-conferencing-with-zoom-api/assets/public/css/style.min.css' %}"
+		type='text/css' media='all' />
+	<link rel='stylesheet' id='redux-google-fonts-ecademy_opt-css'
+		href='https://fonts.googleapis.com/css?family=Nunito&#038;ver=1635007015' type='text/css' media='all' />
+	<link rel='stylesheet' id='learnpress-widgets-css'
+		href="{% static '/wp-content/plugins/learnpress/assets/css/widgets.css' %}" type='text/css' media='all' />
+	<link rel='stylesheet' id='google-fonts-1-css'
+		href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=5.8.2'
+		type='text/css' media='all' />
+	<script type='text/javascript' src="{% static '/wp-includes/js/jquery/jquery.min.js' %}" id='jquery-core-js'>
+	</script>
+	<script type='text/javascript' src="{% static '/wp-includes/js/jquery/jquery-migrate.min.js' %}"
+		id='jquery-migrate-js'>
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/ecademy-toolkit/inc/gradebook/assets/js/table-js.js' %}" id='table-js-js'>
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/ecademy-toolkit/inc/gradebook/assets/js/gradebook.js' %}" id='gradebook-js'>
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/ecademy-toolkit/inc/gradebook/assets/js/papaparse.min.js' %}"
+		id='papaparse-js'>
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/ecademy-toolkit/inc/gradebook/assets/js/frontend-gradebook-export.js' %}"
+		id='learn-press-gradebook-export-frontend-js'></script>
+	<script type='text/javascript' src="{% static '/wp-content/themes/ecademy/assets/js/vendor.min.js' %}"
+		id='vendor-js'></script>
+	<script type='text/javascript' src="{% static '/wp-content/themes/ecademy/assets/js/cursor.min.js' %}"
+		id='ecademy-cursor-js'></script>
+	<script type='text/javascript' src="{% static 'wp-content/themes/ecademy/assets/js/main.js' %}"
+		id='ecademy-main-js'></script>
+	<script type='text/javascript' id='cookie-notice-front-js-extra'>
+		/* <![CDATA[ */
+		var cnArgs = {
+			"ajaxUrl": "https:\/\/themes.envytheme.com\/ecademy\/wp-admin\/admin-ajax.php",
+			"nonce": "ca86278568",
+			"hideEffect": "fade",
+			"position": "bottom",
+			"onScroll": "0",
+			"onScrollOffset": "100",
+			"onClick": "0",
+			"cookieName": "cookie_notice_accepted",
+			"cookieTime": "2592000",
+			"cookieTimeRejected": "2592000",
+			"cookiePath": "\/ecademy\/",
+			"cookieDomain": "",
+			"redirection": "0",
+			"cache": "0",
+			"refuse": "0",
+			"revokeCookies": "0",
+			"revokeCookiesOpt": "automatic",
+			"secure": "1"
+		};
+		/* ]]> */
+	</script>
+	<script async type='text/javascript'
+		src="{% static '/wp-content/plugins/cookie-notice/includes/js/front.min.js' %}"
+		 id='cookie-notice-front-js'>
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/ecademy-toolkit/inc/content-drip/assets/js/frontend.js' %}"
+		id='lpcd-frontend-js'></script>
+	<link rel="https://api.w.org/" href="/wp-json/" />
+	<link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/30" />
+	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="{% static '/wp-includes/wlwmanifest.xml' %}" />
+	<meta name="generator" content="WordPress 5.8.2" />
+	<meta name="generator" content="WooCommerce 5.8.0" />
+	<link rel="canonical" href="/" />
+	<link rel='shortlink' href='/' />
+	<link rel="alternate" type="application/json+oembed"
+		href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemes.envytheme.com%2Fecademy%2F" />
+	<link rel="alternate" type="text/xml+oembed"
+		href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemes.envytheme.com%2Fecademy%2F&#038;format=xml" />
+		
+  
+		<style id="learn-press-custom-css">
+		:root {
+			--lp-primary-color: #fe4a55;
+			--lp-secondary-color: #442e66;
+		}
+	</style>
+	<script type="text/javascript">
+		var ajaxurl = "/wp-admin/admin-ajax.php";
+	</script> <noscript>
+		<style>
+			.woocommerce-product-gallery {
+				opacity: 1 !important;
+			}
+		</style>
+	</noscript>
+	<link rel="icon" href="/media/{{abouts.0.favicon}}" sizes="32x32" />
+	<link rel="icon" href="/media/{{abouts.0.favicon}}" sizes="192x192" />
+	<link rel="apple-touch-icon" href="/media/{{abouts.0.favicon}}" />
+
+	<link rel='stylesheet' id='learn-press-pmpro-style-css'
+		href=" {% static '/wp-content/plugins/ecademy-toolkit/inc/paid-membership-pro/assets/lp-pms-style.min.css' %}"
+		type='text/css' media='all' />
+
+	<meta name="msapplication-TileImage" content="/media/{{abouts.0.favicon}}" />
+
+	<style type="text/css" title="dynamic-css" class="options-output">
+		.ecademy-nav .navbar .navbar-brand {
+			width: 140px;
+		}
+
+		.ecademy-responsive-menu>.logo>a>img {
+			width: 130px;
+		}
+
+		.ecademy-nav .navbar .navbar-nav .nav-item a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li a,
+		.ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a,
+		.mean-container .mean-nav ul li a,
+		.mean-container .mean-nav ul li li a {
+			color: #221638;
+		}
+
+		.footer-area .single-footer-widget p,
+		.footer-area .single-footer-widget ul li,
+		.single-footer-widget .footer-contact-info li a {
+			color: #e4e4e4;
+		}
+
+		body {
+			font-family: Nunito, Verdana, Geneva, sans-serif;
+		}
+	</style>
+	{% block body1 %} {% endblock body1 %}
+</head>
+<body
+	class="home page-template page-template-elementor_header_footer page page-id-30 theme-ecademy pmpro-body-has-access woocommerce-no-js cookies-not-set elementor-default elementor-template-full-width elementor-kit-17 elementor-page elementor-page-30">
+	<div class="preloader">
+		<div class="sbl-half-circle-spin">
+			<div class="loader">
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar-area" id="navid">
+		<div class="ecademy-responsive-nav">
+			<div class="container">
+				<div class="ecademy-responsive-menu">
+					<div class="logo">
+						<a href="/">
+							<img src="/media/{{abouts.0.logo}}" alt="eCademy">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ecademy-nav">
+			<div class="container-fluid">
+				<nav class="navbar navbar-expand-md navbar-light">
+					<a class="navbar-brand" href="/" style="font-weight:800;font-size:30px;color:#ff4d4d;">
+						FlaxAcadamy
+					</a>
+					<div class="collapse navbar-collapse mean-menu" style="margin-left:500px;">
+						<form class="search-box" method="post" action="{% url 'search' %}">{% csrf_token %}
+							<input type="search" value="" name="search" class="input-search" required
+								placeholder="Search for anything">
+							<input type="hidden" value="course" name="ref" />
+							<input type="hidden" name="post_type" value="courses">
+							<button type="submit"><i class="flaticon-search"></i></button>
+						</form>
+						<ul id="menu-primary-menu" class="navbar-nav ml-auto" >
+							{% url 'home' as homeurl %}
+							<li id="menu-item-976" class="menu-item menu-item-type-post_type menu-item-object-page
+								{% if request.path == homeurl %}active{% endif %} menu-item-976 nav-item">
+								<a title="Home" href="{{homeurl}}" class="nav-link">Home</a>
+							</li>
+
+							{% url 'aboutus' as abouturl %}
+							<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page
+								 {% if request.path == abouturl %}active{% endif %} menu-item-27 nav-item">
+								<a title="Courses" href="{{abouturl}}" class="nav-link">About</a></li>
+							{% url 'courses' as courseurl %}
+							<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page 
+								{% if request.path == courseurl %}active{% endif %} menu-item-27 nav-item">
+								<a title="Courses" href="{{courseurl}}" class="nav-link"
+									id="menu-item-dropdown-27">Courses</a>
+								{% comment %}
+								<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-27" role="menu">
+									<li id="menu-item-21"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21 nav-item">
+										<a title="Courses" href="{% url 'courses' %}" class="dropdown-item">Courses</a>
+									</li>
+
+									<li id="menu-item-21"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21 nav-item">
+										<a title="Courses" href="{% url 'faqs' %}" class="dropdown-item">faqs</a>
+									</li>
+									<li id="menu-item-21"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21 nav-item">
+										<a title="Courses" href="{% url 'gallery' %}" class="dropdown-item">gallary</a>
+									</li>
+									<li id="menu-item-21"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21 nav-item">
+										<a title="Courses" href="{% url 'purchase-guide' %}"
+											class="dropdown-item">purchase-guide</a>
+									</li>
+									<li id="menu-item-21"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21 nav-item">
+										<a title="Courses" href="{% url 'success-story' %}"
+											class="dropdown-item">success-story</a>
+									</li>
+
+									<li id="menu-item-23"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23 nav-item">
+										<a title="Instructor/Student Profile" href="{% url 'instructors' %}"
+											class="dropdown-item">Instructor/Student Profile</a></li>
+								</ul>{% endcomment %}
+							</li>
+							{% url 'events' as eventurl %}
+							<li id="menu-item-406" class="menu-item menu-item-type-post_type menu-item-object-page
+								 {% if request.path == eventurl %}active{% endif %} menu-item-406 nav-item">
+								<a title="Events" href="{{eventurl}}" class="nav-link">Events</a>
+
+							</li>{% url 'shop' as shopurl %}
+							<li id="menu-item-1031" class="menu-item menu-item-type-post_type menu-item-object-page
+								{% if request.path == shopurl %}active{% endif %} menu-item-1031 nav-item">
+								<a title="Shop" href="{{shopurl}}" class="nav-link">Shop</a>
+
+							</li>{% url 'blog' as blogurl %}
+							<li id="menu-item-403" class="menu-item menu-item-type-post_type menu-item-object-page
+								  {% if request.path == blogurl %}active{% endif %}  menu-item-403 nav-item">
+								<a title="Blog" href="{{blogurl}}" class="nav-link">Blog</a>
+
+							</li>{% url 'contact' as contacturl %}
+							<li id="menu-item-485" class="menu-item menu-item-type-post_type menu-item-object-page
+								 {% if request.path == contacturl %}active{% endif %}  menu-item-485 nav-item">
+								<a title="Contact" href="{{contacturl}}" class="nav-link">Contact</a></li>
+						</ul>
+						<div class="others-option d-flex align-items-center">
+							{% if request.user.is_authenticated %}
+							<div class="option-item">
+								<div class="cart-btn">
+									<a href="{% url 'cart' %}"><i class="flaticon-shopping-cart"></i>
+										<span class="mini-cart-count"></span></a>
+								</div>
+							</div>
+							<div class="option-item">
+								{% if request.user.is_authenticated  and request.user.userType.type == '1'  %}
+								<a href="{% url 'profile' request.user.instructor.slug %}" class="default-btn">
+									<i class="flaticon-user"></i>
+									Profile
+								</a>{% elif request.user.is_authenticated  and request.user.userType.type == '2' %}
+								<a href="{% url 'profile' request.user.student.slug %}" class="default-btn">
+									<i class="flaticon-user"></i>
+									Profile
+								</a>{% elif request.user.is_superuser   %}
+								<a href="{% url 'ad_dash' %}" class="default-btn">
+									<i class="flaticon-user"></i>
+									Admin
+								</a>
+								
+								{% endif %}
+
+
+
+
+								&nbsp;<a href="{% url 'logout' %}" class="default-btn">
+									<i class="flaticon-user"></i>
+									Logout
+								</a>{% else %}
+								<a href="{% url 'loginregister' %}" class="default-btn">
+									<i class="flaticon-user"></i>
+									Login/Register
+								</a>
+								{% endif %}
+
+
+
+
+
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="others-option-for-responsive">
+			<div class="container">
+				{% comment %} <div class="dot-menu">
+					<div class="inner">
+						<div class="circle circle-one"></div>
+						<div class="circle circle-two"></div>
+						<div class="circle circle-three"></div>
+					</div>
+				</div> {% endcomment %}
+				<div class="container">
+					<div class="option-inner">
+						<form class="search-box" method="post" action="{% url 'search' %}">{% csrf_token %}
+							<input type="search" value="" name="search" class="input-search"
+								placeholder="Search for anything">
+							<input type="hidden" value="course" name="ref" />
+							<input type="hidden" name="post_type" value="lp_course">
+							<button type="submit"><i class="flaticon-search"></i></button>
+						</form>
+						<div class="others-option d-flex align-items-center">
+							{% if request.user.is_authenticated %}
+							<div class="option-item">
+								<div class="cart-btn">
+									<a href="{% url 'cart' %}"><i class="flaticon-shopping-cart"></i>
+										<span class="mini-cart-count"></span></a>
+								</div>
+							</div>{% endif %}
+
+							<div class="option-item">
+								{% if request.user.is_authenticated and request.user.userType.type == '1' %}
+								<a href="{% url 'profile' request.user.instructor.slug %}" class="default-btn">
+									<i class="flaticon-user"></i>
+									Profile<span></span>
+								</a>
+								{% elif request.user.is_authenticated  and request.user.userType.type == '2' %}
+								<a href="{% url 'profile' request.user.student.slug %}" class="default-btn">
+									<i class="flaticon-user"></i>
+									Profile<span></span>
+								</a>{% endif %}
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- start alert -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+	
+	{% if messages %}
+<!-- {{messages}}== -->
+	<!-- Button trigger modal-->
+<!-- <button   data-target="#exampleModal" data-toggle="modal">cli</button> -->
+	<!--Modal: modalConfirmDelete-->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal"
+		aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+			<!--Content-->
+			<div class="modal-content text-center">
+				<!--Header-->
+				{% for m in messages %}
+				{% if m.tags == 'error' %}
+				<div class="modal-header d-flex justify-content-center" style="background-color: #d9534f;">
+					<p class="heading" style="color: black;">
+						{{m|capfirst}}
+					</p>
+				</div>
+				<div class="modal-body">
+					<i class="fa fa-times-circle" style="font-size: 35px;color: #d9534f;" aria-hidden="True"></i>
+				</div>{% elif m.tags == 'warning' %}
+				<div class="modal-header d-flex justify-content-center" style="background-color: #f0ad4e">
+					<p class="heading" style="color: black;">
+						{{m|capfirst}}
+					</p>
+				</div>
+				<div class="modal-body">
+					<i class="fas fa-exclamation-circle" aria-hidden="True" style="font-size: 35px;color: #f0ad4e"
+						aria-hidden="True"></i>
+				</div>{% elif m.tags == 'success' %}
+				<div class="modal-header d-flex justify-content-center" style="background-color: #5cb85c">
+					<p class="heading" style="color: black;">
+					{{m|capfirst}}
+					</p>
+				</div>
+				<div class="modal-body">
+					<i class="far fa-check-circle" aria-hidden="True" style="font-size: 35px;color:  #5cb85c;"></i>
+				</div>
+				{% endif %}{% endfor %}
+				<!--Body-->
+
+				<!--Footer-->
+				<div class="modal-footer flex-center">
+					
+					<a id='close' class="btn {% for m in messages %} {% if m.tags == 'error' %}btn-outline-danger
+		  {% elif m.tags == 'warning' %}btn-outline-warning {% elif m.tags == 'success' %}btn-outline-success{% endif %}{% endfor %}
+		 
+	">
+	
+	OK</a>
+				</div>
+
+
+
+
+			</div>
+			<!--/.Content-->
+		</div>
+	</div>
+	<!--Modal: modalConfirmDelete-->
+	{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- end alert -->
+
+
+
+
+
+	<style>
+		.post-image	img{
+				width: 100%;
+				height: 15vw;
+				object-fit: cover;
+			}
+			
+			</style>
+
+
+	{% block body %}
+
+	{% endblock body %}
+	<div id="newsletter-modal" class="newsletter-modal modal">
+		<div class="newsletter-modal-content">
+			<div class="row align-items-center m-0">
+				<div class="col-lg-5 col-md-12 p-0">
+					<div class="modal-image text-center">
+						<img src="{% static '/wp-content/uploads/2020/06/newsletter-img.jpg' %}"
+							alt="Subscribe to our newsletter">
+					</div>
+				</div>
+				<div class="col-lg-7 col-md-12 p-0">
+					<div class="modal-inner-content text-center">
+						<h2>Subscribe to our newsletter</h2>
+						<span class="sub-text">Sign up to receive updates, promotions, and sneak peeks of upcoming
+							courses. Plus 20% off your next course.</span>
+						<form class="newsletter-form mailchimp" method="post">
+							<div class="input-group subcribes">
+								<input type="email" name="EMAIL" class="input-newsletter" placeholder="Enter your email"
+									required autocomplete="off">
+								<button type="submit">Subscribe Now<span></span></button>
+							</div>
+							<p class="mchimp-errmessage" style="display: none;"></p>
+							<p class="mchimp-sucmessage" style="display: none;"></p>
+						</form>
+						<script>
+							;
+							(function ($) {
+								"use strict";
+								$(document).ready(function () {
+									// MAILCHIMP
+									if ($(".mailchimp").length > 0) {
+										$(".mailchimp").ajaxChimp({
+											callback: mailchimpCallback,
+											url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9"
+										});
+									}
+									if ($(".mailchimp_two").length > 0) {
+										$(".mailchimp_two").ajaxChimp({
+											callback: mailchimpCallback,
+											url: "https://envytheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9" //Replace this with your own mailchimp post URL. Don't remove the "". Just paste the url inside "".
+										});
+									}
+									$(".memail").on("focus", function () {
+										$(".mchimp-errmessage").fadeOut();
+										$(".mchimp-sucmessage").fadeOut();
+									});
+									$(".memail").on("keydown", function () {
+										$(".mchimp-errmessage").fadeOut();
+										$(".mchimp-sucmessage").fadeOut();
+									});
+									$(".memail").on("click", function () {
+										$(".memail").val("");
+									});
+
+									function mailchimpCallback(resp) {
+										if (resp.result === "success") {
+											$(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
+											$(".mchimp-sucmessage").fadeOut(500);
+										} else if (resp.result === "error") {
+											$(".mchimp-errmessage").html(resp.msg).fadeIn(1000);
+										}
+									}
+								});
+							})(jQuery)
+						</script>
+						<p><i class="flaticon-password"></i> Your information will never be shared with any third party
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="close-btn btn-yes"><i class="flaticon-cancel"></i></div>
+		</div>
+	</div>
+
+	<footer class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3" style="margin-left:-15px;">
+					<div class="single-footer-widget">
+						<a class="logo" href="/">
+							<h2>cyberCademy</h2>
+						</a>
+						<p>Working to bring significant changes in online-based learning by doing extensive research for
+							course curriculum preparation, student engagements, and looking forward to the flexible
+							education!</p>
+						<ul class="social-link">
+							<li>
+								<a class="d-block twitter"  href="https://twitter.com/i/flow/login"> <i class="bx bxl-twitter"></i></a>
+							</li>
+							<li>
+								<a class="d-block facebook"  href="https://www.facebook.com/login.php"> <i
+										class="bx bxl-facebook"></i></a>
+							</li>
+							<li>
+								<a class="d-block instagram"  href="https://www.instagram.com/accounts/login/"> <i
+										class="bx bxl-instagram"></i></a>
+							</li>
+							<li>
+								<a class="d-block"  href="https://www.linkedin.com/login/"> <i class="bx bxl-linkedin"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="single-footer-widget col-lg-3 col-md-3 widget_nav_menu" style="margin-left:-20px;">
+					<h3>Resources</h3>
+					<div class="menu-footer-resources-container">
+						<ul id="menu-footer-resources" class="menu">
+							<!-- <li id="menu-item-40"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40"><a
+									href="#">Become A Teacher</a></li> -->
+
+							<li id="menu-item-41"
+								class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-13 current_page_item menu-item-41">
+								<a href="{% url 'instructors' %}" aria-current="page">Instructor</a></li>
+							<li id="menu-item-42"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a
+									href="{% url 'courses' %}">Courses</a></li>
+							<!-- <li id="menu-item-43"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43"><a
+									href="{% url 'lp-checkout' %}">LP Checkout</a></li> -->
+							<li id="menu-item-44"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a
+									href="{% url 'term-condition' %}">Terms &#038; Conditions</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="single-footer-widget col-lg-3 col-md-3 widget_nav_menu" style="margin-left:28px;">
+					<h3>Explore</h3>
+					<div class="menu-footer-explore-container">
+						<ul id="menu-footer-explore" class="menu">
+							<li id="menu-item-35"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-35">
+								<a href="/">Home</a></li>
+							<li id="menu-item-36"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a
+									href="{% url 'blog' %}">Blog</a></li>
+							<li id="menu-item-37"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-37">
+								<a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+							<!-- <li id="menu-item-38"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a
+									href="/become-a-teacher/">Become A Teacher</a></li> -->
+							<li id="menu-item-39"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a
+									href="{% url 'courses' %}">Courses</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="single-footer-widget col-lg-3 col-md-3 widget_ecademy_contact_info" >
+					<h3 style="margin-left:30px;">Address</h3>
+					<ul class="footer-contact-info">
+						<li>
+							<i class="bx bx-map" style="margin-left:30px;"></i>
+							<a href="https://goo.gl/maps/2nJarT1pL1EU3frX8" target="_blank"  style="margin-left:40px;">
+								Software Company 407, Sai Kesava Towers Shilpa Park Kondapur, Hyderabad, Telangana 500084
+							</a>
+						</li>
+						<li>
+							<i class="bx bx-phone-call" style="margin-left:30px;"></i>
+							<a href="tel:+91- 958-483-9976" style="margin-left:40px;">+91- 958-483-9976</a>
+						</li>
+						<li>
+							<!-- Email: sales@cyberflax.com -->
+							<i class="bx bx-envelope" style="margin-left:30px;"></i>
+							<a href="mailto:sales@cyberflax.com"><span class="__cf_email__"
+									data-cfemail="523a373e3e3d1237313336373f2b7c313d3f" style="margin-left:40px;">info@cyberacedamy.com</span></a>
+						</li>
+						<li>
+							<i class="bx bxs-inbox" style="margin-left:30px;"></i>
+							<a href="tel:+91-%20958-%20483-%209976" style="margin-left:40px;">+91- 958-483-9976</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom-area">
+				<div class="row align-items-center">
+					<div class="col-lg-6 col-md-6">
+						<p><i class="bx bx-copyright"></i>2021 cyberCademy is Proudly Crafted by <a
+								href="https://cyberflax.com//" target="_blank" rel="noopener">cyberCademy</a></p>
+					</div>
+					<div class="col-lg-6 col-md-6">
+						<ul id="menu-footer-menu" class="menu" >
+							<li id="menu-item-26" 
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-26" >
+								<a href="{% url 'privacy-policy' %}" >Privacy Policy</a></li>
+							<li id="menu-item-25"
+								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a
+									href="{% url 'term-condition' %}">Terms &#038; Conditions</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="lines">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+	</footer>
+
+	<div class="go-top"><i class='bx bx-chevron-up'></i></div>
+	<div class="container">
+		<div class="ecademy-cursor"></div>
+		<div class="ecademy-cursor2"></div>
+	</div>
+
+	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+	<script>
+		jQuery(document).ready(function ($) {
+			$(document).on('click', '.plus', function (
+				e) { // replace '.quantity' with document (without single quote)
+				$input = $(this).prev('input.qty');
+				var val = parseInt($input.val());
+				var step = $input.attr('step');
+				step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
+				$input.val(val + step).change();
+			});
+			$(document).on('click', '.minus', // replace '.quantity' with document (without single quote)
+				function (e) {
+					$input = $(this).next('input.qty');
+					var val = parseInt($input.val());
+					var step = $input.attr('step');
+					step = 'undefined' !== typeof (step) ? parseInt(step) : 1;
+					if (val > 0) {
+						$input.val(val - step).change();
+					}
+				});
+		});
+	</script>
+
+	<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<link rel='stylesheet' id='e-animations-css'
+		href="{% static '/wp-content/plugins/elementor/assets/lib/animations/animations.min.css' %}" type='text/css'
+		media='all' />
+	<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/regenerator-runtime.min.js' %}"
+		id='regenerator-runtime-js'></script>
+	<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/wp-polyfill.min.js' %}"
+		id='wp-polyfill-js'>
+	</script>
+	<script type='text/javascript' id='contact-form-7-js-extra'>
+		/* <![CDATA[ */
+		var wpcf7 = {
+			"api": {
+				"root": "https:\/\/themes.envytheme.com\/ecademy\/wp-json\/",
+				"namespace": "contact-form-7\/v1"
+			}
+		};
+		/* ]]> */
+	</script>
+	<script type='text/javascript' src="{% static 'wp-content/plugins/contact-form-7/includes/js/index.js' %}"
+		id='contact-form-7-js'></script>
+	<script type='text/javascript'
+		src=" {% static '/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js' %}"
+		id='jquery-blockui-js'></script>
+	<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+		/* <![CDATA[ */
+		var wc_add_to_cart_params = {
+			"ajax_url": "\/ecademy\/wp-admin\/admin-ajax.php",
+			"wc_ajax_url": "\/ecademy\/?wc-ajax=%%endpoint%%",
+			"i18n_view_cart": "View cart",
+			"cart_url": "https:\/\/themes.envytheme.com\/ecademy\/cart\/",
+			"is_cart": "",
+			"cart_redirect_after_add": "no"
+		};
+		/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js' %}"
+		id='wc-add-to-cart-js'></script>
+	<script type='text/javascript'
+		src=" {% static '/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js' %}" id='js-cookie-js'>
+	</script>
+	<script type='text/javascript' id='woocommerce-js-extra'>
+		/* <![CDATA[ */
+		var woocommerce_params = {
+			"ajax_url": "\/ecademy\/wp-admin\/admin-ajax.php",
+			"wc_ajax_url": "\/ecademy\/?wc-ajax=%%endpoint%%"
+		};
+		/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js' %}" id='woocommerce-js'>
+	</script>
+	<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+		/* <![CDATA[ */
+		var wc_cart_fragments_params = {
+			"ajax_url": "\/ecademy\/wp-admin\/admin-ajax.php",
+			"wc_ajax_url": "\/ecademy\/?wc-ajax=%%endpoint%%",
+			"cart_hash_key": "wc_cart_hash_3f700cef23ffad8a2d95aebc2bc2b0f6",
+			"fragment_name": "wc_fragments_3f700cef23ffad8a2d95aebc2bc2b0f6",
+			"request_timeout": "5000"
+		};
+		/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js' %}"
+		id='wc-cart-fragments-js'></script>
+	<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/core.min.js' %}" id='jquery-ui-core-js'>
+	</script>
+	<script type='text/javascript' src="{% static '/wp-includes/js/underscore.min.js' %}" id='underscore-js'></script>
+	<script type='text/javascript' id='wp-util-js-extra'>
+		/* <![CDATA[ */
+		var _wpUtilSettings = {
+			"ajax": {
+				"url": "\/ecademy\/wp-admin\/admin-ajax.php"
+			}
+		};
+		/* ]]> */
+	</script>
+	<script type='text/javascript' src="{% static '/wp-includes/js/wp-util.min.js' %}" id='wp-util-js'></script>
+	<script type='text/javascript' src="{% static '/wp-includes/js/backbone.min.js' %}" id='backbone-js'></script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/wp-events-manager/inc/libraries//countdown/js/jquery.plugin.min.js' %}"
+		id='wpems-countdown-plugin-js-js'></script>
+	<script type='text/javascript' id='wpems-countdown-js-js-extra'>
+		/* <![CDATA[ */
+		var WPEMS = {
+			"gmt_offset": "0",
+			"current_time": "Dec 23, 2021 06:35:00 +0000",
+			"l18n": {
+				"labels": ["Years", "Months", "Weeks", "Days", "Hours", "Minutes", "Seconds"],
+				"labels1": ["Year", "Month", "Week", "Day", "Hour", "Minute", "Second"]
+			},
+			"ajaxurl": "https:\/\/themes.envytheme.com\/ecademy\/wp-admin\/admin-ajax.php",
+			"something_wrong": "Something went wrong",
+			"register_button": "d2d33a1a82"
+		};
+		/* ]]> */
+	</script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/wp-events-manager/inc/libraries//countdown/js/jquery.countdown.min.js' %}"
+		id='wpems-countdown-js-js'></script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/wp-events-manager/inc/libraries//magnific-popup/js/jquery.magnific-popup.min.js' %}"
+		id='wpems-magnific-popup-js-js'></script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/wp-events-manager/assets//js/frontend/events.min.js' %}"
+		id='wpems-frontend-js-js'></script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js' %}"
+		id='jquery-cookie-js'></script>
+	<script type='text/javascript' src="{% static '/wp-includes/js/wp-embed.min.js' %}" id='wp-embed-js'></script>
+	<script type='text/javascript' src="{% static '/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js' %}"
+		id='elementor-webpack-runtime-js'></script>
+	<script type='text/javascript' src="{% static '/wp-content/plugins/elementor/assets/js/frontend-modules.min.js' %}"
+		id='elementor-frontend-modules-js'></script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js' %}"
+		id='elementor-waypoints-js'></script>
+	<script type='text/javascript' src="{% static '/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js' %}"
+		id='swiper-js'></script>
+	<script type='text/javascript'
+		src="{% static '/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js' %}" id='share-link-js'>
+	</script>
+	<script type='text/javascript' src="{% static '/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js' %}"
+		id='elementor-dialog-js'></script>
+	<script type='text/javascript' id='elementor-frontend-js-before'>
+		var elementorFrontendConfig = {
+			"environmentMode": {
+				"edit": false,
+				"wpPreview": false,
+				"isScriptDebug": false
+			},
+			"i18n": {
+				"shareOnFacebook": "Share on Facebook",
+				"shareOnTwitter": "Share on Twitter",
+				"pinIt": "Pin it",
+				"download": "Download",
+				"downloadImage": "Download image",
+				"fullscreen": "Fullscreen",
+				"zoom": "Zoom",
+				"share": "Share",
+				"playVideo": "Play Video",
+				"previous": "Previous",
+				"next": "Next",
+				"close": "Close"
+			},
+			"is_rtl": false,
+			"breakpoints": {
+				"xs": 0,
+				"sm": 480,
+				"md": 768,
+				"lg": 1025,
+				"xl": 1440,
+				"xxl": 1600
+			},
+			"responsive": {
+				"breakpoints": {
+					"mobile": {
+						"label": "Mobile",
+						"value": 767,
+						"default_value": 767,
+						"direction": "max",
+						"is_enabled": true
+					},
+					"mobile_extra": {
+						"label": "Mobile Extra",
+						"value": 880,
+						"default_value": 880,
+						"direction": "max",
+						"is_enabled": false
+					},
+					"tablet": {
+						"label": "Tablet",
+						"value": 1024,
+						"default_value": 1024,
+						"direction": "max",
+						"is_enabled": true
+					},
+					"tablet_extra": {
+						"label": "Tablet Extra",
+						"value": 1200,
+						"default_value": 1200,
+						"direction": "max",
+						"is_enabled": false
+					},
+					"laptop": {
+						"label": "Laptop",
+						"value": 1366,
+						"default_value": 1366,
+						"direction": "max",
+						"is_enabled": false
+					},
+					"widescreen": {
+						"label": "Widescreen",
+						"value": 2400,
+						"default_value": 2400,
+						"direction": "min",
+						"is_enabled": false
+					}
+				}
+			},
+			"version": "3.4.6",
+			"is_static": false,
+			"experimentalFeatures": {
+				"e_import_export": true,
+				"landing-pages": true,
+				"elements-color-picker": true,
+				"admin-top-bar": true
+			},
+			"urls": {
+				"assets": "https:\/\/themes.envytheme.com\/ecademy\/wp-content\/plugins\/elementor\/assets\/"
+			},
+			"settings": {
+				"page": [],
+				"editorPreferences": []
+			},
+			"kit": {
+				"global_image_lightbox": "yes",
+				"active_breakpoints": ["viewport_mobile", "viewport_tablet"],
+				"lightbox_enable_counter": "yes",
+				"lightbox_enable_fullscreen": "yes",
+				"lightbox_enable_zoom": "yes",
+				"lightbox_enable_share": "yes",
+				"lightbox_title_src": "title",
+				"lightbox_description_src": "description"
+			},
+			"post": {
+				"id": 30,
+				"title": "eCademy%20%E2%80%93%20Elementor%20LMS%20%26%20Online%20Courses%20Theme",
+				"excerpt": "",
+				"featuredImage": false
+			}
+		};
+	</script>
+	<script type='text/javascript' src="{% static '/wp-content/plugins/elementor/assets/js/frontend.min.js' %}"
+		id='elementor-frontend-js'></script>
+	<script type='text/javascript' src="{% static '/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js' %}"
+		id='preloaded-modules-js'></script>
+
+	<script type='text/javascript' src="{% static '/wp-content/plugins/front-end-pm/assets/js/notification.js' %}"
+		id='fep-notification-script-js'></script>
+
+	{% comment %}
+	<div id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom"
+		aria-label="Cookie Notice" style="background-color: rgba(0,0,0,1);">
+		<div class="cookie-notice-container" style="color: #fff;"><span id="cn-notice-text" class="cn-text-container">We
+				use cookies to ensure that we give you the best experience on our website. If you continue to use this
+				site we will assume that you are happy with it.</span><span id="cn-notice-buttons"
+				class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept"
+					class="cn-set-cookie cn-button bootstrap" aria-label="Ok">Ok</a><a href="{% url 'privacy-policy' %}"
+					target="_blank" id="cn-more-info" class="cn-more-info cn-button bootstrap"
+					aria-label="Privacy policy">Privacy policy</a></span><a href="javascript:void(0);"
+				id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" aria-label="Ok"></a></div>
+	</div>
+	{% endcomment %}
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+	</script>
+
+<script type="text/javascript">
+	$(window).on('load', function () {
+		$('#exampleModal').modal('show');
+	});
+</script>
+
+<script>
+
+	$("#close").click(function(){
+		$("#exampleModal").modal('hide');
+	});
+
+</script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+
+<script>
+	$(document).ready(function(){
+		$(".lp-show-password-input").on("click",function(){
+			if($(this).parent().find('input').attr('type')=='password'){
+
+				$(this).parent().find('input').attr('type','text')
+			}else{
+				$(this).parent().find('input').attr('type','password')
+
+			}
+		})
+
+	})
+</script>
+</body>
+
+{% endwith %}
+</html>

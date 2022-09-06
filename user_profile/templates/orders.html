@@ -1,0 +1,523 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+{% block body1 %}
+
+
+<link rel='stylesheet' id='lp-font-awesome-5-css'
+	href="{% static '/wp-content/plugins/learnpress/assets/src/css/vendor/font-awesome-5.min.css' %}" type='text/css'
+	media='all' />
+<link rel='stylesheet' id='lp-bundle-css' href="{% static '/wp-content/plugins/learnpress/assets/css/bundle.min.css' %}"
+	type='text/css' media='all' />
+<link rel='stylesheet' id='learnpress-css'
+	href="{% static '/wp-content/plugins/learnpress/assets/css/learnpress.css' %}" type='text/css' media='all' />
+<script type='text/javascript' src="{% static '/wp-includes/js/utils.min.js' %}" id='utils-js'></script>
+
+
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/global.min.js' %}"
+	id='lp-global-js'></script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/dist/utils.min.js' %}"
+	id='lp-utils-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/moxie.min.js' %}" id='moxiejs-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/plupload.min.js' %}" id='plupload-js'></script>
+
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/mouse.min.js' %}" id='jquery-ui-mouse-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/slider.min.js' %}" id='jquery-ui-slider-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/draggable.min.js' %}"
+	id='jquery-ui-draggable-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/jquery.ui.touch-punch.js' %}"
+	id='jquery-touch-punch-js'></script>
+<script type='text/javascript' id='lp-profile-user-js-extra'>
+	/* <![CDATA[ */
+	var lpProfileUserSettings = {
+		"processing": "Processing",
+		"redirecting": "Redirecting",
+		"avatar_size": {
+			"width": 250,
+			"height": 250
+		}
+	};
+	/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/frontend/profile.min.js' %}"
+	id='lp-profile-user-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/lodash.min.js' %}" id='lodash-js'></script>
+<script type='text/javascript' id='lodash-js-after'>
+	window.lodash = _.noConflict();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react.min.js' %}" id='react-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react-dom.min.js'  %}" id='react-dom-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/escape-html.min.js' %}" id='wp-escape-html-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/element.min.js'  %}" id='wp-element-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/hooks.min.js'  %}" id='wp-hooks-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/deprecated.min.js'  %}" id='wp-deprecated-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/dom.min.js'  %}" id='wp-dom-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/is-shallow-equal.min.js' %}"
+	id='wp-is-shallow-equal-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/i18n.min.js' %}" id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+	wp.i18n.setLocaleData({
+		'text direction\u0004ltr': ['ltr']
+	});
+</script>
+<script type='text/javascript' id='wp-keycodes-js-translations'>
+	(function (domain, translations) {
+		var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+		localeData[""].domain = domain;
+		wp.i18n.setLocaleData(localeData, domain);
+	})("default", {
+		"locale_data": {
+			"messages": {
+				"": {}
+			}
+		}
+	});
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/keycodes.min.js' %}" id='wp-keycodes-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/priority-queue.min.js' %}"
+	id='wp-priority-queue-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/compose.min.js' %}" id='wp-compose-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/redux-routine.min.js' %}" id='wp-redux-routine-js'>
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/data.min.js' %}" id='wp-data-js'></script>
+<script type='text/javascript' id='wp-data-js-after'>
+	(function () {
+		var userId = 1826;
+		var storageKey = "WP_DATA_USER_" + userId;
+		wp.data
+			.use(wp.data.plugins.persistence, {
+				storageKey: storageKey
+			});
+		wp.data.plugins.persistence.__unstableMigrate({
+			storageKey: storageKey
+		});
+	})();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/url.min.js' %}" id='wp-url-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-translations'>
+	(function (domain, translations) {
+		var localeData = translations.locale_data[domain] || translations.locale_data.messages;
+		localeData[""].domain = domain;
+		wp.i18n.setLocaleData(localeData, domain);
+	})("default", {
+		"locale_data": {
+			"messages": {
+				"": {}
+			}
+		}
+	});
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/api-fetch.min.js' %}" id='wp-api-fetch-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-after'>
+	wp.apiFetch.use(wp.apiFetch.createRootURLMiddleware("/wp-json/"));
+	wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware("b73c1d7539");
+	wp.apiFetch.use(wp.apiFetch.nonceMiddleware);
+	wp.apiFetch.use(wp.apiFetch.mediaUploadMiddleware);
+	wp.apiFetch.nonceEndpoint = "/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type='text/javascript'
+	src="{% static '/wp-content/plugins/learnpress/assets/js/dist/frontend/profile.min.js' %}" id='lp-profile-v2-js'>
+</script>
+
+<script type='text/javascript' id='fep-notification-script-js-extra'>
+	/* <![CDATA[ */
+	var fep_notification_script = {
+		"root": "https:\/\/themes.envytheme.com\/ecademy\/wp-json\/front-end-pm\/v1",
+		"nonce": "b73c1d7539",
+		"interval": "120000",
+		"skip": "2",
+		"show_in_title": "1",
+		"show_in_desktop": "1",
+		"call_on_ready": "",
+		"play_sound": "1",
+		"sound_url": "https:\/\/themes.envytheme.com\/ecademy\/wp-content\/plugins\/front-end-pm\/assets\/audio\/plucky.mp3",
+		"icon_url": "https:\/\/themes.envytheme.com\/ecademy\/wp-content\/plugins\/front-end-pm\/assets\/images\/desktop-notification-32.png",
+		"mgs_notification_title": "New Message. ",
+		"mgs_notification_body": "You have received a new message. ",
+		"mgs_notification_url": "https:\/\/themes.envytheme.com\/ecademy\/private-massage\/?fepaction=messagebox",
+		"ann_notification_title": "New Announcement. ",
+		"ann_notification_body": "You have received a new announcement. ",
+		"ann_notification_url": "https:\/\/themes.envytheme.com\/ecademy\/private-massage\/?fepaction=announcements"
+	};
+	/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/front-end-pm/assets/js/notification.js' %}"
+	id='fep-notification-script-js'></script>
+
+
+
+{% endblock body1 %}
+
+
+
+
+
+<div class="page-main-content">
+	<div class="page-area">
+		<div class="container">
+			<div id="post-13" class="post-13 page type-page status-publish hentry pmpro-has-access">
+				<div class="entry-content ecademy-Instructor/Student Profile-un">
+					<div class="learnpress">
+						<div id="learn-press-profile" class="lp-user-profile current-user">
+							<div class="lp-content-area">
+								<div class="wrapper-profile-header wrap-fullwidth">
+									<div class="lp-content-area lp-profile-content-area">
+										<div class="lp-profile-left">
+											<div class="lp-user-profile-avatar">
+												{% if instruct.0.img|length != 0 %}
+												<img alt='User Avatar' src='/media/{{instruct.0.img}}'
+													srcset='/media/{{instruct.0.img}} 2x' class='avatar avatar-96 photo'
+													height='250' width='250' loading='lazy' />
+												{% else %}
+												<img alt='User Avatar' src='/media/default.png'
+													srcset='/media/default.png 2x' class='avatar avatar-96 photo'
+													height='250' width='250' loading='lazy' />{% endif %}
+
+
+											</div>
+										</div>
+										<div class="lp-profile-right">
+											<div class="lp-profile-username">
+										{{instruct.0.name|capfirst}}		</div>
+											<ul class="social-link">
+											</ul>
+											<a href="{% url 'private-message' instruct.0.slug %}" class="default-btn">
+												<i class="flaticon-user"></i>
+												Messages<span></span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<aside id="profile-sidebar">
+									<div id="profile-nav">
+										<ul class="lp-profile-nav-tabs">
+											
+											<li class="courses ">
+												{% if request.user.userType.type == '1' %}
+												
+												{% if instruct.0.slug == request.user.instructor.slug %}
+												<a href="{% url 'profile' request.user.instructor.slug %}"
+													data-slug="{% url 'profile' request.user.instructor.slug %}">
+													<i class="fas flaticon-user"></i> Profile </a>{% endif %}
+												  {% elif request.user.userType.type == '2' %}
+												  {% if instruct.0.slug == request.user.student.slug %}
+												  <a href="{% url 'profile' request.user.student.slug %}"
+												  data-slug="{% url 'profile' request.user.student.slug %}">
+												  <i class="fas flaticon-user"></i> Profile</a>{% endif %}
+
+										   {% endif %}
+										   {% if request.user.userType.type == '2' %}
+										   {% if instruct.0.slug != request.user.student.slug %}
+										   <a href="{% url 'courses' %}?inst={{instruct.0.slug}}"
+										   data-slug="{% url 'courses' %}?inst={{instruct.0.slug}}">
+										   <i class="fas flaticon-user"></i> Course</a>
+									{% endif %}
+									
+									{% elif request.user.userType.type == '1' %}
+									{% if instruct.0.slug != request.user.instructor.slug %}
+									<a href="{% url 'courses' %}?inst={{instruct.0.slug}}"
+									data-slug="{% url 'courses' %}?inst={{instruct.0.slug}}">
+									<i class="fas flaticon-user"></i> Course</a>
+							 {% endif %}
+									{% endif %}
+										   <!-- {% if   instruct.0.slug != request.user.student.slug %}
+									   
+										   <li class="certificates active">
+											   <a href="{% url 'courses'  %}?inst={{instruct.0.slug}}"
+												   data-slug="{% url 'courses'  %}?inst={{instruct.0.slug}}">
+												   <i class="fas fa-book-open"></i> Courses</a>
+										   </li> {% endif %} -->
+
+											</li> {% if request.user.userType.type == '1' %}
+										   
+											<li class="certificates ">
+												<a href="{% url 'profile-certificates' instruct.0.slug %}"
+													data-slug="{% url 'profile-certificates' instruct.0.slug %}">
+													<i class="fas fa-certificate"></i> Certificates </a>
+											</li> {% endif %}
+
+											<!-- <li class="quizzes">
+												<a href="{% url 'quzess' instruct.0.slug %}"
+													data-slug="{% url 'quzess' instruct.0.slug %}">
+													<i class="fas fa-puzzle-piece"></i> Quizzes </a>
+											</li> -->
+											
+											{% if request.user.userType.type == '2' or request.user.userType.type == '1' %}
+											{% if instruct.0.slug == request.user.instructor.slug or instruct.0.slug == request.user.student.slug %}
+											<li class="orders active">
+												<a href="{% url 'orders' instruct.0.slug %}"
+													data-slug="{% url 'orders' instruct.0.slug %}">
+													<i class="fas fa-shopping-cart"></i> Orders </a>
+											</li>{% endif %}
+											
+											{% endif %}
+
+														  
+{% if request.user.is_authenticated %}
+{% if request.user.id == instruct.0.user.id %}
+
+											<li class="settings has-child">
+												<a href="{% url 'setting-genralinfo' instruct.0.slug %}"
+													data-slug="{% url 'setting-genralinfo' instruct.0.slug %}">
+													<i class="fas fa-cog"></i> Settings </a>
+												
+											</li>{% endif %}{% endif %}
+											{% if request.user.is_authenticated %}
+											
+										{% if request.user.id == instruct.0.user.id %}
+										<li class="logout">
+												<a href="{% url 'logout' %}"
+													data-slug="{% url 'logout' %}">
+													<i class="fas fa-sign-out-alt"></i> Logout </a>
+											</li>{% endif %}{% endif %}
+										</ul>
+									</div>
+								</aside>
+								<article id="profile-content" class="lp-profile-content">
+									<div id="profile-content-orders">
+										<div class="profile-orders">
+
+											<div class="learn-press-message success">
+												{% if crs_oder|length != 0  or prod_oder|length != 0 %}
+
+												<table class="shop_table woocommerce-checkout-review-order-table">
+													<thead>
+														<tr><th class="product-name">#</th>
+															<th class="product-name">Name</th>
+															<th class="product-name">Quntity</th>
+															<th class="product-total">Amount</th>
+															
+															<th class="product-total">Detail</th>
+														</tr>
+													</thead>
+													<tbody>
+														
+														
+														{% for c  in crs_oder %}
+											
+														<tr class="cart_item">
+															<td class="product-name">
+															Course 
+															</td>
+															<td class="product-name">
+																{{c.course.course_title|capfirst|slice:':20'}}  . . . 
+															</td>
+															
+															<td class="product-total">
+																<span class="woocommerce-Price-amount amount"><bdi><span
+																			class="woocommerce-Price-currencySymbol"></span>{{c.quntity}}</bdi></span>
+															</td><td class="product-total" >
+																<span class="woocommerce-Price-amount amount" ><bdi><span
+																			class="woocommerce-Price-currencySymbol" >&#36;</span>
+																			{{c.amount}}</bdi></span>
+															</td><td>
+																<a data-toggle="modal" id='prod'
+																data-target="#crs{{forloop.counter}}">
+														   
+															<button  style="float: rigth; border-radius: 5px;"
+															class="btn btn-primary" name="apply_coupon"
+															value="Apply coupon">view</button></a></td>
+														</tr>
+														
+														<div class="modal productsQuickView fade" id="crs{{forloop.counter}}"
+														tabindex="-1" role="dialog" aria-labelledby="prod"
+														aria-hidden="true">
+					
+					
+														<div class="modal-dialog modal-dialog-centered" role="document">
+															<div class="modal-content">
+																<button type="button" class="close" data-dismiss="modal"  style="line-height: 0px;" aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+																<div class="row">
+																	<div class="col-lg-6">
+																		<div class="products-image">
+																			<img width="670" height="800" src="/media/{{c.course.course_img}}}"
+																				id='prod_img'
+																				class="attachment-full size-full wp-post-image" alt=""
+																				loading="lazy" srcset="/media/{{c.course.course_img}}  670w ,
+											  /media/{{c.course.course_img}}  251w ,
+											   /media/{{c.course.course_img}}  600w " sizes="(max-width: 670px) 100vw, 670px" />
+																		</div>
+																	</div>
+																	<div class="col-lg-6">
+																		<div class="products-content">
+					
+					
+					
+																			<h3>{{c.course.course_title|capfirst}}</h3>
+										
+																	
+																			<div class="woocommerce-product-details__short-description">
+																				<p>{{c.course.course_description|capfirst|safe|slice:':100'}}...</p>
+																			</div>
+																			<div class="product-meta">
+																				<div class="product_meta">
+																					<span class="posted_in">Price:
+					
+																						<input value="{{c.course.course_price}}"
+																							style="border:none; display: inline;"
+																							id='prod_cat'>
+																					</span>	
+														
+																					<span class="posted_in">Quntity:
+					
+																						<input value="{{c.quntity}}"
+																							style="border:none; display: inline;"
+																							id='prod_cat'>
+																					</span>	
+																					<span class="posted_in">Payment Method:
+					
+																						<input value="{{c.payment|capfirst}}"
+																							style="border:none; display: inline;"
+																							id='prod_cat'>
+																					</span>															</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+					
+													</div>
+														{% endfor %}
+														
+														{% for p  in prod_oder %}
+														
+														<tr class="cart_item">
+															<td class="product-name">
+															Product
+															</td>
+															<td class="product-name">
+																{{p.product.product_title|capfirst}} 
+															</td>
+															<td class="product-total">
+																<span class="woocommerce-Price-amount amount"><bdi><span
+																			class="woocommerce-Price-currencySymbol"></span>{{p.quntity}}</bdi></span>
+															</td>
+															<td class="product-total">
+																<span class="woocommerce-Price-amount amount"><bdi><span
+																			class="woocommerce-Price-currencySymbol">&#36;</span>{{p.amount}}</bdi></span>
+															</td>
+															<td <a data-toggle="modal" id='crs'
+															data-target="#prod{{forloop.counter}}">
+													   
+																<button style="float: rigth;"
+																class="btn btn-primary" name="apply_coupon"
+																value="Apply coupon">view</button></a></td>
+														</tr>
+														<div class="modal productsQuickView fade" id="prod{{forloop.counter}}"
+														tabindex="-1" role="dialog" aria-labelledby="productsModalCenterTitle"
+														aria-hidden="true">
+					
+					
+														<div class="modal-dialog modal-dialog-centered" role="document">
+															<div class="modal-content">
+																
+
+																<button type="button" class="close" data-dismiss="modal" style="line-height: 10px;" aria-label="Close">
+																	<span aria-hidden="true">&times;</span>
+																</button>
+																<div class="row">
+																	<div class="col-lg-6">
+																		<div class="products-image">
+																			<img width="670" height="800" src="/media/{{p.product.product_img}}}"
+																				id='prod_img'
+																				class="attachment-full size-full wp-post-image" alt=""
+																				loading="lazy" srcset="/media/{{p.product.product_img}}  670w ,
+											  /media/{{p.product.product_img}}  251w ,
+											   /media/{{p.product.product_img}}  600w " sizes="(max-width: 670px) 100vw, 670px" />
+																		</div>
+																	</div>
+																	<div class="col-lg-6">
+																		<div class="products-content">
+					
+					
+					
+																			<h3>{{p.product.product_title|capfirst}}</h3>
+										
+																	
+																			<div class="woocommerce-product-details__short-description">
+																				<p>{{p.product.product_description|capfirst|safe|slice:':100'}}...</p>
+																			</div>
+																			<div class="product-meta">
+																				<div class="product_meta">
+																					<span class="posted_in">Price:
+					
+																						<input value="{{p.product.product_price}}"
+																							style="border:none; display: inline;"
+																							id='prod_cat'>
+																					</span>	
+														
+																					<span class="posted_in">Quntity:
+					
+																						<input value="{{p.quntity}}"
+																							style="border:none; display: inline;"
+																							id='prod_cat'>
+																					</span>	
+																					<span class="posted_in">Payment Method:
+					
+																						<input value="{{p.payment|capfirst}}"
+																							style="border:none; display: inline;"
+																							id='prod_cat'>
+																					</span>															</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+					
+													</div>
+														{% endfor %}
+														
+														
+													</tbody>
+													
+												</table>
+
+
+
+
+
+
+												{% else %}<h5 class="mt-1">
+												<i class="fa"></i>No orders!</h5> {% endif %}
+											
+											
+											
+											</div>
+											{% comment %}
+											<div class="profile-recover-order">
+												<p class="recover-order__title">If you have a valid order key you can
+													recover it here.</p>
+												<p class="recover-order__description">When you checkout with Guest order
+													key will send in email, you can use order key to create order.</p>
+												<div class="order-recover">
+													<input type="text" name="order-key" value=""
+														placeholder="Order key">
+													<input type="hidden" name="recover-order-nonce" value="06322e00c9">
+													<input type="hidden" name="lp-ajax" value="recover-order">
+													<button type="button"
+														class="lp-button button-recover-order">Recover</button>
+								
+												</div>
+											</div>{% endcomment %}
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %}

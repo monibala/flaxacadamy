@@ -1,0 +1,574 @@
+{% extends 'basic.html' %}
+{% block body %}
+{% load static %}
+
+
+
+{% block body1 %}
+<style id='ecademy-main-style-inline-css' type='text/css'>
+
+    .default-btn, .ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget:hover .icon, .ecademy-nav .navbar .others-option .cart-btn a span, .others-option-for-responsive .dot-menu:hover .inner .circle, .others-option-for-responsive .option-inner .others-option .cart-btn a span, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget:hover .icon, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .others-option .cart-btn a span, .banner-wrapper-content form button, .home-banner-area, .about-video-box .video-btn, .single-courses-box .courses-image .price, .single-courses-item-box .courses-image .price, .courses-slides.owl-theme .owl-dots .owl-dot:hover span::before, .courses-slides.owl-theme .owl-dots .owl-dot.active span::before, .courses-slides.owl-theme .owl-nav [class*=owl-]:hover , .shorting-menu.shorting-menu-style-two .filter::before, .load-more-btn .load-more:hover, .courses-details-desc .nav .nav-item .nav-link::before, .courses-details-info .image .content i, .courses-details-info .courses-share .share-info .social-link li a:hover, .courses-details-desc-style-two .courses-author .author-profile-header, .courses-sidebar-information .courses-share .share-info .social-link li a:hover, .single-advisor-box .advisor-content .social-link li a:hover, .advisor-slides.owl-theme .owl-dots .owl-dot:hover span::before, .advisor-slides.owl-theme .owl-dots .owl-dot.active span::before, .single-advisor-item .advisor-image .social-link li a:hover, .advisor-slides-two.owl-theme .owl-dots .owl-dot:hover span::before, .advisor-slides-two.owl-theme .owl-dots .owl-dot.active span::before, .start-with-success-box .content .link-btn:hover, .single-feedback-item::after, .feedback-slides.owl-theme .owl-dots .owl-dot:hover span::before, .feedback-slides.owl-theme .owl-dots .owl-dot.active span::before, .testimonials-slides.owl-theme .owl-dots .owl-dot:hover span::before, .testimonials-slides.owl-theme .owl-dots .owl-dot.active span::before, .feedback-slides-two.owl-theme .owl-dots .owl-dot:hover span::before, .feedback-slides-two.owl-theme .owl-dots .owl-dot.active span::before, .profile-box .content .social-link li a:hover, .profile-courses-quizzes .nav .nav-item .nav-link::before, .profile-courses-quizzes .tab-content .nav .nav-item .nav-link:hover, .profile-courses-quizzes .tab-content .nav .nav-item .nav-link.active, .video-box .video-btn, .events-details-image #timer .countdown-section::before, .events-details-info .events-share .share-info .social-link li a:hover, .blog-slides.owl-theme .owl-dots .owl-dot:hover span::before, .blog-slides.owl-theme .owl-dots .owl-dot.active span::before, .blog-slides.owl-theme .owl-nav [class*=owl-]:hover, .blog-details .article-image-slides.owl-theme .owl-nav [class*=owl-]:hover, .blog-details .article-footer .article-share .social li a, .blog-details .article-author .author-profile-header, blockquote::after, .blockquote::after, .prev-link-wrapper .image-prev::after, .next-link-wrapper .image-next::after, .become-instructor-partner-content.bg-color, .teacher-register-box, .apply-instructor-content .nav .nav-item .nav-link::before, .single-products-box .products-image .products-button ul li a .tooltip-label, .single-products-box .products-image .products-button ul li a .tooltip-label::before, .single-products-box .products-image .products-button ul li a:hover, .membership-levels-table .table thead th, .membership-levels-table .table tbody tr td .select-btn:hover, .pagination-area .page-numbers:hover, .pagination-area .page-numbers.current, .faq-accordion-tab .tabs li a:hover, .faq-accordion-tab .tabs li.current a, .login-form form .lost-your-password-wrap a::after, .login-form form button, .register-form form button, .contact-info ul li:hover .icon, .contact-form, .single-footer-widget .social-link li a:hover, .go-top:hover, .wp-block-search .wp-block-search__button, .wp-block-tag-cloud a:hover, .wp-block-tag-cloud a:focus, .page-links .post-page-numbers:hover, .post-password-form input[type="submit"], .comment-navigation .nav-links .nav-previous a:hover, .comment-navigation .nav-links .nav-next a:hover, .footer-area .single-footer-widget ul li::before, .footer-area .tagcloud a:hover, .sidebar .widget .widget-title::before, .sidebar .widget_search form button:hover, .sidebar .widget_search form button:focus, .sidebar .tagcloud a:hover, .comments-area .comment-body .reply a:hover, #comments .comment-list .comment-body .reply a:hover, lp-profile-content button, #course-item-content-header .form-button.lp-button-back button, .login-content .login-form form button, .sidebar .tagcloud a:hover, .footer-area .widget_search form button, body.single-lp_course.course-item-popup .course-item-nav a:hover, .learnpress .become-teacher-form button, .learnpress #learn-press-checkout-login button, .learnpress #learn-press-user-profile button, .no-results form button, .single-course-sidebar .widget ul li::before, .single-course-sidebar .widget_lp-widget-popular-courses .widget-footer a:hover::before, .single-course-sidebar .widget_lp-widget-featured-courses .widget-footer a:hover::before, .single-course-sidebar .widget_lp-widget-recent-courses .widget-footer a:hover::before, .sidebar .widget_lp-widget-popular-courses .widget-footer a:hover::before, .sidebar .widget_lp-widget-featured-courses .widget-footer a:hover::before, .sidebar .widget_lp-widget-recent-courses .widget-footer a:hover::before, .wp-block-button__link, .single-language-courses-box:hover .default-btn, .single-language-courses-box .default-btn span, .feedback-slides-style-two.feedback-slides.owl-theme::before, .information-content .apply-details li .icon, .products_details div.product .woocommerce-tabs ul#tabs .nav-item .nav-link::before, .newsletter-modal .newsletter-modal-content .modal-inner-content form button, .free-trial-form form button, button#bbp_reply_submit, .bg-fe4a55, .experience-content .features-list li:hover i, .single-pricing-box .default-btn span, .experience-image .title, .experience-image .video-btn:hover, .experience-image::before, #fep-menu .fep-button, .fep-button, .fep-button-active, #event-lightbox .event_auth_button, .event-auth-form  input#wp-submit, .about-content .about-list li span:hover i, .feedback-slides-three.owl-theme .owl-nav [class*=owl-]:hover::before, .courses-slides-two.owl-theme .owl-nav [class*=owl-]:hover::before, .owl-item:nth-child(2) .single-kindergarten-courses-box, .services-slides.owl-theme .owl-nav [class*=owl-]:hover::before, .about-content .about-list li span:hover i, .default-btn-style-two::before, .experience-img::before, .single-pricing-box .default-btn span, .tutor-form-group.tutor-reg-form-btn-wrap .tutor-button, .tutor-login-form-wrap input[type="submit"], .pmpro_login_wrap #content-item-quiz button, input[type=submit], #popup_ok { background-color: #fe4a55; }
+
+    .ecademy-grid-sorting .ordering .nice-select .list .option:hover, .ecademy-grid-sorting .ordering .nice-select .list .option.selected:hover, .page-links .current, .wp-block-file .wp-block-file__button, .learnpress-page .lp-button, #learn-press-course-curriculum.courses-curriculum ul li.current a, .elementor-1114 .elementor-element.elementor-element-59893a7:not(.elementor-motion-effects-element-type-background), .download-syllabus-form form .form-group .nice-select .list .option.selected:hover, .download-syllabus-form form .form-group .nice-select .list .option:hover, .fep-button:hover, .learn-press-pmpro-buy-membership .purchase-button { background-color: #fe4a55 !important; }
+
+    .comments-area .form-submit input, .coming-soon-content form .form-group .label-title::before, .login-form form .remember-me-wrap [type="checkbox"]:checked + label:after, .login-form form .remember-me-wrap [type="checkbox"]:not(:checked) + label:after, .footer-area .widget_search form button, .sidebar .widget .widget-title::after, .sidebar .widget ul li::before, .sidebar .widget_search form button, learn-press-pagination .page-numbers > li a:hover, .learn-press-pagination .page-numbers > li a.current, .learn-press-pagination .page-numbers > li a:hover, .learn-press [type=button], .learn-press [type=reset], .learn-press [type=submit], .learn-press button, body.single-lp_course.course-item-popup .curriculum-sections .section .section-content .course-item.current, .learnpress .become-teacher-form .learn-press-message:before, .learnpress #learn-press-checkout-login .learn-press-message:before, #user-submit, #bbp_search_submit, .owl-item:nth-child(2) .single-kindergarten-courses-box .price, .tutor-button.tutor-success, .pmpro-has-access a.pmpro_btn, .pmpro-has-access input.pmpro_btn, .learnpress #learn-press-checkout-register button { background: #fe4a55;}
+
+    .learn-press-message:before, .guest-and-class a { background: #fe4a55 !important;}
+
+    a:hover, .section-title .sub-title, .ecademy-nav .navbar .search-box button, .ecademy-nav .navbar .navbar-nav .nav-item a:hover, .ecademy-nav .navbar .navbar-nav .nav-item a:focus, .ecademy-nav .navbar .navbar-nav .nav-item a.active, .ecademy-nav .navbar .navbar-nav .nav-item:hover a, .ecademy-nav .navbar .navbar-nav .nav-item.active a, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li a:focus, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a:focus, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a:focus, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li .dropdown-menu li.active a, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li .dropdown-menu li.active a, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu li.active a, .ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a:hover, .ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a.active, .ecademy-nav .navbar .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget .sub-title, .ecademy-nav .navbar .others-option .cart-btn a:hover, .others-option-for-responsive .option-inner .search-box button, .others-option-for-responsive .option-inner .others-option .cart-btn a:hover, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .mean-nav ul li a.active, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a:hover, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .megamenu-submenu li a.active, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .navbar-nav .nav-item.megamenu .dropdown-menu .single-category-widget .sub-title, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .search-box button, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .others-option .cart-btn a:hover, .banner-wrapper-content form label, .banner-wrapper-content .popular-search-list li a:hover, .single-banner-box:hover .icon, .single-box-item .link-btn, .single-features-box .link-btn, .about-content .sub-title, .about-content .features-list li span i, .about-content-box .sub-title, .about-content-box .link-btn, .single-courses-box .courses-image .fav:hover, .single-courses-box .courses-content .course-author span a, .single-courses-box .courses-content .courses-box-footer li i, .single-courses-item .courses-content .fav:hover, .single-courses-item .courses-content .price, .single-courses-item .courses-content .courses-content-footer li i, .single-courses-item-box .courses-image .fav:hover, .single-courses-item-box .courses-content .course-author span, .courses-info p a, .shorting-menu .filter.active, .shorting-menu .filter:hover, .ecademy-grid-sorting .ordering .nice-select .list .option::before, .load-more-btn .load-more, .courses-details-desc .tab-content .courses-curriculum ul li a::before, .courses-details-desc .tab-content .courses-curriculum ul li a .courses-meta .duration, .courses-details-desc .tab-content .courses-curriculum ul li a:hover, .courses-details-info .info li span i, .courses-details-info .info li.price, .courses-details-info .courses-share .share-info span, .courses-details-header .courses-meta ul li span, .courses-details-header .courses-meta ul li a:hover, .courses-details-header .courses-meta ul li a:focus, .courses-details-desc-style-two .why-you-learn ul li span i, .courses-details-desc-style-two .courses-curriculum ul li a::before, .courses-details-desc-style-two .courses-curriculum ul li a .courses-meta .duration, .courses-details-desc-style-two .courses-curriculum ul li a:hover, .courses-sidebar-information .info li span i, .courses-sidebar-information .info li.price, .courses-sidebar-information .courses-share .share-info span, .slogan-content span, .single-advisor-box .advisor-content .sub-title, .single-advisor-item .advisor-content span, .start-with-success-box .content .link-btn, .start-with-success-box .content span, .single-funfacts-box h3, .single-funfacts-item h3, .single-funfacts h3, .feedback-content .sub-title, .feedback-content .feedback-info p a, .single-feedback-item .client-info .title h3, .single-testimonials-item h3, .single-feedback-box .client-info .title h3, .single-testimonials-box h3, .profile-box .content .sub-title, .profile-courses-quizzes .tab-content .table tbody tr td a:hover, .get-instant-courses-content .sub-title, .single-events-box .image .date, .single-events-box .content .location i, .events-details-header ul li i, .events-details-info .info li.price, .events-details-info .btn-box p a, .events-details-info .events-share .share-info span, .single-blog-post .post-content .category:hover, .single-blog-post .post-content .post-content-footer li i, .single-blog-post-item .post-content .category:hover, .single-blog-post-item .post-content .post-content-footer li .post-author span, .single-blog-post-item .post-content .post-content-footer li i, .blog-post-info p a, .single-blog-post-box .post-content .category:hover, .single-blog-post-box .post-content .post-content-footer li .post-author span, .single-blog-post-box .post-content .post-content-footer li i, .blog-details .article-content .entry-meta ul li span, .blog-details .article-content .features-list li i, .blog-details .article-footer .article-share .social li a:hover, .blog-details .article-footer .article-share .social li a:focus, .prev-link-wrapper a:hover .prev-link-info-wrapper, .next-link-wrapper a:hover .next-link-info-wrapper, .view-all-courses-content .sub-title, .teacher-register-box form .default-btn:hover, .premium-access-content .sub-title, .page-title-content ul li a:hover, .subscribe-content .sub-title, .single-products-box .products-content .add-to-cart:hover, .products-details-desc .price, .contact-info .sub-title, .contact-info ul li .icon, .contact-form form .default-btn:hover, .single-footer-widget .footer-links-list li a:hover, .single-footer-widget .footer-contact-info li a:hover, .footer-bottom-area p a, .footer-bottom-area ul li a:hover, .footer-area .calendar_wrap .wp-calendar-nav-prev a:hover, .footer-area .single-footer-widget ul li a:hover, body.single-lp_course.course-item-popup .curriculum-sections .section .section-content .course-item .section-item-link::before, body.single-lp_course.course-item-popup .curriculum-sections .section .section-content .course-item .course-item-meta .item-meta.course-item-status, .learnpress .become-teacher-form .message-info::before, .learnpress #learn-press-checkout-login #checkout-form-login .row a:hover, .learnpress #learn-press-user-profile .learn-press-form-login .row a:hover, .learnpress #learn-press-user-profile .learn-press-form-register .row a:hover, .learnpress .become-teacher-form .form-fields .form-field label span, .single-course-sidebar .widget_lp-widget-popular-courses .course-entry .course-detail a:hover, .single-course-sidebar .widget_lp-widget-popular-courses .course-entry .course-detail h3:hover, .single-course-sidebar .widget_lp-widget-featured-courses .course-entry .course-detail a:hover, .single-course-sidebar .widget_lp-widget-featured-courses .course-entry .course-detail h3:hover, .single-course-sidebar .widget_lp-widget-recent-courses .course-entry .course-detail a:hover, .single-course-sidebar .widget_lp-widget-recent-courses .course-entry .course-detail h3:hover, .sidebar .widget_lp-widget-popular-courses .course-entry .course-detail a:hover, .sidebar .widget_lp-widget-popular-courses .course-entry .course-detail h3:hover, .sidebar .widget_lp-widget-featured-courses .course-entry .course-detail a:hover, .sidebar .widget_lp-widget-featured-courses .course-entry .course-detail h3:hover, .sidebar .widget_lp-widget-recent-courses .course-entry .course-detail a:hover, .sidebar .widget_lp-widget-recent-courses .course-entry .course-detail h3:hover, .lp-user-profile #learn-press-profile-content .learn-press-subtab-content .lp-sub-menu li span, #learn-press-course-curriculum.courses-curriculum ul li a::before, .sidebar .calendar_wrap table #today a, .footer-area .calendar_wrap table #today, .footer-area .single-footer-widget .wp-calendar-nav .wp-calendar-nav-next a:hover, .sidebar .widget_rss ul li .rsswidget:hover, .sidebar .calendar_wrap table th a, .sidebar .calendar_wrap table #today, .wp-block-calendar a, .wp-block-image figcaption a, blockquote a, table td a, dd a, p a, .page-main-content .wp-caption .wp-caption-text a, .blog-details .wp-caption .wp-caption-text a, .blog-details table a, .blog-details .blog-details-content ul li a, .sticky .single-blog-post .post-content .post-content-footer li a:hover, .sticky .single-blog-post .post-content h3 a:hover, .blog-details .blog-details-content .entry-meta li a:hover, .blog-details .blog-details-content ol li a, .wp-block-file a, .blog-details .blog-details-content ol li a, #comments .comment-metadata a:hover, .page-main-content table a, .products_details div.product .woocommerce-product-rating a.woocommerce-review-link:hover, .products_details div.product .product_meta span.sku_wrapper span, .single-language-courses-box .default-btn, .information-content .sub-title, .bbpress-wrapper a, #bbpress-forums div.bbp-topic-author a.bbp-author-name, #bbpress-forums div.bbp-reply-author a.bbp-author-name, #bbpress-forums #bbp-single-user-details #bbp-user-navigation a:hover, a.bbp-register-link, a.bbp-lostpass-link, .right-sidebar ul li a:hover, .bbp-author-name:hover, .download-syllabus-form form span.wpcf7-list-item-label a:hover, .preloader .loader .sbl-half-circle-spin, .boxes-info p a, .overview-box .overview-content .sub-title, .single-training-box .link-btn, .experience-content .sub-title, .download-syllabus-form form .form-group .nice-select .list .option::before, #fep-content a, .fep-error a, .about-content .about-list li span:hover i, .single-kindergarten-services-box .content .icon, .single-kindergarten-courses-box .courses-image .fav:hover, .single-blog-item .post-content .category:hover, .events-box .content .location i, .col-lg-3:nth-child(2) .single-selected-ages-box h3, .col-lg-3:nth-child(2) .single-selected-ages-box .ages-number, .tutor-container .tutor-course-loop-title h2 a:hover, .lp-pmpro-membership-list .item-td.item-desc, .lp-pmpro-membership-list .item-td.item-check, .lp-pmpro-membership-list .item-td a:hover, #pmpro_account-profile a, a.ld-enroll-btn { color: #fe4a55; }
+
+    .single-footer-widget .footer-contact-info li a:hover, .footer-area .single-footer-widget ul li a:hover, span.bbp-admin-links a { color: #fe4a55 !important; }
+
+    .form-control:focus, .ecademy-nav .navbar .search-box .input-search:focus, .others-option-for-responsive .option-inner .search-box .input-search:focus, .ecademy-responsive-nav .ecademy-responsive-menu.mean-container .search-box .input-search:focus, .banner-wrapper-content form .input-search:focus, .courses-slides.owl-theme .owl-dots .owl-dot:hover span, .courses-slides.owl-theme .owl-dots .owl-dot.active span, .ecademy-grid-sorting .ordering .nice-select:hover, .advisor-slides.owl-theme .owl-dots .owl-dot:hover span, .advisor-slides.owl-theme .owl-dots .owl-dot.active span, .advisor-slides-two.owl-theme .owl-dots .owl-dot:hover span, .advisor-slides-two.owl-theme .owl-dots .owl-dot.active span, .funfacts-list .row .col-lg-6:nth-child(2) .single-funfacts-box, .single-funfacts-box:hover, .feedback-slides.owl-theme .owl-dots .owl-dot:hover span, .feedback-slides.owl-theme .owl-dots .owl-dot.active span, .testimonials-slides.owl-theme .owl-dots .owl-dot:hover span, .testimonials-slides.owl-theme .owl-dots .owl-dot.active span, .feedback-slides-two.owl-theme .owl-dots .owl-dot:hover span, .feedback-slides-two.owl-theme .owl-dots .owl-dot.active span, .blog-slides.owl-theme .owl-dots .owl-dot:hover span, .blog-slides.owl-theme .owl-dots .owl-dot.active span, .blog-details .article-image-slides.owl-theme .owl-nav [class*=owl-]:hover, .login-form form .remember-me-wrap [type="checkbox"]:hover + label:before, .login-form form .remember-me-wrap [type="checkbox"]:checked + label:before, .ecademy-nav .navbar .navbar-nav .nav-item .dropdown-menu, .about-video-box .video-btn::after, .about-video-box .video-btn::before, .video-box .video-btn::after, .video-box .video-btn::before, .blog-details .article-footer .article-share .social li a, .products-details-desc .products-share .social li a, .user-actions, .is-style-outline .wp-block-button__link, #comments .comment-list .comment-body .reply a:hover, .products_details div.product .woocommerce-product-rating a.woocommerce-review-link:hover, .single-language-courses-box .default-btn, .services-slides.owl-theme .owl-nav [class*=owl-], .courses-slides-two.owl-theme .owl-nav [class*=owl-], .default-btn-style-two, .tutor-form-group.tutor-reg-form-btn-wrap .tutor-button, .tutor-login-form-wrap input[type="submit"] { border-color: #fe4a55; }
+
+    .navbar-area { background-color: #ffffff !important; }
+    .footer-area .single-footer-widget p, .footer-area .single-footer-widget ul li, .single-footer-widget .footer-contact-info li a, .footer-area .single-footer-widget ul li a { color: #e4e4e4 !important; }
+    .footer-area { background-color: #100f1f; }
+    .single-footer-widget .social-link li .d-block:hover { color: var(--whiteColor) !important;}
+
+    .single-products .sale-btn, .single-products .products-image ul li a:hover, .productsQuickView .modal-dialog .modal-content .products-content form button, .productsQuickView .modal-dialog .modal-content button.close:hover, .productsQuickView .modal-dialog .modal-content button.close:hover, .woocommerce ul.products li.product:hover .add-to-cart-btn, .shop-sidebar .widget_product_search form button, .shop-sidebar a.button, .shop-sidebar .woocommerce-widget-layered-nav-dropdown__submit, .shop-sidebar .woocommerce button.button, .woocommerce .widget_price_filter .ui-slider .ui-slider-range, .woocommerce .widget_price_filter .ui-slider .ui-slider-handle, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .products_details div.product .woocommerce-tabs .panel #respond input#submit, .products_details div.product .product_title::before, .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover, .btn-primary:hover, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce .woocommerce-MyAccount-navigation ul .is-active a, .woocommerce .woocommerce-MyAccount-navigation ul li a:hover, .products_details div.product span.sale-btn, .shop-sidebar .tagcloud a:focus, .shop-sidebar .widget_search form button, .shop-sidebar .widget .widget-title::before, .shop-sidebar .widget ul li::before, .shop-sidebar .tagcloud a:hover, .shop-sidebar .tagcloud a:focus { background-color: #fe4a55; }
+    .btn-primary, .btn-primary.disabled, .btn-primary:disabled { background-color: #fe4a55; }
+
+    .productsQuickView .modal-dialog .modal-content .products-content .product-meta span a:hover, .woocommerce ul.products li.product h3 a:hover, .woocommerce ul.products li.product .add-to-cart-btn, .woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .products_details div.product .woocommerce-tabs ul.tabs li a:hover, .products_details div.product .woocommerce-tabs ul.tabs li.active, .products_details div.product .woocommerce-tabs ul.tabs li.active a:hover, .products_details div.product .product_meta span.posted_in a:hover, .products_details div.product .product_meta span.tagged_as a:hover, .products_details div.product span.price, .cart-table table tbody tr td.product-name a, .woocommerce-message::before, .woocommerce-info::before, .shop-sidebar .widget ul li a:hover, .shop-sidebar .widget_rss .widget-title .rsswidget { color: #fe4a55; }
+
+    .woocommerce-info, .woocommerce-message { border-top-color: #fe4a55; }
+    .shop-sidebar .widget_shopping_cart .cart_list li a:hover, .shop-sidebar ul li a:hover { color: #fe4a55 !important; }
+    .woocommerce ul.products li.product:hover .add-to-cart-btn, .form-control:focus, .woocommerce .form-control:focus, .shop-sidebar .tagcloud a:hover, .shop-sidebar .tagcloud a:focus, .tutor-button.tutor-success { border-color: #fe4a55; }
+
+    .navbar-area.no-sticky.is-sticky {display:none !important;}
+    .courses-curriculum .scroll-wrapper > .scroll-content { overflow: inherit !important; }
+    .courses-curriculum .scroll-wrapper { overflow: initial !important; }
+    .single-blog-post .post-image a img {
+width: 100%;
+}
+
+.pmpro-has-access .entry-content ul {
+list-style-type: none;
+}
+
+.lp-profile-content button, #course-item-content-header .form-button.lp-button-back button {
+background: #fe4a55;
+}
+
+.lp-profile-content button:hover, .lp-profile-content button:focus, #course-item-content-header .form-button.lp-button-back button:hover, #course-item-content-header .form-button.lp-button-back button:focus {
+color: #ffffff !important;
+}
+@media only screen and (max-width: 767px) {
+#learn-press-profile .lp-content-area {
+display: unset !important;
+} 
+}
+</style>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/global.min.js' %}" id='lp-global-js'></script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/dist/utils.min.js' %}" id='lp-utils-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/moxie.min.js' %}" id='moxiejs-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/plupload/plupload.min.js' %}" id='plupload-js'></script>
+
+
+<link rel='stylesheet' id='editor-buttons-css' href="{% static '/wp-includes/css/editor.min.css' %}" type='text/css' media='all' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' id='lp-font-awesome-5-css' href="{% static '/wp-content/plugins/learnpress/assets/src/css/vendor/font-awesome-5.min.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='lp-bundle-css' href="{% static '/wp-content/plugins/learnpress/assets/css/bundle.min.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='learnpress-css' href="{% static '/wp-content/plugins/learnpress/assets/css/learnpress.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='buttons-css' href="{% static '/wp-includes/css/buttons.min.css' %}" type='text/css' media='all' />
+
+<!-- 
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/mouse.min.js' %}" id='jquery-ui-mouse-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/slider.min.js' %}" id='jquery-ui-slider-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/draggable.min.js' %}" id='jquery-ui-draggable-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/jquery.ui.touch-punch.js' %}" id='jquery-touch-punch-js'></script>
+<script type='text/javascript' id='lp-profile-user-js-extra'>
+/* <![CDATA[ */
+var lpProfileUserSettings = {"processing":"Processing","redirecting":"Redirecting","avatar_size":{"width":250,"height":250}};
+/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/frontend/profile.min.js' %}" id='lp-profile-user-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/lodash.min.js' %}" id='lodash-js'></script>
+<script type='text/javascript' id='lodash-js-after'>
+window.lodash = _.noConflict();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react.min.js' %}" id='react-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/vendor/react-dom.min.js' %}" id='react-dom-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/escape-html.min.js' %}" id='wp-escape-html-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/element.min.js' %}" id='wp-element-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/hooks.min.js' %}" id='wp-hooks-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/deprecated.min.js' %}" id='wp-deprecated-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/dom.min.js' %}" id='wp-dom-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/is-shallow-equal.min.js' %}" id='wp-is-shallow-equal-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/i18n.min.js' %}" id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='wp-keycodes-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/keycodes.min.js' %}" id='wp-keycodes-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/priority-queue.min.js' %}" id='wp-priority-queue-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/compose.min.js' %}" id='wp-compose-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/redux-routine.min.js' %}" id='wp-redux-routine-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/data.min.js' %}" id='wp-data-js'></script>
+<script type='text/javascript' id='wp-data-js-after'>
+( function() {
+	var userId = 0;
+	var storageKey = "WP_DATA_USER_" + userId;
+	wp.data
+		.use( wp.data.plugins.persistence, { storageKey: storageKey } );
+	wp.data.plugins.persistence.__unstableMigrate( { storageKey: storageKey } );
+} )();
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/url.min.js' %}" id='wp-url-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/api-fetch.min.js' %}" id='wp-api-fetch-js'></script>
+<script type='text/javascript' id='wp-api-fetch-js-after'>
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "/wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "6b363cd8d7" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type='text/javascript' src="{% static '/wp-content/plugins/learnpress/assets/js/dist/frontend/profile.min.js' %}" id='lp-profile-v2-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/wp-embed.min.js' %}" id='wp-embed-js'></script>
+<script type='text/javascript' src="{% static '/wp-admin/js/editor.min.js' %}" id='editor-js'></script>
+<script type='text/javascript' id='editor-js-after'>
+window.wp.oldEditor = window.wp.editor;
+</script>
+<script type='text/javascript' id='quicktags-js-extra'>
+/* <![CDATA[ */
+var quicktagsL10n = {"closeAllOpenTags":"Close all open tags","closeTags":"close tags","enterURL":"Enter the URL","enterImageURL":"Enter the URL of the image","enterImageDescription":"Enter a description of the image","textdirection":"text direction","toggleTextdirection":"Toggle Editor Text Direction","dfw":"Distraction-free writing mode","strong":"Bold","strongClose":"Close bold tag","em":"Italic","emClose":"Close italic tag","link":"Insert link","blockquote":"Blockquote","blockquoteClose":"Close blockquote tag","del":"Deleted text (strikethrough)","delClose":"Close deleted text tag","ins":"Inserted text","insClose":"Close inserted text tag","image":"Insert image","ul":"Bulleted list","ulClose":"Close bulleted list tag","ol":"Numbered list","olClose":"Close numbered list tag","li":"List item","liClose":"Close list item tag","code":"Code","codeClose":"Close code tag","more":"Insert Read More tag"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/quicktags.min.js' %}" id='quicktags-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/dom-ready.min.js' %}" id='wp-dom-ready-js'></script>
+<script type='text/javascript' id='wp-a11y-js-translations'>
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/dist/a11y.min.js' %}" id='wp-a11y-js'></script>
+<script type='text/javascript' id='wplink-js-extra'>
+/* <![CDATA[ */
+var wpLinkL10n = {"title":"Insert\/edit link","update":"Update","save":"Add Link","noTitle":"(no title)","noMatchesFound":"No results found.","linkSelected":"Link selected.","linkInserted":"Link inserted.","minInputLength":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/wplink.min.js' %}" id='wplink-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/menu.min.js' %}" id='jquery-ui-menu-js'></script>
+<script type='text/javascript' id='jquery-ui-autocomplete-js-extra'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/jquery/ui/autocomplete.min.js' %}" id='jquery-ui-autocomplete-js'></script>
+<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "/wp-includes/js/tinymce",
+			suffix: ".min",
+						mceInit: {'acf_content':{theme:"modern",skin:"lightgray",language:"en",formats:{alignleft: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"left"}},{selector: "img,table,dl.wp-caption", classes: "alignleft"}],aligncenter: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"center"}},{selector: "img,table,dl.wp-caption", classes: "aligncenter"}],alignright: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"right"}},{selector: "img,table,dl.wp-caption", classes: "alignright"}],strikethrough: {inline: "del"}},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,cache_suffix:"wp-mce-49110-20201110",resize:"vertical",menubar:false,branding:false,preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",end_container_on_empty_block:true,wpeditimage_html5_captions:true,wp_lang_attr:"en-US",wp_keep_scroll_position:false,wp_shortcut_labels:{"Heading 1":"access1","Heading 2":"access2","Heading 3":"access3","Heading 4":"access4","Heading 5":"access5","Heading 6":"access6","Paragraph":"access7","Blockquote":"accessQ","Underline":"metaU","Strikethrough":"accessD","Bold":"metaB","Italic":"metaI","Code":"accessX","Align center":"accessC","Align right":"accessR","Align left":"accessL","Justify":"accessJ","Cut":"metaX","Copy":"metaC","Paste":"metaV","Select all":"metaA","Undo":"metaZ","Redo":"metaY","Bullet list":"accessU","Numbered list":"accessO","Insert\/edit image":"accessM","Insert\/edit link":"metaK","Remove link":"accessS","Toolbar Toggle":"accessZ","Insert Read More tag":"accessT","Insert Page Break tag":"accessP","Distraction-free writing mode":"accessW","Add Media":"accessM","Keyboard Shortcuts":"accessH"},content_css:"/wp-includes/css/dashicons.min.css?ver=5.8.2,/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=5.8.2",plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image",selector:"#acf_content",wpautop:false,indent:true,toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,wp_more,spellchecker,fullscreen,wp_adv",toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help",toolbar3:"",toolbar4:"",tabfocus_elements:":prev,:next",body_class:"acf_content post-type-page post-status-publish page-template-default locale-en-us",valid_elements:"*[*]",extended_valid_elements:"*[*]"}},
+			qtInit: {'acf_content':{id:"acf_content",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,more,close"}},
+			ref: {plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+<script type='text/javascript' src="{% static '/wp-includes/js/tinymce/tinymce.min.js'%}" id='wp-tinymce-root-js'></script>
+<script type='text/javascript' src="{% static '/wp-includes/js/tinymce/plugins/compat3x/plugin.min.js' %}" id='wp-tinymce-js'></script>
+<script type='text/javascript'>
+tinymce.addI18n( 'en', {"Ok":"OK","Bullet list":"Bulleted list","Insert\/Edit code sample":"Insert\/edit code sample","Url":"URL","Spellcheck":"Check Spelling","Row properties":"Table row properties","Cell properties":"Table cell properties","Cols":"Columns","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you\u2019re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press Alt-Shift-H for help.","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser\u2019s edit menu instead.","Edit|button":"Edit"});
+tinymce.ScriptLoader.markDone( '/wp-includes/js/tinymce/langs/en.js' );
+</script>
+<script type="text/javascript">
+			if (typeof fwEvents != 'undefined') {
+				fwEvents.trigger('fw:tinymce:init:before');
+			}
+		</script>
+<script type="text/javascript">
+		var ajaxurl = "/ecademy/wp-admin/admin-ajax.php";
+		( function() {
+			var initialized = [];
+			var initialize  = function() {
+				var init, id, inPostbox, $wrap;
+				var readyState = document.readyState;
+
+				if ( readyState !== 'complete' && readyState !== 'interactive' ) {
+					return;
+				}
+
+				for ( id in tinyMCEPreInit.mceInit ) {
+					if ( initialized.indexOf( id ) > -1 ) {
+						continue;
+					}
+
+					init      = tinyMCEPreInit.mceInit[id];
+					$wrap     = tinymce.$( '#wp-' + id + '-wrap' );
+					inPostbox = $wrap.parents( '.postbox' ).length > 0;
+
+					if (
+						! init.wp_skip_init &&
+						( $wrap.hasClass( 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( id ) ) &&
+						( readyState === 'complete' || ( ! inPostbox && readyState === 'interactive' ) )
+					) {
+						tinymce.init( init );
+						initialized.push( id );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = id;
+						}
+					}
+				}
+			}
+
+			if ( typeof tinymce !== 'undefined' ) {
+				if ( tinymce.Env.ie && tinymce.Env.ie < 11 ) {
+					tinymce.$( '.wp-editor-wrap ' ).removeClass( 'tmce-active' ).addClass( 'html-active' );
+				} else {
+					if ( document.readyState === 'complete' ) {
+						initialize();
+					} else {
+						document.addEventListener( 'readystatechange', initialize );
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( id in tinyMCEPreInit.qtInit ) {
+					quicktags( tinyMCEPreInit.qtInit[id] );
+
+					if ( ! window.wpActiveEditor ) {
+						window.wpActiveEditor = id;
+					}
+				}
+			}
+		}());
+		</script> -->
+       
+       
+        {% endblock body1 %}
+
+<style>
+    #spn{
+        position: absolute;
+        left: 40%;
+        transform: translate(0,-50%);
+        top:37%;
+        cursor: pointer;
+
+    }
+    .fa{
+        font-size: 20px;
+    }
+    </style>
+
+<div class="page-main-content">
+    <div class="page-area">
+        <div class="container">
+            <div id="post-13" class="post-13 page type-page status-publish hentry pmpro-has-access">
+                <div class="entry-content ecademy-Instructor/Student Profile-un">
+                    <div class="learnpress">
+                        <div id="learn-press-profile" class="lp-user-profile guest">
+                            <div class="lp-content-area">
+                                <div class="learn-press-form-login learn-press-form">
+                                    <h3>Login</h3>
+                                    <form name="learn-press-login"  method="post" action="{% url 'login' %}"  >
+                                    {% csrf_token %}    <ul class="form-fields">
+                                            <li class="form-field">
+                                                
+                                                <input type="hidden" id="previous_page" name="next" 
+                                                value="/previous/page/url">
+                                            
+
+                                                <label for="username">Email&nbsp;<span
+                                                        class="required">*</span></label>
+                                                <input type="email" name="email" id="username" required
+                                                       placeholder="Email or username" autocomplete="username"/>
+                                            </li>
+                                            <li class="form-field">
+                                                <label for="password">Password&nbsp;<span
+                                                        class="required">*</span></label>
+                                                <input type="password" name="password" id="password"  required
+                                                      placeholder="Password" autocomplete="current-password"/>
+                                           <!-- <span id="spn">
+                                               <i class="fa fa-eye"
+                                               aria-hidden="true" id="eye"
+                                               onclick="toggle()">
+
+                                               </i>
+                                           </span> -->
+                                                    </li>
+                                        </ul>
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="rememberme"/>
+                                                Remember me </label>
+                                        </p>
+                                        <p>
+                                            <input type="hidden" name="learn-press-login-nonce" value="81f17d0935">
+                                            <button type="submit">Login</button>
+        
+                                        </p>
+                                        <p>
+                                            <a href="{% url 'lost-password' %}">Lost your password?</a>
+                                        </p>
+                                    </form>
+                                </div>
+                                <div class="learn-press-form-register learn-press-form">
+                                    <h3>Register</h3>
+                                    <form name="learn-press-register" method="post" action="{% url 'register' %}?next={{ request.path }}" >{% csrf_token %}
+                                        <ul class="form-fields">
+                                            <li class="form-field">
+
+
+                                                <input type="hidden" id="previous_page" name="next" 
+                                                value="/previous/page/url">
+                                            
+
+                                                <label for="reg_email">Email address&nbsp;<span
+                                                        class="required">*</span></label>
+                                                <input id="reg_email" name="email" type="email" placeholder="Email" required
+                                                       autocomplete="email" value="">
+                                            </li>
+                                            <li class="form-field">
+                                                <label for="reg_username">Username&nbsp;<span class="required">*</span></label>
+                                                <input id="reg_username" name="name" type="text" required
+                                                       placeholder="Username" autocomplete="username" value="">
+                                            </li>
+                                            <li class="form-field">
+                                                <label for="reg_password">Password&nbsp;<span class="required">*</span></label>
+                                                <input id="reg_password" name="password" type="password" required
+                                                       placeholder="Password" autocomplete="new-password">
+                                            </li>
+                                            <li class="form-field">
+                                                <label for="reg_password2">Confirm Password&nbsp;<span class="required">*</span></label>
+                                                <input id="reg_password2" name="confirm" type="password" required
+                                                       placeholder="Password" autocomplete="off">
+                                            </li>
+                                        </ul>
+                                        <div id="acf-form-data" class="acf-hidden">
+                                            <input type="hidden" id="_acf_screen" name="_acf_screen"
+                                                   value="user"/><input type="hidden" id="_acf_post_id"
+                                                                        name="_acf_post_id" value="user_0"/><input
+                                                type="hidden" id="_acf_validation" name="_acf_validation"
+                                                value="0"/><input type="hidden" id="_acf_nonce" name="_acf_nonce"
+                                                                  value="f27c203a0a"/><input type="hidden"
+                                                                                             id="_acf_changed"
+                                                                                             name="_acf_changed"
+                                                                                             value="0"/></div>
+                                        <h2>User Meta</h2>
+                                        <div class="acf-user-register-fields acf-fields -clear">
+                                            <div class="acf-field acf-field-image acf-field-5e89b11sb50ccf"
+                                                 data-name="user_image" data-type="image"
+                                                 data-key="field_5e89b11sb50ccf">
+                                                <div class="acf-label">
+                                                    <label for="acf-field_5e89b11sb50ccf">User Image</label></div>
+                                                <div class="acf-input">
+                                                    <div class="acf-image-uploader" data-preview_size="medium"
+                                                         data-library="all" data-mime_types="" data-uploader="basic">
+                                                        <input type="hidden" name="acf[field_5e89b11sb50ccf]" value=""/>
+                                                        <div class="show-if-value image-wrap" style="max-width: 300px">
+                                                            <img src="" alt="" data-name="image"
+                                                                 style="max-height: 300px;"/>
+                                                            <div class="acf-actions -hover">
+                                                                <a class="acf-icon -cancel dark" data-name="remove"
+                                                                   href="#" title="Remove"></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="hide-if-value">
+                                                            <label class="acf-basic-uploader">
+                                                                <input type="file" name="acf[field_5e89b11sb50ccf]"
+                                                                       id="acf-field_5e89b11sb50ccf"/> </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="acf-field acf-field-text acf-field-5ed100f70020a"
+                                                 data-name="designation_name" data-type="text"
+                                                 data-key="field_5ed100f70020a">
+                                                <div class="acf-label">
+                                                    <label for="acf-field_5ed100f70020a">User Designation</label></div>
+                                                <div class="acf-input">
+                                                    <div class="acf-input-wrap"><input type="text"
+                                                                                       id="acf-field_5ed100f70020a"
+                                                                                       name="acf[field_5ed100f70020a]"
+                                                                                       value="Agile Project Expert"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="acf-field acf-field-wysiwyg acf-field-5ea0524ade010"
+                                                 data-name="user_description" data-type="wysiwyg"
+                                                 data-key="field_5ea0524ade010">
+                                                <div class="acf-label">
+                                                    <label for="acf-field_5ea0524ade010">Description</label></div>
+                                                <div class="acf-input">
+                                                    <div id="wp-acf-editor-61c41e5c033a2-wrap"
+                                                         class="acf-editor-wrap wp-core-ui wp-editor-wrap tmce-active"
+                                                         data-toolbar="full">
+                                                        <div id="wp-acf-editor-61c41e5c033a2-editor-tools"
+                                                             class="wp-editor-tools hide-if-no-js">
+                                                            <div class="wp-editor-tabs">
+                                                                <button id="acf-editor-61c41e5c033a2-tmce"
+                                                                        class="wp-switch-editor switch-tmce"
+                                                                        data-wp-editor-id="acf-editor-61c41e5c033a2"
+                                                                        type="button">Visual
+                                                                </button>
+                                                                <button id="acf-editor-61c41e5c033a2-html"
+                                                                        class="wp-switch-editor switch-html"
+                                                                        data-wp-editor-id="acf-editor-61c41e5c033a2"
+                                                                        type="button">Text
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div id="wp-acf-editor-61c41e5c033a2-editor-container"
+                                                             class="wp-editor-container">
+                                                            <textarea id="acf-editor-61c41e5c033a2"
+                                                                      class="wp-editor-area"
+                                                                      name="acf[field_5ea0524ade010]"
+                                                                      style="height:300px;"></textarea></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="acf-field acf-field-repeater acf-field-5ea054d699f4e"
+                                                 data-name="user_social_links" data-type="repeater"
+                                                 data-key="field_5ea054d699f4e">
+                                                <div class="acf-label">
+                                                    <label for="acf-field_5ea054d699f4e">Social Links</label></div>
+                                                <div class="acf-input">
+                                                    <div class="acf-repeater -empty -table" data-min="0" data-max="0">
+                                                        <input type="hidden" name="acf[field_5ea054d699f4e]" value=""/>
+                                                        <table class="acf-table">
+                                                            <thead>
+                                                            <tr>
+                                                                <th class="acf-row-handle"></th>
+                                                                <th class="acf-th" data-name="user_select_social_icon"
+                                                                    data-type="select" data-key="field_5ea054ed99f4f">
+                                                                    <label>Select Social Icon</label></th>
+                                                                <th class="acf-th" data-name="user_social_link"
+                                                                    data-type="text" data-key="field_5ea0551099f50">
+                                                                    <label>Social Link</label></th>
+                                                                <th class="acf-row-handle"></th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr class="acf-row
+				 acf-clone			" data-id="acfcloneindex">
+                                                                <td class="acf-row-handle order"
+                                                                    title="Drag to reorder">
+                                                                    <span>1</span>
+                                                                </td>
+                                                                <td class="acf-field acf-field-select acf-field-5ea054ed99f4f"
+                                                                    data-name="user_select_social_icon"
+                                                                    data-type="select" data-key="field_5ea054ed99f4f">
+                                                                    <div class="acf-input">
+                                                                        <select id="acf-field_5ea054d699f4e-acfcloneindex-field_5ea054ed99f4f"
+                                                                                class=""
+                                                                                name="acf[field_5ea054d699f4e][acfcloneindex][field_5ea054ed99f4f]"
+                                                                                data-ui="0" data-ajax="0"
+                                                                                data-multiple="0"
+                                                                                data-placeholder="Select"
+                                                                                data-allow_null="0">
+                                                                            <option value="fa fa-twitter">Twitter
+                                                                            </option>
+                                                                            <option value="fa fa-facebook"
+                                                                                    selected="selected" data-i="0">
+                                                                                Facebook
+                                                                            </option>
+                                                                            <option value="fa fa-instagram">Instagram
+                                                                            </option>
+                                                                            <option value="fa fa-linkedin">Linkdin
+                                                                            </option>
+                                                                            <option value="fa fa-pinterest">Pinterest
+                                                                            </option>
+                                                                            <option value="fa fa-dribbble">Dribbble
+                                                                            </option>
+                                                                            <option value="fa fa-tumblr">Tumblr</option>
+                                                                            <option value="fa fa-youtube">YouTube
+                                                                            </option>
+                                                                            <option value="fa fa-flickr">Flickr</option>
+                                                                            <option value="fa fa-behance">Behance
+                                                                            </option>
+                                                                            <option value="fa fa-github">Github</option>
+                                                                            <option value="fa fa-skype">Skype</option>
+                                                                            <option value="fa fa-rss">RS</option>
+                                                                        </select></div>
+                                                                </td>
+                                                                <td class="acf-field acf-field-text acf-field-5ea0551099f50"
+                                                                    data-name="user_social_link" data-type="text"
+                                                                    data-key="field_5ea0551099f50">
+                                                                    <div class="acf-input">
+                                                                        <div class="acf-input-wrap"><input type="text"
+                                                                                                           id="acf-field_5ea054d699f4e-acfcloneindex-field_5ea0551099f50"
+                                                                                                           name="acf[field_5ea054d699f4e][acfcloneindex][field_5ea0551099f50]"
+                                                                                                           value="#"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="acf-row-handle remove">
+                                                                    <a class="acf-icon -plus small acf-js-tooltip hide-on-shift"
+                                                                       href="#" data-event="add-row"
+                                                                       title="Add row"></a>
+                                                                    <a class="acf-icon -duplicate small acf-js-tooltip show-on-shift"
+                                                                       href="#" data-event="duplicate-row"
+                                                                       title="Duplicate row"></a>
+                                                                    <a class="acf-icon -minus small acf-js-tooltip"
+                                                                       href="#" data-event="remove-row"
+                                                                       title="Remove row"></a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="acf-actions">
+                                                            <a class="acf-button button button-primary" href="#"
+                                                               data-event="add-row">Add Row</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>
+                                            <label for="become_teacher">
+                                                <input type="checkbox"  name="check" id="become_teacher">
+                                                Want to become an instructor? </label>
+                                        </p>
+                                        <p>
+                                            <input type="hidden" id="learn-press-register-nonce"
+                                                   name="learn-press-register-nonce" value="6515e57adc"/><input
+                                                type="hidden" name="_wp_http_referer" value="/ecademy/profile/"/>
+                                            <button type="submit">Register</button>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        
+<script>
+    prev = document.getElementById("previous_page");
+    prev.value = document.referrer;
+</script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var state=false;
+    function toggle(){
+        if(state){
+            document.getElementById('password').setAttribute('type','password');
+            state=false;}
+            else{
+         document.getElementById('password').setAttribute('type','text');
+            state=true;}  
+            }
+</script>
+
+{% endblock body %}

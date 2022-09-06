@@ -1,0 +1,187 @@
+{% include 'dbasic.html' %}
+
+{% block body %}
+{% load static %}
+
+     
+{% load newfilter %} 
+
+
+
+
+
+<style>
+td {
+    text-align: center;
+}
+th {
+    text-align: center;
+}
+
+</style>
+
+
+<div id="page-wrapper">
+            <div id="page-inner">
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-header text-center" >
+                         Coupons
+
+                            <a   href="{% url 'add_coupon' %}">  
+                                 <button class="btn btn-primary "  style="float: right;">
+                                Add 
+                                </button></a>
+                            
+
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                   
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                           All Coupons
+                            </div> 
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Coupon Code</th>
+                                                <th>Coupon Valid Date</th>
+                                                <th>Coupon Discount</th><th>Action</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for t in cop %}
+                                            <tr> <td>{{forloop.counter}}</td>
+                                                <td>{{t.code}}</td>
+                                                <td>{{t.valid_date|date:'d,M Y'}}</td>
+                                                <td>{{t.discount}}%</td>
+                                              <td> 
+                                                   <a  data-toggle="modal" data-target="#edit"  onclick="$('#cid').val('{{t.id}}');" >  
+                                                    <button class="btn btn-primary " >
+                                                   Edit
+                                                   </button></a> 
+                                                   
+                                                   <a  data-toggle="modal" data-target="#delete"  onclick="$('#did').val('{{t.id}}');" >  
+                                                    <button class="btn btn-primary "  style="background-color: rgb(209, 66, 66);">
+                                                   Delete
+                                                   </button></a></td>
+                                               
+                                            </tr>{% endfor %}
+                                           
+
+                                        </tbody>
+                                        
+                                    </table>
+                                    <nav aria-label="Page navigation example text-center">
+                                        <ul class="pagination justify-content-end">
+                                            
+                                            {% if trans.has_previous %}
+                                          <li class="page-item ">
+                                            <a class="page-link" href="?page={{trans.previous_page_number}}" tabindex="-1">Previous</a>
+                                          </li>
+                                          {% endif %}
+                        
+                                          {% for i in trans.paginator.page_range %}
+                      {% if trans.number == i %}
+                          <li class="active page-item "><a class="page-link" href="#">{{ i }}</a></li>
+                      {% elif i > trans.number|add:'-5' and i < trans.number|add:'5' %}
+                          <li class="page-item"><a class="page-link" href="?page={{i}}">{{ i }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                        
+                        
+                                          {% if trans.has_next %}
+                                           <li class="page-item">
+                                            <a class="page-link" href="?page={{trans.next_page_number}}">Next</a>
+                                          </li> {% endif %}
+                                        </ul>
+                                      </nav> 
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                </div>
+        
+            </div></div>        
+        
+{% endblock body %}
+
+{% block body1 %}
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title text-center" id="myModalLabel">Delete</h4>
+            </div>
+            <form action="" method="post">{% csrf_token %}
+            <div class="modal-body text-center" style="font-size:20px;">
+          
+              <input type="hidden" name="did" id="did">
+            Are You Sure You want to delete?  </div>
+            <div class="modal-footer">
+                <button type="close" class="btn btn-primary" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-danger">Yes</button>
+            </div></form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title text-center" id="myModalLabel">Edit</h4>
+            </div>
+            <form action="" method="post" >{% csrf_token %}
+                <div class="row">
+                  
+              <input type="hidden" name="cid" id="cid">
+              
+               <div class="col-lg-12">
+                   <div class="panel panel-default">
+                       <div class="panel-heading">
+                          Information
+                       </div>
+                           <div class="row" style="margin: 15px;"> 
+                                 
+                                       <div class="form-group">
+                                           <label>Coupon Code</label>
+                                           <input class="form-control" name="code" type="number">
+                                       </div>
+                                       <div class="form-group">
+                                           <label>Coupon Valid date</label>
+                                           <input class="form-control" name="date" type="date">
+                                       </div>
+                                      
+                                       <div class="form-group">
+                                        <label>Discount in %</label>
+                                        <input class="form-control" name="dis" type="number">
+                                       
+                                    </div>
+                                                    
+                              
+                            <button class="btn btn-primary  " type="submit" style="float: right;">
+                              Save Change</button>
+                           </div>  
+                           
+           <!-- </div> -->
+          </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body1 %} 
